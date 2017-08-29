@@ -270,7 +270,25 @@
 					<p>View from google map</p>
 					<!-- map -->
 					<div id="section-map" class="clearfix">
-						<div id="google-map" data-latitude="53.4744567" data-longitude="-2.2864820"></div>
+						<div id="google-map"></div>
+						<script>
+							function initMap() {
+								var uluru = {
+									lat: 53.4744567,
+									lng: -2.2864820
+								};
+								var map = new google.maps.Map(document.getElementById('map'), {
+									zoom: 4,
+									center: uluru
+								});
+								var marker = new google.maps.Marker({
+									position: uluru,
+									map: map
+								});
+							}
+						</script>
+						<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNJbrXTL1IlBivF8WuVFa2LjPDj0eSJD0&callback=initMap">
+						</script>
 					</div>
 				</div>
 			</div>
