@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="assets/css/slippry.css">
 	<link href="assets/css/style.css" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/color/default.css">
-	<link rel="stylesheet" href="assets/css/easydropdown.metro.css">
+	<link rel="stylesheet" href="scripts/style.css">
 
 	<script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
 
@@ -86,25 +86,32 @@
 				<div class="col-md-8 col-md-offset-2">
 					<div class="heading">
 						<h3><span>Now Showing</span></h3>
-						<br> </br>
-						<select class="dropdown" tabindex="8" data-settings='{"wrapperClass":"metro"}'>
-							<option value="0">Please select location</option>
-							<option value="1">location 1</option>
-							<option value="2">location 2</option>
-							<option value="3">location 3</option>
-							<option value="4">location 4</option>
-							<option value="5">location 5</option>
-						</select>
 					</div>
 					<div class="sub-heading">
 						<p>
 							Creating a visual language around the beliefs of the brands we work with.
 						</p>
 						<div id="nowshowingsubheading">
+							<div class="tab">
+								<button class="tablinks" onclick="openCity(event, 'Manchester')" id="defaultOpen">Manchester</button>
+								<button class="tablinks" onclick="openCity(event, 'Sheffield')">Sheffield</button>
+								<button class="tablinks" onclick="openCity(event, 'London')">London</button>
+							</div>
 
-						</div>
-						<div id="nowshowingmovielist">
+							<div id="Manchester" class="tabcontent">
+								<h3>Manchester</h3>
+								<p>some text</p>
+							</div>
 
+							<div id="Sheffield" class="tabcontent">
+								<h3>Sheffield</h3>
+								<p>some text</p>
+							</div>
+
+							<div id="London" class="tabcontent">
+								<h3>London</h3>
+								<p>some text</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -118,7 +125,7 @@
 	<section id="latestfilms" class="section gray">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
+				<div>
 					<div class="heading">
 						<h3><span>Latest films</span></h3>
 					</div>
@@ -126,6 +133,49 @@
 						<p>
 							Creating a visual language around the beliefs of the brands we work with.
 						</p>
+
+						<div class="gallery">
+							<a target="_blank" href="fjords.jpg">
+								  <img src="http://i.imgur.com/94aQbeU.jpg" alt="Fjords" width="300" height="200">
+								</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
+						<div class="gallery">
+							<a target="_blank" href="forest.jpg">
+								  <img src="http://i.imgur.com/xo1RO63.jpg" alt="Forest" width="300" height="200">
+								</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
+						<div class="gallery">
+							<a target="_blank" href="lights.jpg">
+								  <img src="http://i.imgur.com/JJXGiRF.jpg" alt="Northern Lights" width="300" height="200">
+								</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
+						<div class="gallery">
+							<a target="_blank" href="mountains.jpg">
+								  <img src="http://i.imgur.com/Bdl16vi.jpg" alt="Mountains" width="300" height="200">
+								</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
+						<div class="gallery">
+							<a target="_blank" href="mountains.jpg">
+									  <img src="http://i.imgur.com/L4lSiKU.jpg" alt="Mountains" width="300" height="200">
+									</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
+						<div class="gallery">
+							<a target="_blank" href="mountains.jpg">
+										  <img src="http://i.imgur.com/RoF2unX.jpg" alt="Mountains" width="300" height="200">
+										</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -138,14 +188,52 @@
 	<section id="comingsoon" class="section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="heading">
+				<div>
+					<div id="comingsoonheading" class="heading">
 						<h3><span>Coming Soon</span></h3>
 					</div>
 					<div class="sub-heading">
-						<p>
-							Creating a visual language around the beliefs of the brands we work with.
-						</p>
+						<div class="gallery">
+							<a target="_blank" href="fjords.jpg">
+										  <img src="http://i.imgur.com/94aQbeU.jpg" alt="Fjords" width="300" height="200">
+										</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
+						<div class="gallery">
+							<a target="_blank" href="forest.jpg">
+										  <img src="http://i.imgur.com/xo1RO63.jpg" alt="Forest" width="300" height="200">
+										</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
+						<div class="gallery">
+							<a target="_blank" href="lights.jpg">
+										  <img src="http://i.imgur.com/JJXGiRF.jpg" alt="Northern Lights" width="300" height="200">
+										</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
+						<div class="gallery">
+							<a target="_blank" href="mountains.jpg">
+										  <img src="http://i.imgur.com/Bdl16vi.jpg" alt="Mountains" width="300" height="200">
+										</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
+						<div class="gallery">
+							<a target="_blank" href="mountains.jpg">
+											  <img src="http://i.imgur.com/L4lSiKU.jpg" alt="Mountains" width="300" height="200">
+											</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
+
+						<div class="gallery">
+							<a target="_blank" href="mountains.jpg">
+												  <img src="http://i.imgur.com/RoF2unX.jpg" alt="Mountains" width="300" height="200">
+												</a>
+							<div class="desc">Add a description of the image here</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -173,7 +261,7 @@
 				<div class="col-md-12">
 					<ul class="grid effect" id="grid">
 						<li>
-							<a class="fancybox" data-fancybox-group="gallery" title="Portfolio name" href="assets/img/portfolio/1.jpg"><img src="assets/img/portfolio/1.jpg" alt="" /></a></li>
+							<a class="fancybox" data-fancybox-group="gallery" title="Portfolio name" href="assets/img/portfolio/1.jpg"><img src="assets/img/portfolio/1.jpg" alt=""  /></a></li>
 						<li><a href="assets/img/portfolio/2.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/2.jpg" alt="" /></a></li>
 						<li><a href="assets/img/portfolio/3.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/3.jpg" alt="" /></a></li>
 						<li><a href="assets/img/portfolio/4.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/4.jpg" alt="" /></a></li>
@@ -369,6 +457,7 @@
 	<script src="assets/js/custom.js"></script>
 	<script src="contactform/contactform.js"></script>
 	<script src="scripts/movieinfo.js"></script>
+	<script src="scripts/locationtab.js"></script>
 
 </body>
 
