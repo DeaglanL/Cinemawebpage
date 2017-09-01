@@ -31,6 +31,6 @@ function movieMaker(movieName, movieDescription, movieReleaseDate, movieLanguage
 let paragraph = document.createElement("p");
 let text = document.createTextNode(movie.MovieName);
 
-paragraph.appendChild(text);
-let printMovieInfo = document.getElementById("nowshowingsubheading")
-printMovieInfo.appendChild(paragraph);
+//paragraph.appendChild(text);
+//let printMovieInfo = document.getElementById("nowshowingsubheading")
+//printMovieInfo.appendChild(paragraph);
