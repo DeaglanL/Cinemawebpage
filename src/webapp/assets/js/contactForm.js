@@ -66,12 +66,12 @@ function validEmail(email) { // see:
       var url = event.target.action;  //
       var xhr = new XMLHttpRequest();
       xhr.open('POST', url);
-      // xhr.withCredentials = true;
+      xhr.withCredentials = true;
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = function() {
           console.log( xhr.status, xhr.statusText )
           console.log(xhr.responseText);
-          document.getElementById('gform').style.display = 'none'; // hide form
+          //document.getElementById('gform').style.display = 'none'; // hide form
           document.getElementById('thankyou_message').style.display = 'block';
           return;
       };
@@ -89,3 +89,7 @@ function validEmail(email) { // see:
     form.addEventListener("submit", handleFormSubmit, false);
   };
   document.addEventListener('DOMContentLoaded', loaded, false);
+
+  function offOverlay() {
+    document.getElementById("thankyou_message").style.display = "none";
+  }
