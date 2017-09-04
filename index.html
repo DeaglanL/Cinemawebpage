@@ -14,10 +14,9 @@
 	<link rel="stylesheet" href="assets/css/slippry.css">
 	<link href="assets/css/style.css" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/color/default.css">
-	<link rel="stylesheet" href="scripts/style.css">
+	<link rel="stylesheet" href="assets/css/easydropdown.metro.css">
 
-	<script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
-
+	<script src="assets/js/modernizr.custom.js"></script>
 </head>
 
 <body>
@@ -33,7 +32,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-					<a class="navbar-brand" href="index.html">Apollo Cinema</a>
+					<a class="navbar-brand" href="index.html">QA Cinema</a>
 				</div>
 
 				<div class="navigation">
@@ -47,8 +46,7 @@
 								<li><a href="#movielisting">Movie Listing</a></li>
 								<li><a href="#about">About</a></li>
 								<li><a href="#contact">Contact</a></li>
-								<li><a href="">Login</a></li>
-								<li><a href="">Register</a></li>
+								<li><a href=""><input type="search" name="mySearch" placeholder="Search..."></a></li>
 							</ul>
 						</nav>
 					</div>
@@ -63,19 +61,19 @@
 	<section id="intro">
 		<ul id="slippry-slider">
 			<li>
-				<a href=""><img src="assets/img/slide/1.jpg" alt="Movie 1"></a>
+				<a href="#slide1"><img src="assets/img/slide/1.jpg" alt="Movie 1"></a>
 			</li>
 			<li>
-				<a href=""><img src="assets/img/slide/2.jpg"  alt="Movie 2"></a>
+				<a href="#slide2"><img src="assets/img/slide/2.jpg"  alt="Movie 2"></a>
 			</li>
 			<li>
-				<a href=""><img src="assets/img/slide/3.jpg" alt="Movie 3"></a>
+				<a href="#slide3"><img src="assets/img/slide/3.jpg" alt="Movie 3"></a>
 			</li>
 			<li>
-				<a href=""><img src="assets/img/slide/4.jpg" alt="Movie 4"></a>
+				<a href="#slide4"><img src="assets/img/slide/4.jpg" alt="Movie 4"></a>
 			</li>
 			<li>
-				<a href=""><img src="assets/img/slide/5.jpg" alt="Movie 5"></a>
+				<a href="#slide5"><img src="assets/img/slide/5.jpg" alt="Movie 5"></a>
 			</li>
 		</ul>
 	</section>
@@ -88,36 +86,20 @@
 				<div class="col-md-8 col-md-offset-2">
 					<div class="heading">
 						<h3><span>Now Showing</span></h3>
+						<br> </br>
+						<select class="dropdown" tabindex="8" data-settings='{"wrapperClass":"metro"}'>
+							<option value="0">Please select location</option>
+							<option value="1">location 1</option>
+							<option value="2">location 2</option>
+							<option value="3">location 3</option>
+							<option value="4">location 4</option>
+							<option value="5">location 5</option>
+						</select>
 					</div>
 					<div class="sub-heading">
 						<p>
 							Creating a visual language around the beliefs of the brands we work with.
 						</p>
-						<div id="nowshowingsubheading">
-							<div class="tab">
-								<button class="tablinks" onclick="openCity(event, 'Manchester')" id="defaultOpen">Manchester</button>
-								<button class="tablinks" onclick="openCity(event, 'Sheffield')">Sheffield</button>
-								<button class="tablinks" onclick="openCity(event, 'London')">London</button>
-							</div>
-
-							<div id="Manchester" class="tabcontent">
-								<h3>Manchester</h3>
-								<p>Opening time Mon - Sat: 9am - 11pm</p>
-								<p>Opening time Sun: 9am - 5pm</p>
-							</div>
-
-							<div id="Sheffield" class="tabcontent">
-								<h3>Sheffield</h3>
-								<p>Opening time Mon - Sat: 9am - 11pm</p>
-								<p>Opening time Sun: 9am - 5pm</p>
-							</div>
-
-							<div id="London" class="tabcontent">
-								<h3>London</h3>
-								<p>Opening time Mon - Sat: 9am - 11pm</p>
-								<p>Opening time Sun: 9am - 5pm</p>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -127,10 +109,10 @@
 	<!-- end section about -->
 
 	<!-- Section latestfilms -->
-	<section id="latestfilms" class="section gray">
+	<section id="latestfilms" class="section">
 		<div class="container">
 			<div class="row">
-				<div>
+				<div class="col-md-8 col-md-offset-2">
 					<div class="heading">
 						<h3><span>Latest films</span></h3>
 					</div>
@@ -138,61 +120,6 @@
 						<p>
 							Creating a visual language around the beliefs of the brands we work with.
 						</p>
-
-						<div class="gallery">
-							<a target="_blank" href="fjords.jpg">
-								<div class="cell">
-									<img src="http://i.imgur.com/94aQbeU.jpg" alt="Fjords" width="300" height="200">
-								</div>
-							</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="forest.jpg">
-								<div class="cell">
-									<img src="http://i.imgur.com/xo1RO63.jpg" alt="Forest" width="300" height="200">
-								</div>
-							</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="lights.jpg">
-								<div class="cell">
-									<img src="http://i.imgur.com/JJXGiRF.jpg" alt="Northern Lights" width="300" height="200">
-								</div>
-							</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="mountains.jpg">
-								<div class="cell">
-									<img src="http://i.imgur.com/Bdl16vi.jpg" alt="Mountains" width="300" height="200">
-								</div>
-							</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="mountains.jpg">
-								<div class="cell">
-									<img src="http://i.imgur.com/L4lSiKU.jpg" alt="Mountains" width="300" height="200">
-								</div>
-							</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="mountains.jpg">
-								<div class="cell">
-									<img src="http://i.imgur.com/RoF2unX.jpg" alt="Mountains" width="300" height="200">
-								</div>
-							</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
 					</div>
 				</div>
 			</div>
@@ -205,29 +132,14 @@
 	<section id="comingsoon" class="section">
 		<div class="container">
 			<div class="row">
-				<div>
-					<div id="comingsoonheading" class="heading">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="heading">
 						<h3><span>Coming Soon</span></h3>
 					</div>
 					<div class="sub-heading">
-					</div>
-
-					<button class="accordion">Section 1</button>
-					<div class="panel">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					</div>
-
-					<button class="accordion">Section 2</button>
-					<div class="panel">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					</div>
-
-					<button class="accordion">Section 3</button>
-					<div class="panel">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>
+							Creating a visual language around the beliefs of the brands we work with.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -255,7 +167,7 @@
 				<div class="col-md-12">
 					<ul class="grid effect" id="grid">
 						<li>
-							<a class="fancybox" data-fancybox-group="gallery" title="Portfolio name" href="assets/img/portfolio/1.jpg"><img src="assets/img/portfolio/1.jpg" alt=""  /></a></li>
+							<a class="fancybox" data-fancybox-group="gallery" title="Portfolio name" href="assets/img/portfolio/1.jpg"><img src="assets/img/portfolio/1.jpg" alt="" /></a></li>
 						<li><a href="assets/img/portfolio/2.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/2.jpg" alt="" /></a></li>
 						<li><a href="assets/img/portfolio/3.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/3.jpg" alt="" /></a></li>
 						<li><a href="assets/img/portfolio/4.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/4.jpg" alt="" /></a></li>
@@ -298,8 +210,7 @@
 	<!-- end section about -->
 
 	<!-- section contact -->
-
-	<section id="contact" class="section gray">
+	<section id="contact" class="section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
@@ -323,11 +234,12 @@
 						Want to work with us or just want to say hello? Don't hesitate to get in touch!
 					</p>
 					<!-- start contact form -->
-					<div class="cform" id="gform">
+					<div class="cform" id="contact-form">
+
+
 						<div id="sendmessage">Your message has been sent. Thank you!</div>
 						<div id="errormessage"></div>
-						<form action="https://script.google.com/macros/s/AKfycbzCVcDrHI_yn2LPjr45k7r-E5Sw6PKTVph8jmNJTz2FtHAGkNne/exec" method="post"
-						    role="form" class="contactForm">
+						<form action="" method="post" role="form" class="contactForm">
 							<div class="form-group">
 								<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars"
 								/>
@@ -352,10 +264,6 @@
 						</form>
 					</div>
 					<!-- END contact form -->
-					<!-- Customise the Thankyou Message People See when they submit the form: -->
-					<div style="display:none;" id="thankyou_message">
-						<h2><em>Thanks</em> for contacting us! We will get back to you soon!</h2>
-					</div>
 				</div>
 				<div class="col-md-6">
 					<h4>Find our location</h4>
@@ -454,9 +362,6 @@
 
 	<script src="assets/js/custom.js"></script>
 	<script src="contactform/contactform.js"></script>
-	<script src="scripts/movieinfo.js"></script>
-	<script src="scripts/locationtab.js"></script>
-	<script src="scripts/accordion.js"></script>
 
 </body>
 
