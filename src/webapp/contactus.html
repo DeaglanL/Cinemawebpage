@@ -126,18 +126,10 @@
                 <h4>Find our location</h4>
                 <p>View from google map</p>
                 <!-- map -->
-                <div id="map" style="width:400px;height:385px;background:white"></div>
-                <script>
-                    function myMap() {
-                        var mapCanvas = document.getElementById("map");
-                        var mapOptions = {
-                            center: new google.maps.LatLng(53.4741296, -2.2861229),
-                            zoom: 15
-                        };
-                        var map = new google.maps.Map(mapCanvas, mapOptions);
-                    }
-                </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNJbrXTL1IlBivF8WuVFa2LjPDj0eSJD0&callback=myMap"></script>
+                <div id="map" style="width:400px;height:385px;background:white">
+                    <iframe width="400px" height="385px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=qa%20anchorage%20salford&key=AIzaSyAVSbkgBRLawFue92LFK9orsXkIJvmkUjk" allowfullscreen></iframe>
+                </div>
+                
     
             </div>
         </div>
