@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="apolloCinema">
 
 <head>
 	<meta charset="utf-8">
-	<title>Groovin one page bootstrap template</title>
+	<title>Apollo Cinemas</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
@@ -29,10 +29,10 @@
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 					<a class="navbar-brand" href="index.html">Apollo Cinema</a>
 				</div>
 
@@ -40,13 +40,13 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<nav>
 							<ul class="nav navbar-nav navbar-right">
-								<li class="current"><a href="#intro">Home</a></li>
-								<li><a href="#nowshowing">Now Showing</a></li>
-								<li><a href="#latestfilms">Latest Films</a></li>
-								<li><a href="#comingsoon">Coming Soon</a></li>
-								<li><a href="#movielisting">Movie Listing</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
+								<li class="current"><a ui-sref="homepage#intro">Home</a></li>
+								<li><a ui-sref="homepage#nowshowing">Now Showing</a></li>
+								<li><a ui-sref="homepage#latestfilms">Latest Films</a></li>
+								<li><a ui-sref="homepage#comingsoon">Coming Soon</a></li>
+								<li><a ui-sref="homepage#movielisting">Movie Listing</a></li>
+								<li><a ui-sref="about">About</a></li>
+								<li><a ui-sref="contact">Contact</a></li>
 								<li><a href="">Login</a></li>
 								<li><a href="">Register</a></li>
 							</ul>
@@ -57,237 +57,10 @@
 
 			</div>
 		</div>
+	</header>>
 
-	</header>
-	<!-- section intro -->
-	<section id="intro">
-		<ul id="slippry-slider">
-			<li>
-				<a href=""><img src="assets/img/slide/1.jpg" alt="Movie 1"></a>
-			</li>
-			<li>
-				<a href=""><img src="assets/img/slide/2.jpg"  alt="Movie 2"></a>
-			</li>
-			<li>
-				<a href=""><img src="assets/img/slide/3.jpg" alt="Movie 3"></a>
-			</li>
-			<li>
-				<a href=""><img src="assets/img/slide/4.jpg" alt="Movie 4"></a>
-			</li>
-			<li>
-				<a href=""><img src="assets/img/slide/5.jpg" alt="Movie 5"></a>
-			</li>
-		</ul>
-	</section>
-	<!-- end intro -->
+	<div ui-view></div>
 
-	<!-- Section nowshowing -->
-	<section id="nowshowing" class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="heading">
-						<h3><span>Now Showing</span></h3>
-					</div>
-					<div class="sub-heading">
-						<p>
-							Creating a visual language around the beliefs of the brands we work with.
-						</p>
-						<div id="nowshowingsubheading">
-							<div class="tab">
-								<button class="tablinks" onclick="openCity(event, 'Manchester')" id="defaultOpen">Manchester</button>
-								<button class="tablinks" onclick="openCity(event, 'Sheffield')">Sheffield</button>
-								<button class="tablinks" onclick="openCity(event, 'London')">London</button>
-							</div>
-
-							<div id="Manchester" class="tabcontent">
-								<h3>Manchester</h3>
-								<p>Opening time Mon - Sat: 9am - 11pm</p>
-								<p>Opening time Sun: 9am - 5pm</p>
-							</div>
-
-							<div id="Sheffield" class="tabcontent">
-								<h3>Sheffield</h3>
-								<p>Opening time Mon - Sat: 9am - 11pm</p>
-								<p>Opening time Sun: 9am - 5pm</p>
-							</div>
-
-							<div id="London" class="tabcontent">
-								<h3>London</h3>
-								<p>Opening time Mon - Sat: 9am - 11pm</p>
-								<p>Opening time Sun: 9am - 5pm</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
-	<!-- end section about -->
-
-	<!-- Section latestfilms -->
-	<section id="latestfilms" class="section gray">
-		<div class="container">
-			<div class="row">
-				<div>
-					<div class="heading">
-						<h3><span>Latest films</span></h3>
-					</div>
-					<div class="sub-heading">
-						<p>
-							Creating a visual language around the beliefs of the brands we work with.
-						</p>
-
-						<div class="gallery">
-							<a target="_blank" href="fjords.jpg">
-								  <img src="http://i.imgur.com/94aQbeU.jpg" alt="Fjords" width="300" height="200">
-								</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="forest.jpg">
-								  <img src="http://i.imgur.com/xo1RO63.jpg" alt="Forest" width="300" height="200">
-								</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="lights.jpg">
-								  <img src="http://i.imgur.com/JJXGiRF.jpg" alt="Northern Lights" width="300" height="200">
-								</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="mountains.jpg">
-								  <img src="http://i.imgur.com/Bdl16vi.jpg" alt="Mountains" width="300" height="200">
-								</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="mountains.jpg">
-									  <img src="http://i.imgur.com/L4lSiKU.jpg" alt="Mountains" width="300" height="200">
-									</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="mountains.jpg">
-										  <img src="http://i.imgur.com/RoF2unX.jpg" alt="Mountains" width="300" height="200">
-										</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
-	<!-- end section about -->
-
-	<!-- Section comingsoon -->
-	<section id="comingsoon" class="section">
-		<div class="container">
-			<div class="row">
-				<div>
-					<div id="comingsoonheading" class="heading">
-						<h3><span>Coming Soon</span></h3>
-					</div>
-					<div class="sub-heading">
-						<div class="gallery">
-							<a target="_blank" href="fjords.jpg">
-										  <img src="http://i.imgur.com/94aQbeU.jpg" alt="Fjords" width="300" height="200">
-										</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="forest.jpg">
-										  <img src="http://i.imgur.com/xo1RO63.jpg" alt="Forest" width="300" height="200">
-										</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="lights.jpg">
-										  <img src="http://i.imgur.com/JJXGiRF.jpg" alt="Northern Lights" width="300" height="200">
-										</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="mountains.jpg">
-										  <img src="http://i.imgur.com/Bdl16vi.jpg" alt="Mountains" width="300" height="200">
-										</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="mountains.jpg">
-											  <img src="http://i.imgur.com/L4lSiKU.jpg" alt="Mountains" width="300" height="200">
-											</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-
-						<div class="gallery">
-							<a target="_blank" href="mountains.jpg">
-												  <img src="http://i.imgur.com/RoF2unX.jpg" alt="Mountains" width="300" height="200">
-												</a>
-							<div class="desc">Add a description of the image here</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
-	<!-- end section about -->
-
-	<!-- section movielisting -->
-	<section id="movielisting" class="section gray">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="heading">
-						<h3><span>Movie Listings</span></h3>
-					</div>
-					<div class="sub-heading">
-						<p>
-							We have a history of doing what our name implies, creating a visual language around the beliefs of the brands we work with.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<ul class="grid effect" id="grid">
-						<li>
-							<a class="fancybox" data-fancybox-group="gallery" title="Portfolio name" href="assets/img/portfolio/1.jpg"><img src="assets/img/portfolio/1.jpg" alt=""  /></a></li>
-						<li><a href="assets/img/portfolio/2.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/2.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/3.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/3.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/4.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/4.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/5.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/5.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/6.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/6.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/7.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/7.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/8.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/8.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/9.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/9.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/10.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/10.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/11.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/11.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/12.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/12.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/13.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/13.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/14.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/14.jpg" alt="" /></a></li>
-						<li><a href="assets/img/portfolio/15.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/15.jpg" alt="" /></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- section works -->
-	
 	<footer>
 		<div class="verybottom">
 			<div class="container">
@@ -354,7 +127,7 @@
 					initSingle: false,
 					auto: true,
 					preload: 'visible',
-					pager: false,
+					pager: false
 				}
 
 			)
@@ -362,11 +135,17 @@
 	</script>
 
 	<script src="assets/js/custom.js"></script>
-	<script src="contactform/contactform.js"></script>
 	<script src="scripts/movieinfo.js"></script>
 	<script src="scripts/locationtab.js"></script>
 
+	<script src="scripts/angular.min.js"></script>
+	<script src="scripts/ui-router.min.js"></script>
 
+	<script src="app/app.js"></script>
+	<script src="app/app-state-manager.js"></script>
+
+	<script src="app/features/contact/contactcontroller.js"></script>
+	<script src="app/features/homepage/homecontroller.js"></script>
 </body>
 
 </html>

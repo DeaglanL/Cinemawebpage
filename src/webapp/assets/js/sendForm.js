@@ -25,7 +25,7 @@ function validEmail(email) { // see:
         return elements[k].item(0).name;
       }
     }).filter(function(item, pos, self) {
-      return self.indexOf(item) == pos && item;
+      return self.indexOf(item)=== pos && item;
     });
     var data = {};
     fields.forEach(function(k){
@@ -69,7 +69,7 @@ function validEmail(email) { // see:
       xhr.withCredentials = true;
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = function() {
-          console.log( xhr.status, xhr.statusText )
+          console.log( xhr.status, xhr.statusText );
           console.log(xhr.responseText);
           //document.getElementById('gform').style.display = 'none'; // hide form
           document.getElementById('thankyou_message').style.display = 'block';
@@ -78,7 +78,7 @@ function validEmail(email) { // see:
       // url encode form data for sending as post data
       var encoded = Object.keys(data).map(function(k) {
           return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-      }).join('&')
+      }).join('&');
       xhr.send(encoded);
     }
   }
@@ -87,8 +87,8 @@ function validEmail(email) { // see:
     // bind to the submit event of our form
     var form = document.getElementById('gform');
     form.addEventListener("submit", handleFormSubmit, false);
-  };
-  document.addEventListener('DOMContentLoaded', loaded, false);
+  }
+document.addEventListener('DOMContentLoaded', loaded, false);
 
   function offOverlay() {
     document.getElementById("thankyou_message").style.display = "none";
