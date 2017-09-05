@@ -2,116 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d870511-575e-46b9-b03d-a3756718648c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/homeController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/angular.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/ui-router.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/color/default.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/color/default.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/animate.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/animate.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/bootstrap-theme.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/custom-fonts.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/custom-fonts.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/fancybox/blank.gif" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/fancybox/blank.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/fancybox/fancybox_loading.gif" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/fancybox/fancybox_loading.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/fancybox/fancybox_overlay.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/fancybox/fancybox_overlay.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/fancybox/fancybox_sprite.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/fancybox/fancybox_sprite.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/fancybox/jquery.fancybox.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/fancybox/jquery.fancybox.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/font-awesome.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/font-awesome.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/overwrite.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/overwrite.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/prettyPhoto.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/prettyPhoto.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/slippry.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/slippry.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/customicon/Icons.eot" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/customicon/Icons.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/customicon/Icons.svg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/customicon/Icons.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/customicon/Icons.ttf" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/customicon/Icons.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/customicon/Icons.woff" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/customicon/Icons.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/fontawesome/FontAwesome.otf" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/fontawesome/FontAwesome.otf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/fontawesome/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/fontawesome/fontawesome-webfont.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/fontawesome/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/fontawesome/fontawesome-webfont.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/fontawesome/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/fontawesome/fontawesome-webfont.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/fontawesome/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/fontawesome/fontawesome-webfont.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/glyphicons-halflings-regular.eot@" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/glyphicons-halflings-regular.eot@" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/arrows.svg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/arrows.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/cursor.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/cursor.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/dummies/team1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/dummies/team1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/dummies/team2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/dummies/team2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/dummies/team3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/dummies/team3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/dummies/team4.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/dummies/team4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/glyphicons-halflings-white.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/glyphicons-halflings.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/glyphicons-halflings.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/10.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/10.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/11.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/11.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/12.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/12.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/13.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/13.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/14.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/14.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/15.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/15.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/4.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/5.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/5.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/6.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/6.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/7.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/7.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/8.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/8.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/9.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/9.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/10.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/10.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/11.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/11.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/12.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/12.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/13.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/13.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/14.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/14.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/4.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/5.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/5.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/6.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/6.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/7.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/7.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/8.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/8.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/9.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/9.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/app-design.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/app-design.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/4.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/4.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/5.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/5.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/Original/1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/Original/1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/Original/2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/Original/2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/Original/3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/Original/3.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/sy-loader.gif" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/sy-loader.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/AnimOnScroll.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/AnimOnScroll.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/animate.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/animate.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/classie.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/classie.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/contactForm.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/contactForm.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/custom.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/custom.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/imagesloaded.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/imagesloaded.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery-1.9.1.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery-1.9.1.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.easing.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.easing.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.fancybox-media.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.fancybox-media.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.fancybox.pack.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.fancybox.pack.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.nav.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.nav.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.nicescroll.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.nicescroll.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.scrollTo.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.scrollTo.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/masonry.pkgd.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/masonry.pkgd.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/modernizr.custom.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/modernizr.custom.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/nagging-menu.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/nagging-menu.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/slippry.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/slippry.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/contactus.html" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/contact/contactus.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/home.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/scripts/accordion.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/accordion.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/scripts/locationtab.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/locationtab.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/scripts/movieGet.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/movieGet.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/scripts/movieinfo.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/movieinfo.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/scripts/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QACinemas.iml" afterPath="$PROJECT_DIR$/QACinemas.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/app/features/home/home.html" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -126,9 +20,12 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2839">
-              <caret line="167" column="28" lean-forward="true" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="393">
+              <caret line="318" column="0" lean-forward="true" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,18 +33,8 @@
       <file leaf-file-name="homeController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/homeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+            <state relative-caret-position="102">
+              <caret line="6" column="79" lean-forward="true" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -157,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="42" />
+              <caret line="0" column="45" lean-forward="true" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -166,9 +53,21 @@
       <file leaf-file-name="app-state-manager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="204">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="65" lean-forward="true" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+              <folding>
+                <element signature="e#3919#3925#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,11 +96,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/features/home/homeController.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/app/app.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/app/features/home/homeController.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/app/features/home/home.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
       </list>
     </option>
   </component>
@@ -211,9 +110,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="408" />
-    <option name="y" value="39" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="840" />
     <option name="width" value="840" />
     <option name="height" value="1010" />
   </component>
@@ -291,6 +189,14 @@
               <item name="features" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Cinemawebpage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cinemawebpage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -307,8 +213,10 @@
       <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main\webapp\scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main\webapp\app\features\contact" />
+      <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main\webapp\scripts" />
+      <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main\webapp\app\features\home\scripts" />
       <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main\webapp\app\features\home" />
+      <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main\webapp\app\features\contact" />
       <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main" />
     </key>
   </component>
@@ -451,10 +359,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3492000" />
+    <option name="totallyTimeSpent" value="4194000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="408" y="39" width="840" height="1010" extended-state="0" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -471,7 +379,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3131068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15357143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -551,7 +459,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -600,7 +511,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -640,7 +554,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -665,7 +582,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -721,7 +641,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -759,14 +682,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/ui-router.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -775,35 +690,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/homeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        <state relative-caret-position="102">
+          <caret line="6" column="79" lean-forward="true" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
-          <caret line="167" column="28" lean-forward="true" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="28" />
+        <state relative-caret-position="393">
+          <caret line="318" column="0" lean-forward="true" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#section#6;n#body#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="45" lean-forward="true" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/homeController.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="19" column="65" lean-forward="true" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+          <folding>
+            <element signature="e#3919#3925#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
