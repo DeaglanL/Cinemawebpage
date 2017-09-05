@@ -1,7 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d870511-575e-46b9-b03d-a3756718648c" name="Default" comment="" />
+    <list default="true" id="9d870511-575e-46b9-b03d-a3756718648c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/homeController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/angular.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/ui-router.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/color/default.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/color/default.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/animate.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/animate.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/bootstrap-theme.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/custom-fonts.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/custom-fonts.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/fancybox/blank.gif" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/fancybox/blank.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/fancybox/fancybox_loading.gif" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/fancybox/fancybox_loading.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/fancybox/fancybox_overlay.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/fancybox/fancybox_overlay.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/fancybox/fancybox_sprite.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/fancybox/fancybox_sprite.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/fancybox/jquery.fancybox.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/fancybox/jquery.fancybox.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/font-awesome.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/font-awesome.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/overwrite.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/overwrite.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/prettyPhoto.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/prettyPhoto.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/slippry.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/slippry.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/css/style.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/customicon/Icons.eot" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/customicon/Icons.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/customicon/Icons.svg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/customicon/Icons.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/customicon/Icons.ttf" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/customicon/Icons.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/customicon/Icons.woff" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/customicon/Icons.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/fontawesome/FontAwesome.otf" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/fontawesome/FontAwesome.otf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/fontawesome/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/fontawesome/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/fontawesome/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/fontawesome/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/fontawesome/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/fontawesome/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/fontawesome/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/fontawesome/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/glyphicons-halflings-regular.eot@" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/glyphicons-halflings-regular.eot@" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/arrows.svg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/arrows.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/cursor.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/cursor.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/dummies/team1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/dummies/team1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/dummies/team2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/dummies/team2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/dummies/team3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/dummies/team3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/dummies/team4.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/dummies/team4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/glyphicons-halflings-white.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/glyphicons-halflings.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/glyphicons-halflings.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/10.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/10.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/11.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/11.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/12.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/12.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/13.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/13.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/14.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/14.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/15.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/15.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/4.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/5.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/5.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/6.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/6.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/7.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/7.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/8.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/8.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/9.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/9.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/10.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/10.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/11.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/11.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/12.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/12.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/13.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/13.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/14.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/14.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/4.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/5.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/5.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/6.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/6.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/7.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/7.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/8.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/8.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/9.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/9.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/portfolio/Original/app-design.png" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/portfolio/Original/app-design.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/4.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/5.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/5.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/Original/1.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/Original/1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/Original/2.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/Original/2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/slide/Original/3.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/slide/Original/3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/img/sy-loader.gif" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/img/sy-loader.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/AnimOnScroll.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/AnimOnScroll.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/animate.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/animate.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/classie.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/classie.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/contactForm.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/contactForm.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/custom.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/custom.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/imagesloaded.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/imagesloaded.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery-1.9.1.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery-1.9.1.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.easing.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.easing.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.fancybox-media.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.fancybox-media.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.fancybox.pack.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.fancybox.pack.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.nav.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.nav.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.nicescroll.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.nicescroll.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/jquery.scrollTo.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/jquery.scrollTo.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/masonry.pkgd.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/masonry.pkgd.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/modernizr.custom.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/modernizr.custom.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/nagging-menu.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/nagging-menu.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/assets/js/slippry.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/assets/js/slippry.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/contactus.html" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/contact/contactus.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/app/features/home/home.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/scripts/accordion.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/accordion.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/scripts/locationtab.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/locationtab.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/scripts/movieGet.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/movieGet.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/scripts/movieinfo.js" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/movieinfo.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/webapp/scripts/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QACinemas.iml" afterPath="$PROJECT_DIR$/QACinemas.iml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,7 +122,68 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2839">
+              <caret line="167" column="28" lean-forward="true" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homeController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/homeController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app-state-manager.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ui-router.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/ui-router.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="27" column="64" lean-forward="false" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,6 +197,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/app.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/features/home/homeController.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/app/features/home/home.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
       </list>
     </option>
   </component>
@@ -34,11 +211,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="408" />
+    <option name="y" value="39" />
+    <option name="width" value="840" />
+    <option name="height" value="1010" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -55,6 +235,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -62,20 +246,71 @@
               <item name="Cinemawebpage" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cinemawebpage" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Cinemawebpage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cinemawebpage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cinemawebpage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cinemawebpage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cinemawebpage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cinemawebpage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cinemawebpage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cinemawebpage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cinemawebpage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cinemawebpage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cinemawebpage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cinemawebpage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main\webapp\scripts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main\webapp\app\features\contact" />
+      <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main\webapp\app\features\home" />
+      <recent name="C:\Users\Profile\Downloads\Github\Cinemawebpage\src\main" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -216,10 +451,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="883000" />
+    <option name="totallyTimeSpent" value="3492000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="408" y="39" width="840" height="1010" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -235,9 +471,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3131068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -246,11 +481,35 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +523,290 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app-state-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="51" lean-forward="false" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/src/webapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app-state-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app-state-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="51" lean-forward="false" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app-state-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app-state-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/homePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="51" lean-forward="true" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/app-state-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/ui-router.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="64" lean-forward="false" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/app-state-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2839">
+          <caret line="167" column="28" lean-forward="true" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/app/features/home/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
