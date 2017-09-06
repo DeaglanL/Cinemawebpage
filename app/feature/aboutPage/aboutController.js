@@ -4,7 +4,7 @@
     {
         var vm = this;
 
-   
+
     };
-    angular.module('apolloCinema').controller('aboutController', [aboutController]);
+    angular.module('QACCinema').controller('aboutController', [aboutController]);
 }());
