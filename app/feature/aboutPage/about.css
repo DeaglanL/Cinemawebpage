@@ -50,3 +50,7 @@
 .button:hover {
     background-color: #555;
 }
+
+#cards{
+    position:center;
+}
