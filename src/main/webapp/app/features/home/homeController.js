@@ -1,6 +1,6 @@
 (function() {
 
-    var HomeController =  function() {
+    var HomeController =  function($scope) {
 
     };
 
