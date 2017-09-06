@@ -34,21 +34,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Apollo Cinema</a>
+                <a class="navbar-brand" ui-sref="home">Apollo Cinema</a>
             </div>
 
             <div class="navigation">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <nav>
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="current"><a href="#intro">Home</a></li>
-                            <li><a href="#nowshowing">Now Showing</a></li>
-                            <li><a href="#latestfilms">Latest Films</a></li>
-                            <li><a href="#comingsoon">Coming Soon</a></li>
-                            <li><a href="#movielisting">Movie Listing</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="">Login</a></li>
+                            <li class="current"><a ui-sref="home#intro">Home</a></li>
+                            <li><a ui-sref="home#nowshowing">Now Showing</a></li>
+                            <li><a ui-sref="home#latestfilms">Latest Films</a></li>
+                            <li><a ui-sref="home#comingsoon">Coming Soon</a></li>
+                            <li><a ui-sref="home#movielisting">Movie Listing</a></li>
+                            <li><a ui-sref="home#about">About</a></li>
+                            <li><a ui-sref="contact">Contact</a></li>
+                            <li><a ui-sref="">Login</a></li>
                             <li><a href="">Register</a></li>
                         </ul>
                     </nav>
@@ -72,8 +72,9 @@
 <script src="app/app-state-manager.js"></script>
 
 <script src="app/features/home/homeController.js"></script>
+<script src="app/features/contact/contactcontroller.js"></script>
 <script src="assets/js/modernizr.custom.js"></script>
-
+<script src="assets/js/contactForm.js"></script>
 </body>
 
 <footer>
