@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="apolloCinema">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Apollo Cinema</title>
+
+        <meta charset="utf-8">
+        <title>Apollo Cinema</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+    <link rel="stylesheet" href="assets/css/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="assets/css/slippry.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/color/default.css">
+    <link rel="stylesheet" href="assets/css/customStyle.css">
+
+
+
+</head>
+
+<header>
+    <div id="navigation" class="navbar navbar-inverse navbar-fixed-top default" role="navigation">
+        <div class="container">
+
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Apollo Cinema</a>
+            </div>
+
+            <div class="navigation">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <nav>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="current"><a href="#intro">Home</a></li>
+                            <li><a href="#nowshowing">Now Showing</a></li>
+                            <li><a href="#latestfilms">Latest Films</a></li>
+                            <li><a href="#comingsoon">Coming Soon</a></li>
+                            <li><a href="#movielisting">Movie Listing</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="">Login</a></li>
+                            <li><a href="">Register</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</header>
+
+ <body>
+<div ui-view></div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="scripts/ui-router.min.js"></script>
+
+<script src="app/app.js"></script>
+<script src="app/app-state-manager.js"></script>
+
+<script src="app/features/home/homeController.js"></script>
+<script src="assets/js/modernizr.custom.js"></script>
+
+</body>
+
+<footer>
+    <div class="verybottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aligncenter">
+                        <ul class="social-network social-circle">
+                            <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aligncenter">
+                        <p>
+                            &copy; Groovin Theme - All right reserved
+                        </p>
+                        <div class="credits">
+                            <a href="https://bootstrapmade.com/">Free Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
