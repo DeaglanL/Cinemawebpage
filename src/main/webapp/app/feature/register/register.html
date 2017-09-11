@@ -1,0 +1,57 @@
+<div ng-controller="RegisterController">
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Register
+      <small>Subheading</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a ui-sref="home">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Register</li>
+    </ol>
+
+    <div class="col-md-6">
+      <h4><i class="icon-envelope"></i><strong>Register</strong></h4>
+      <p>
+        New? Sign up with us now!
+      </p>
+      <!-- START registration form -->
+      <div class="cform" id="registerform">
+        <form action="" method="post" role="form" class="contactForm" id="register">
+          <div class="form-group">
+            <input name="name" class="form-control" id="registername" placeholder="Username" data-rule="minlen:4" data-msg="Please enter at least 4 chars"
+            />
+            <div class="validation"></div>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" id="registeremail" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email"
+            />
+            <div class="validation"></div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" id="registerpassword" placeholder="Password" data-rule="minlen:8"
+                   data-msg="Please enter at least 8 chars" />
+            <div class="validation"></div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password" data-rule="minlen:8"
+                   data-msg="Please enter at least 8 chars" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="text-center"><button class="btn btn-lg btn-theme">Create user</button></div>
+        </form>
+      </div>
+      <!-- END registration form -->
+
+    <p>
+      <a href=""></a></p>
+
+  </div>
+  <!-- /.container -->
+
+</div>
