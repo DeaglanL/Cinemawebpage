@@ -1,0 +1,47 @@
+<div ng-controller="LoginController">
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Login
+        <small>Subheading</small>
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a ui-sref="home">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Login</li>
+      </ol>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h4><i class="icon-envelope"></i><strong>Login</strong></h4>
+            <p>
+              Please enter your account information
+            </p>
+            <!-- START login form -->
+            <div class="cform" id="loginform">
+              <form action="" method="post" role="form" class="contactForm" id="login">
+                <div class="form-group">
+                  <input name="name" class="form-control" id="loginname" placeholder="Username" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="password" id="loginpassword" placeholder="Password" data-rule="minlen:8"
+                         data-msg="" />
+                  <div class="validation"></div>
+                </div>
+
+                <div class="text-center"><button class="btn btn-lg btn-theme">Login</button></div>
+              </form>
+              <p id="forgotpassword">Forgot your passord?</p>
+              <p >Don't have an account ? <a ui-sref="register">Register Here</a></p>
+            </div>
+            <!-- END login form -->
+
+    </div>
+    <!-- /.container -->
+
+</div>
