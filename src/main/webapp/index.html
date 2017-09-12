@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"   ng-app="apolloCinema">
+<html lang="en"   ng-app="apolloCinema" ng-controller="indexController">
 
 <head>
   <meta charset="utf-8">
@@ -18,7 +18,7 @@
         <img src="assets/img/logo.png" style="width:50px;height:50px;">
         Apollo Cinema
       </a>
-      <input id = "searchbox" type="text" name="search" placeholder="Search..">
+      <input id = "searchbox" type="text" name="search" placeholder="Search.." ng-model="sTerm" onKeyDown="if(event.keyCode==13){ $state.go('search'); ctrl.search(searchbox.value);  }" >
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -74,7 +74,7 @@
   <script src="services/app-state-manager.js"></script>
 
 
-
+  <script src="indexController.js"></script>
   <script src="app/feature/home/homeController.js"></script>
   <script src="app/feature/about/aboutController.js"></script>
   <script src="app/feature/contact/contactController.js"></script>
