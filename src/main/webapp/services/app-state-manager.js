@@ -36,6 +36,13 @@
             url:"/pricing",
             templateUrl:"app/feature/pricing/pricing.html"
 
+        }).state("parkingLocation", {
+            url:"/parkingLocation",
+            templateUrl:"app/feature/parkingLocation/parkingLocation.html"
+
+        }).state("placesLocation", {
+            url:"/placesLocation",
+            templateUrl:"app/feature/placesLocation/placesLocation.html"
         })
 
     });
