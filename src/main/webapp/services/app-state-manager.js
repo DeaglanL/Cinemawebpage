@@ -32,6 +32,10 @@
             url:"/movieinfo",
             templateUrl:"app/feature/movieinfo/movieinfo.html"
 
+        }).state("pricing", {
+            url:"/pricing",
+            templateUrl:"app/feature/pricing/pricing.html"
+
         }).state("parkingLocation", {
             url:"/parkingLocation",
             templateUrl:"app/feature/parkingLocation/parkingLocation.html"
@@ -40,5 +44,6 @@
             url:"/placesLocation",
             templateUrl:"app/feature/placesLocation/placesLocation.html"
         })
+
     });
 }());
