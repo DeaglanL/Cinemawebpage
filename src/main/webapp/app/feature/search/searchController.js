@@ -1,6 +1,6 @@
 (function() {
 
-    var SearchController =  function(apiGet) {
+    var SearchController = function (apiGet) {
         var vm = this;
 
         vm.searchNotDone = true;
@@ -15,12 +15,15 @@
 
                 result.results.forEach(function (movie) {
                     html += "<h1 class=\"mt-4 mb-3\">" + movie.title + "</h1> <br>";
-                    html += "<h3 class=\"my-3\">Movie Description</h3>\n" + "<p>" + movie.overview + "</p>";
-                   // html += "<div class=\"col-md-8\"><img class=img-fluid src=\"https://image.tmdb.org/t/p/\w500" + movie.poster_path + "\"" > "+" < /div>"
+                    html += "<h3 class=\"my-3\"> Movie Description </h3>" + "<p>" + movie.overview + "</p>";
+                    html += "<div class=\"col-md-8\"><img class=img-fluid src=\"https://image.tmdb.org/t/p/w500" + movie.backdrop_path + "\"></div>";
                 });
 
-            });
+                search.innerHTML = html;
 
-        }
-        angular.module('apolloCinema').controller('SearchController', ['apiGet', SearchController]);
-    })
+            });
+        };
+
+    };
+    angular.module('apolloCinema').controller('SearchController', ['apiGet', SearchController]);
+}());
