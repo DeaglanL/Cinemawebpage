@@ -32,6 +32,13 @@
             url:"/movieinfo",
             templateUrl:"app/feature/movieinfo/movieinfo.html"
 
+        }).state("parkingLocation", {
+            url:"/parkingLocation",
+            templateUrl:"app/feature/parkingLocation/parkingLocation.html"
+
+        }).state("placesLocation", {
+            url:"/placesLocation",
+            templateUrl:"app/feature/placesLocation/placesLocation.html"
         })
     });
 }());
