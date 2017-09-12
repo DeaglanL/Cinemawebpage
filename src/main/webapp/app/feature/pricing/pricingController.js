@@ -4,5 +4,5 @@
         var vm = this;
     };
 
-    angular.module('apolloCinema').controller('PricingController', [PricingController]);
+    angular.module("apolloCinema").controller("PricingController", [PricingController]);
 }());
