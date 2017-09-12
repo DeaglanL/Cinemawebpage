@@ -32,6 +32,11 @@
             url:"/movieinfo",
             templateUrl:"app/feature/movieinfo/movieinfo.html"
 
+        }).state("pricing", {
+            url:"/pricing",
+            templateUrl:"app/feature/pricing/pricing.html"
+
         })
+
     });
 }());
