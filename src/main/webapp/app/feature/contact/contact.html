@@ -1,4 +1,4 @@
-<div ng-controller="HomeController">
+<div ng-controller="contactController as contactCtrl">
     <!-- Page Content -->
     <div class="container">
 
@@ -51,40 +51,59 @@
       <!-- /.row -->
 
       <!-- Contact Form -->
-      <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
       <div class="row">
         <div class="col-lg-8 mb-4">
           <h3>Send us a Message</h3>
-          <form name="sentMessage" id="contactForm" novalidate>
+          <form ng-submit="contactCtrl.handleFormSubmit(data)" name="sentMessage" id="contactForm" method="post" >
             <div class="control-group form-group">
               <div class="controls">
                 <label>Full Name:</label>
-                <input class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                <input class="form-control" id="name" name="name" ng-model="data.name" required>
                 <p class="help-block"></p>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
-                <label>Phone Number:</label>
-                <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                <label>Mobile Number:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" ng-model="data.phone" required>
+                  <div ng-show="phoneInvalid" id="phone-invalid">
+                      <div id="phone-invalid-message" class="text-center">
+                          <p class="text-danger">Please enter a valid UK mobile number</p>
+                      </div>
+                  </div>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Email Address:</label>
-                <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                <input type="email" class="form-control" id="email" name="email" ng-model="data.email" required>
+                <div ng-show="emailInvalid" id="email-invalid">
+                  <div id="email-invalid-message" class="text-center">
+                    <p class="text-danger">Please enter a valid email address</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Message:</label>
-                <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                <textarea rows="10" cols="100" class="form-control" id="message" name="message" ng-model="data.message" required
+                          maxlength="999" style="resize:none"></textarea>
               </div>
             </div>
-            <div id="success"></div>
-            <!-- For success/fail messages -->
+            <div class="control-group form-group" ng-show="false">
+                  <label>Honeypot:</label>
+                  <input type="text" class="form-control" id="honeypot" name="honeypot" ng-model="data.honeypot" >
+              </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
+            <div ng-show="thankYou" id="thankyou_message">
+                <div id="overlayMessage" class="text-center">
+                    <p class="text-light">Your message has been sent. Thank you for contacting us, and
+                        we will get back to you soon!</p>
+                    <button class="btn btn-primary" ng-click="contactCtrl.offOverlay()">Return to page</button>
+                </div>
+            </div>
         </div>
 
       </div>
@@ -92,10 +111,5 @@
 
     </div>
     <!-- /.container -->
-
-    <!-- Contact form JavaScript -->
-    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
 </div>
 
