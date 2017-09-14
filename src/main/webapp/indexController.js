@@ -4,11 +4,13 @@
         var vm = this;
 
         vm.searchBar = function () {
+            console.log("enter");
+            $state.go('search');
 
-
-                    console.log("enter");
-                    $state.go('search');
-
+            vm.callSearch = function () {
+                vm.$emit("callSearch", vm.sTerm);
+            }
+            
         };
     };
 

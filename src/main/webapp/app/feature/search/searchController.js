@@ -4,6 +4,14 @@
         var vm = this;
 
         vm.searchNotDone = true;
+
+        vm.$on("callSearch", function(sTerm){
+            vm.search(sTerm)
+        });
+
+
+
+
         vm.search = function (term) {
             vm.searchNotDone = false;
             console.log("click");
