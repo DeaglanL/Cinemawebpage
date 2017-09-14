@@ -33,12 +33,13 @@
                 resetPassword(user);
                 return false;
             } else {
-                var validateUser = "";
+                //TODO: test functions
+                /*var validateUser = "";        //Not yet linked to server, does nothing atm
                 $http({
                     method: "POST",
                     url: validateUser,
                     data: user
-                }).then(function(response) {
+                }).then(function (response) {
                         //await login details confirmation from server
                         if (validLogin) {
                             //route to homepage
@@ -49,10 +50,10 @@
                             return false;
                         }
                     },
-                    function(response) { // optional
+                    function (response) { // optional
                         alert("ERROR 500: Unable to verify login");
                         return false;
-                    });
+                    });*/
             }
         };
     };

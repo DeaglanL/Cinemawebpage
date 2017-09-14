@@ -87,7 +87,8 @@
                 alert("Password not confirmed!");
                 return false;
             } else {
-                var addNewUser = "";
+                //TODO: test functions
+                /*var addNewUser = "";          //Not yet linked to server, does nothing atm
                 $http({
                     method: "POST",
                     url: addNewUser,
@@ -104,7 +105,7 @@
                     function(response) { // optional
                         alert("ERROR 500: Unable to create user");
                         return false;
-                    });
+                    });*/
             }
         };
     };
