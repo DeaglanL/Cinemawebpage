@@ -6,12 +6,12 @@
         vm.wrongDetails = false;
 
         function acceptableUsername(username) {
-            var regexUsername = "(?=.*[a-z]).{4,}"; //at least 4 characters including one lowercase letter
+            var regexUsername = "/(?=.*[a-z]).{4,}/i"; //at least 4 characters including one lowercase letter
             return regexUsername.test(username);
         }
 
         function acceptablePassword(password) {
-            var regexPassword = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"; //Must contain at least one number, one uppercase letter,
+            var regexPassword = "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i"; //Must contain at least one number, one uppercase letter,
             return regexPassword.test(password);                       //one lowercase letter, and at least 8 or more characters
         }
 
