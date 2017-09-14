@@ -8,5 +8,5 @@
         };
     };
 
-    angular.module('apolloCinema').service('apiGet', ['movieDal',apiGet]);
+    angular.module("apolloCinema").service("apiGet", ["movieDal",apiGet]);
 }());

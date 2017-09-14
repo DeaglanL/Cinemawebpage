@@ -67,7 +67,7 @@
                     });
                     return deferred.promise;
                 }
-            }
+            };
         })();
         $log.debug("DAL Instantiated");
     }

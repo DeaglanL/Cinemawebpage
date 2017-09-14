@@ -13,5 +13,5 @@
         };
     };
 
-    angular.module('apolloCinema').controller('indexController', ['$state', '$rootScope', indexController]);
+    angular.module("apolloCinema").controller("indexController", ["$state", "$rootScope", indexController]);
 }());
