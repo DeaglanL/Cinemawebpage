@@ -1,4 +1,4 @@
-<div ng-controller="LoginController">
+<div ng-controller="LoginController as loginCtrl">
     <!-- Page Content -->
     <div class="container">
 
@@ -23,18 +23,20 @@
             </p>
             <!-- START login form -->
             <div class="cform" id="loginform">
-              <form action="" method="post" role="form" class="contactForm" id="login">
+              <form method="post" role="form" class="contactForm" id="login" ng-submit="loginCtrl.loginSubmit(user)">
                 <div class="form-group">
-                  <input name="name" class="form-control" id="loginname" placeholder="Username" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                  <div class="validation"></div>
+                  <input name="name" class="form-control" id="loginname" placeholder="Username" ng-model="user.name" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" name="password" id="loginpassword" placeholder="Password" data-rule="minlen:8"
-                         data-msg="" />
-                  <div class="validation"></div>
+                  <input type="password" class="form-control" name="password" id="loginpassword" placeholder="Password" ng-model="user.password" required/>
+                    <div class="validation" ng-show="wrongDetails">
+                        <p class="text-danger">Please check your username and password</p>
+                    </div>
                 </div>
-
-                <div class="text-center"><button class="btn btn-lg btn-theme">Login</button></div>
+                <div class="form-group" ng-show="false">
+                      <input name="honeypot" class="form-control" id="honeypot" ng-model="user.honeypot">
+                  </div>
+                <div class="text-center"><button type="submit" class="btn btn-lg btn-theme">Login</button></div>
               </form>
               <p id="forgotpassword">Forgot your passord?</p>
               <p >Don't have an account ? <a ui-sref="register">Register Here</a></p>
