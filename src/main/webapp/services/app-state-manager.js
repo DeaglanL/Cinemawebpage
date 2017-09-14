@@ -28,10 +28,20 @@
             url:"/register",
             templateUrl:"app/feature/register/register.html"
 
+        }).state("placetovisit", {
+            url: "/placetovisit",
+            templateUrl: "app/feature/placetovisit/placetovisit.html"
+
         }).state("search", {
             url: "/search",
             templateUrl: "app/feature/search/search.html"
 
+        }).state("parkinglocation", {
+            url: "/parkinglocation",
+            templateUrl: "app/feature/parkinglocation/parkinglocation.html"
+
         })
+
+
     });
 }());
