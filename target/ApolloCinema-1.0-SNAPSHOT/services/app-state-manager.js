@@ -36,14 +36,12 @@
             url: "/search",
             templateUrl: "app/feature/search/search.html"
 
-        }).state("pricing", {
-            url:"/pricing",
-            templateUrl:"app/feature/pricing/pricing.html"
         }).state("parkinglocation", {
             url: "/parkinglocation",
             templateUrl: "app/feature/parkinglocation/parkinglocation.html"
 
         })
+
 
     });
 }());
