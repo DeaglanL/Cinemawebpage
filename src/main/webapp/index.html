@@ -18,7 +18,7 @@
         <img src="assets/img/logo.png" style="width:50px;height:50px;">
         Apollo Cinema
       </a>
-      <input id = "searchbox" type="text" name="search" placeholder="Search.." ng-model="sTerm" enter-Key="ctrl.searchBar()" >
+      <input id = "searchbox" type="text" name="search" placeholder="Search.." ng-model="sTerm" enter-Key="ctrl.searchBar(sTerm)" >
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,9 +41,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" ui-sref="register">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" ui-sref="search">temp search pls remove</a>
           </li>
         </ul>
       </div>

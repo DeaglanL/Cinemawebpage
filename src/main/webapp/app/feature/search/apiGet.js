@@ -4,7 +4,6 @@
 
         this.getMovie = function (term)
         {
-            console.log("in api get");
             return movieDal.getMovie(term);
         };
     };
