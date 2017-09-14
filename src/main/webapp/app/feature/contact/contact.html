@@ -97,18 +97,17 @@
               </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
-            <div ng-show="thankYou" id="thankyou_message">
-                <div id="overlayMessage" class="text-center">
-                    <p class="text-light">Your message has been sent. Thank you for contacting us, and
-                        we will get back to you soon!</p>
-                    <button class="btn btn-primary" ng-click="contactCtrl.offOverlay()">Return to page</button>
-                </div>
-            </div>
         </div>
+          <div ng-show="contactCtrl.thankYou" id="thankyou_message">
+              <div id="overlayMessage" ng-style="contactCtrl.overlay">
+                  <p>Your message has been sent. Thank you for contacting us, and
+                      we will get back to you soon!</p>
+                  <button class="btn btn-primary" ui-sref="home">Return to homepage</button>
+              </div>
+          </div>
 
       </div>
       <!-- /.row -->
-
     </div>
     <!-- /.container -->
 </div>

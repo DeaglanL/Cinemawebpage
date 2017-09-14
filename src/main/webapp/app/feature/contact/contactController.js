@@ -9,11 +9,28 @@
         vm.emailInvaild = false;
         vm.thankYou = false;
 
-        vm.default={name: "", phone: "", email: "", message: "", honeypot: ""};
-
-        vm.offOverlay = function () {
-            vm.thankYou = false;
+        vm.overlay = {
+            "color" : "white",
+            "font-size" : "24px",
+            "padding" : "56px",
+            "position" : "fixed",
+            "width": "100%", /* Full width (cover the whole page) */
+            "height": "100%", /* Full height (cover the whole page) */
+            "top": "0",
+            "left": "0",
+            "right": "0",
+            "bottom": "0",
+            "background-color" : "rgba(0,0,0,0.5)" /* Black background with opacity */
         };
+
+        function toggleOverlay () {
+            vm.thankYou = !vm.thankYou;
+            if (vm.thankYou) {
+                console.log("Overlay turned on");
+            } else {
+                console.log("Overlay turned off");
+            }
+        }
 
         function validEmail(email) { // see:
             var reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -34,7 +51,12 @@
             }
         }
 
-        function reset() {
+        function reset(data) {
+            data.name = "";
+            data.phone = "";
+            data.email = "";
+            data.message = "";
+            data.honeypot = "";
             console.log("Form values successfully reset");
         }
 
@@ -44,12 +66,12 @@
                 return false;
             }
             if (!validPhone(data.phone)) {
-                vm.phoneInvalid = true;
+                vm.phoneInvalid = !vm.phoneInvalid;
                 console.log("Phone number invalid");
                 return false;
             }
             if (!validEmail(data.email)) {   // if email is not valid show error
-                vm.emailInvaild = true;
+                vm.emailInvaild = !vm.emailInvaild;
                 console.log("Email address invalid");
                 return false;
             } else {
@@ -64,8 +86,8 @@
                     data: encoded,
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).then(function(response) {
-                        vm.thankYou = true;
-                        reset();
+                        toggleOverlay();
+                        reset(data);
                         console.log("Form submit completed");
                         return true;
                     },
