@@ -1,12 +1,12 @@
 'use strict'
 
-var apiKey = "c00a3e5661629abbe2531b560b75a9cc";
+/*var apiKey = "c00a3e5661629abbe2531b560b75a9cc";
 var movObj;
 
 
 
 
-var getMovByTitle = (title) => {
+var  getMovByTitle = (title) => {
     var req = new XMLHttpRequest();
     req.open("GET", "https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&query=" + title);
     req.responseType = "json";
@@ -46,3 +46,4 @@ function getPopularity ()  {
 }
 
 
+*/

@@ -28,9 +28,9 @@
             url:"/register",
             templateUrl:"app/feature/register/register.html"
 
-        }).state("movieinfo", {
-            url:"/movieinfo",
-            templateUrl:"app/feature/movieinfo/movieinfo.html"
+        }).state("search", {
+            url: "/search",
+            templateUrl: "app/feature/search/search.html"
 
         }).state("pricing", {
             url:"/pricing",
