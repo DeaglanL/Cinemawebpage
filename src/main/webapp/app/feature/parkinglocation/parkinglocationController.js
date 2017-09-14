@@ -4,5 +4,5 @@
         var vm = this;
     };
 
-    angular.module('apolloCinema').controller('ParkingLocationController', [ParkingLocationController]);
+    angular.module("apolloCinema").controller("ParkingLocationController", [ParkingLocationController]);
 }());

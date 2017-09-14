@@ -4,5 +4,5 @@
         var vm = this;
     };
 
-    angular.module("apolloCinema").controller("UserProfileController", [UserProfileController]);
+    angular.module('apolloCinema').controller('UserProfileController', [UserProfileController]);
 }());
