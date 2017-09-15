@@ -43,6 +43,10 @@
             url: "/parkinglocation",
             templateUrl: "app/feature/parkinglocation/parkinglocation.html"
 
+        }).state("movieinfo", {
+            url:"/movieinfo",
+            templateUrl:"app/feature/movieinfo/movieinfo.html"
+
         })
 
     });
