@@ -27,17 +27,17 @@
             vm.thankYou = !vm.thankYou;
         }
 
-        function validEmail(email) { // see:
+        function isValidEmail(email) { // see:
             var reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
             return reEmail.test(email);
         }
 
-        function validPhone(phone) { // see:
+        function isValidPhone(phone) { // see:
             var rePhone = /^07([\d]{3})[(\D\s)]?[\d]{3}[(\D\s)]?[\d]{3}$/i;
             return rePhone.test(phone);
         }
 
-        function validateHuman(honeypot) {
+        function checkIfRobot(honeypot) {
             return !!honeypot;
         }
 
@@ -50,14 +50,14 @@
         }
 
         vm.handleFormSubmit = function (data) {
-            if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
+            if (checkIfRobot(data.honeypot)) {  //if form is filled, form will not be submitted
                 return false;
             }
-            if (!validPhone(data.phone)) {
+            if (!isValidPhone(data.phone)) {
                 vm.phoneInvalid = !vm.phoneInvalid;
                 return false;
             }
-            if (!validEmail(data.email)) {   // if email is not valid show error
+            if (!isValidEmail(data.email)) {   // if email is not valid show error
                 vm.emailInvaild = !vm.emailInvaild;
                 return false;
             } else {
