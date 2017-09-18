@@ -1,5 +1,5 @@
 (function() {
-    var HomeController =  function(apiGet) {
+    var HomeController =  function(apiGet, $rootScope, $state) {
 
         var vm = this;
 
@@ -67,6 +67,14 @@
             vm.comingSoonFilm4 = comingSoonMovieName4;
             vm.comingSoonFilm5 = comingSoonMovieName5;
 
+            vm.moreInfo = function (movieName) {
+                vm.callMoreInfo(movieName);
+            };
+
+            vm.callMoreInfo = function (movieName) {
+                $rootScope.$emit("callMoreInfo", movieName);
+                $state.go("movieinfo");
+            };
 
 
         }
@@ -74,5 +82,5 @@
         vm.getPic();
 
     };
-    angular.module("apolloCinema").controller("HomeController", ["apiGet", HomeController]);
+    angular.module("apolloCinema").controller("HomeController", ["apiGet", "$rootScope" ,"$state", HomeController]);
 }());

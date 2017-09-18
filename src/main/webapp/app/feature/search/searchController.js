@@ -11,20 +11,14 @@
         vm.search = function (term) {
             apiGet.getMovie(term).then(function (result) {
                 var search = document.getElementById("results");
-                var html;
-                html += "<h2>Search results:</h2>";
-
-                /*result.results.forEach(function (movie) {
-                    html += "<h1 class=\"mt-4 mb-3\">" + movie.title + "</h1>";
-                    html += "<h3 class=\"my-3\"> Movie Description </h3>" + "<p>" + movie.overview + "</p>";
-                    html += "<div class=\"col-md-8\"><img class=img-fluid src=\"https://image.tmdb.org/t/p/w500" + movie.poster_path + "\"></div>";
-                });*/
+                var html = "";
+                html += "<h2 id = \"searchResultTitle\">Search results:</h2>";
 
                 result.results.forEach(function (movie) {
-                    html += "<div class=\"row\">" +
-                        "        <div class=\"col-md-7\">" +
+                    html += "<div id=\"searchResult\" class=\"row\" >" +
+                        "        <div class=\"col-md-6\">" +
                         "          <a href=\"#\">" +
-                        "            <img class=\"img-fluid rounded mb-3 mb-md-0\" src=\"https://image.tmdb.org/t/p/w500" + movie.backdrop_path + "\">" +
+                        "            <img id=\"moviePoster\" class=\"img-fluid rounded mb-3 mb-md-0\" src=\"https://image.tmdb.org/t/p/w500" + movie.poster_path +"\" width=\"50%\" align=\"middle\">" +
                         "          </a>" +
                         "        </div>" +
                         "        <div class=\"col-md-5\">" +
