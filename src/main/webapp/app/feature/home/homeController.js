@@ -3,7 +3,6 @@
 
         var vm = this;
 
-
         vm.getPic = function () {
             var slideShowMovieName1 = "IT";
             var slideShowMovieName2 = "The Hitman's bodyguard";
@@ -38,22 +37,22 @@
             vm.galleryFilm6 = galleryFilmName6;
 
             apiGet.getMovie(galleryFilmName1).then(function (result) {
-                vm.GF1 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.GF1 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
             })
             apiGet.getMovie(galleryFilmName2).then(function (result) {
-                vm.GF2 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.GF2 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
             })
             apiGet.getMovie(galleryFilmName3).then(function (result) {
-                vm.GF3 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.GF3 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
             })
             apiGet.getMovie(galleryFilmName4).then(function (result) {
-                vm.GF4 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.GF4 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
             })
             apiGet.getMovie(galleryFilmName5).then(function (result) {
-                vm.GF5 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.GF5 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
             })
             apiGet.getMovie(galleryFilmName6).then(function (result) {
-                vm.GF6 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.GF6 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
             })
 
             var comingSoonMovieName1 = "Kingsman: The Golden Circle";
