@@ -1,0 +1,63 @@
+"use strict";
+(function() {
+
+    let LoginController =  function($http) {
+        let vm = this;
+
+        vm.wrongDetails = false;
+
+        function acceptableUsername(username) {
+            let regexUsername = "/(?=.*[a-z]).{4,}/i"; //at least 4 characters including one lowercase letter
+            return regexUsername.test(username);
+        }
+
+        function acceptablePassword(password) {
+            let regexPassword = "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i"; //Must contain at least one number, one uppercase letter,
+            return regexPassword.test(password);                       //one lowercase letter, and at least 8 or more characters
+        }
+
+        function validateHuman(honeypot) {
+            return !!honeypot;
+        }
+
+        function resetPassword(user) {
+            user.password = "";
+        }
+
+        vm.loginSubmit = function(user) {
+            if (validateHuman(user.honeypot)) {  //if form is filled, form will not be submitted
+                alert("Robot detected");
+                return false;
+            }
+            if (!acceptableUsername(user.name) || !acceptablePassword(user.password)) {
+                vm.wrongDetails = !vm.wrongDetails;
+                resetPassword(user);
+                return false;
+            } else {
+                //TODO: test functions
+                /*var validateUser = "";        //Not yet linked to server, does nothing atm
+                $http({
+                    method: "POST",
+                    url: validateUser,
+                    data: user
+                }).then(function (response) {
+                        //await login details confirmation from server
+                        if (validLogin) {
+                            //route to homepage
+                            return true;
+                        } else {
+                            vm.wrongDetails = !vm.wrongDetails;
+                            resetPassword(user);
+                            return false;
+                        }
+                    },
+                    function (response) { // optional
+                        alert("ERROR 500: Unable to verify login");
+                        return false;
+                    });*/
+            }
+        };
+    };
+
+    angular.module("apolloCinema").controller("LoginController", ["$http", LoginController]);
+}());
