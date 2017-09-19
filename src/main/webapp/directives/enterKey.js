@@ -1,3 +1,4 @@
+"use strict";
 cinemaApp.directive("enterKey", function () {
     return function (scope, element, attrs) {
         element.bind("keydown keypress", function (event) {

@@ -1,17 +1,18 @@
+"use strict";
 (function() {
 
-    var LoginController =  function($http) {
-        var vm = this;
+    let LoginController =  function($http) {
+        let vm = this;
 
         vm.wrongDetails = false;
 
         function acceptableUsername(username) {
-            var regexUsername = "/(?=.*[a-z]).{4,}/i"; //at least 4 characters including one lowercase letter
+            let regexUsername = "/(?=.*[a-z]).{4,}/i"; //at least 4 characters including one lowercase letter
             return regexUsername.test(username);
         }
 
         function acceptablePassword(password) {
-            var regexPassword = "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i"; //Must contain at least one number, one uppercase letter,
+            let regexPassword = "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i"; //Must contain at least one number, one uppercase letter,
             return regexPassword.test(password);                       //one lowercase letter, and at least 8 or more characters
         }
 

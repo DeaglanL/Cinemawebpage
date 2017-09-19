@@ -2,8 +2,8 @@
 
 (function() {
 
-    var ContactController =  function($http) {
-        var vm = this;
+    let ContactController =  function($http) {
+        let vm = this;
 
         vm.phoneInvalid = false;
         vm.emailInvaild = false;
@@ -28,12 +28,12 @@
         }
 
         function validEmail(email) { // see:
-            var reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            let reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
             return reEmail.test(email);
         }
 
         function validPhone(phone) { // see:
-            var rePhone = /^07([\d]{3})[(\D\s)]?[\d]{3}[(\D\s)]?[\d]{3}$/i;
+            let rePhone = /^07([\d]{3})[(\D\s)]?[\d]{3}[(\D\s)]?[\d]{3}$/i;
             return rePhone.test(phone);
         }
 
@@ -61,8 +61,8 @@
                 vm.emailInvaild = !vm.emailInvaild;
                 return false;
             } else {
-                var googleScript = "https://script.google.com/macros/s/AKfycbzCVcDrHI_yn2LPjr45k7r-E5Sw6PKTVph8jmNJTz2FtHAGkNne/exec";
-                var encoded = Object.keys(data).map(function (k) {
+                let googleScript = "https://script.google.com/macros/s/AKfycbzCVcDrHI_yn2LPjr45k7r-E5Sw6PKTVph8jmNJTz2FtHAGkNne/exec";
+                let encoded = Object.keys(data).map(function (k) {
                     return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
                 }).join("&");
                 $http({

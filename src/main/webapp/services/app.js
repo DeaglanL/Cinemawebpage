@@ -1,1 +1,1 @@
-var cinemaApp = angular.module('apolloCinema',['ui.router']);
+let cinemaApp = angular.module('apolloCinema',['ui.router']);
