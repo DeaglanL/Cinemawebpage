@@ -4,8 +4,10 @@
         var vm = this;
 
         vm.searchBar = function (sTerm) {
-            $state.go("search");
-            vm.callSearch(sTerm);
+            $state.go("search").then(function () {
+                vm.callSearch(sTerm);
+            });
+
         };
 
         vm.callSearch = function (sTerm) {
