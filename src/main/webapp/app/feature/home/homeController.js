@@ -1,9 +1,8 @@
 "use strict";
 (function() {
-    let HomeController =  function(apiGet) {
+    var HomeController =  function($rootScope, $state, apiGet) {
 
         let vm = this;
-
 
         vm.getPic = function () {
             let slideShowMovieName1 = "IT";
@@ -39,23 +38,23 @@
             vm.galleryFilm6 = galleryFilmName6;
 
             apiGet.getMovie(galleryFilmName1).then(function (result) {
-                vm.GF1 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
-            });
+                vm.GF1 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
+            })
             apiGet.getMovie(galleryFilmName2).then(function (result) {
-                vm.GF2 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
-            });
+                vm.GF2 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
+            })
             apiGet.getMovie(galleryFilmName3).then(function (result) {
-                vm.GF3 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
-            });
+                vm.GF3 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
+            })
             apiGet.getMovie(galleryFilmName4).then(function (result) {
-                vm.GF4 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
-            });
+                vm.GF4 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
+            })
             apiGet.getMovie(galleryFilmName5).then(function (result) {
-                vm.GF5 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
-            });
+                vm.GF5 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
+            })
             apiGet.getMovie(galleryFilmName6).then(function (result) {
-                vm.GF6 =  "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
-            });
+                vm.GF6 =  "https://image.tmdb.org/t/p/w500" + result.results[0].poster_path;
+            })
 
             let comingSoonMovieName1 = "Kingsman: The Golden Circle";
             let comingSoonMovieName2 = "The Lego Ninjago Movie";
@@ -69,12 +68,19 @@
             vm.comingSoonFilm4 = comingSoonMovieName4;
             vm.comingSoonFilm5 = comingSoonMovieName5;
 
+            vm.moreInfo = function (movieName) {
+                vm.callMoreInfo(movieName);
+            };
+
+            vm.callMoreInfo = function (movieName) {
+                $state.go("movieinfo").then(function(){ $rootScope.$emit("callMoreInfo", movieName);} );
+            };
 
 
-        };
+        }
 
         vm.getPic();
 
     };
-    angular.module("apolloCinema").controller("HomeController", ["apiGet", HomeController]);
+    angular.module("apolloCinema").controller("HomeController", ["$rootScope" ,"$state", "apiGet", HomeController]);
 }());

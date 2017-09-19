@@ -47,6 +47,10 @@
             url:"/movieinfo",
             templateUrl:"app/feature/movieinfo/movieinfo.html"
 
+        }).state("404", {
+            url:"/404",
+            templateUrl:"app/feature/404/404.html"
+
         })
 
     });
