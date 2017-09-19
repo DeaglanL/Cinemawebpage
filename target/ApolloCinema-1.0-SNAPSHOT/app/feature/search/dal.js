@@ -5,7 +5,6 @@
     angular.module("apolloCinema").service("dal", ["$http", "$q", "$log", Dal]);
 
     function Dal ($http, $q, $log) {
-        console.log("in dal");
         this.http = (function serviceCaller() {
             return {
 
@@ -68,7 +67,7 @@
                     });
                     return deferred.promise;
                 }
-            }
+            };
         })();
         $log.debug("DAL Instantiated");
     }

@@ -1,16 +1,17 @@
 (function() {
 
-    var indexController =  function($state) {
+    var indexController =  function($state, $rootScope) {
         var vm = this;
 
-        vm.searchBar = function () {
+        vm.searchBar = function (sTerm) {
+            $state.go("search");
+            vm.callSearch(sTerm);
+        };
 
-
-                    console.log("enter");
-                    $state.go('search');
-
+        vm.callSearch = function (sTerm) {
+            $rootScope.$emit("callSearch", sTerm);
         };
     };
 
-    angular.module('apolloCinema').controller('indexController', ['$state' , indexController]);
+    angular.module("apolloCinema").controller("indexController", ["$state", "$rootScope", indexController]);
 }());

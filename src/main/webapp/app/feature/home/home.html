@@ -9,22 +9,22 @@
        <div class="carousel-inner" role="listbox">
          <!-- Slide One - Set the background image for this slide in the line below -->
          <div class="carousel-item active" style="background-image: url('{{ctrl.Src1}}')">
-           <div class="carousel-caption d-none d-md-block">
-             <h3>{{ctrl.slideShowMovie1}}</h3>
+           <div class="carousel-caption d-none d-md-block" >
+             <h3 ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.slideShowMovie1)">{{ctrl.slideShowMovie1}}</h3>
              <p>This is a description for the first slide.</p>
            </div>
          </div>
          <!-- Slide Two - Set the background image for this slide in the line below -->
          <div class="carousel-item" style="background-image: url('{{ctrl.Src2}}')">
-           <div class="carousel-caption d-none d-md-block">
-             <h3>{{ctrl.slideShowMovie2}}</h3>
+           <div class="carousel-caption d-none d-md-block" >
+             <h3 ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.slideShowMovie2)">{{ctrl.slideShowMovie2}}</h3>
              <p>This is a description for the second slide.</p>
            </div>
          </div>
          <!-- Slide Three - Set the background image for this slide in the line below -->
          <div class="carousel-item" style="background-image: url('{{ctrl.Src3}}')">
-           <div class="carousel-caption d-none d-md-block">
-             <h3>{{ctrl.slideShowMovie3}}</h3>
+           <div class="carousel-caption d-none d-md-block" >
+             <h3 ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.slideShowMovie3)">{{ctrl.slideShowMovie3}}</h3>
              <p>This is a description for the third slide.</p>
            </div>
          </div>
@@ -87,71 +87,46 @@
       <div class="row">
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="{{ctrl.GF1}}" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a ui-sref="movieinfo">{{ctrl.galleryFilm1}}</a>
-              </h4>
-              <p class="card-text">Movie 1 info</p>
-            </div>
+            <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.galleryFilm1)">
+              <img class="card-img-top" src="{{ctrl.GF1}}" alt="">
+            </a>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="{{ctrl.GF2}}" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{ctrl.galleryFilm2}}</a>
-              </h4>
-              <p  class="card-text"></p>
-            </div>
+            <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.galleryFilm2)">
+              <img class="card-img-top" src="{{ctrl.GF2}}" alt="">
+            </a>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="{{ctrl.GF3}}" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{ctrl.galleryFilm3}}</a>
-              </h4>
-              <p class="card-text"></p>
-            </div>
+            <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.galleryFilm3)">
+              <img class="card-img-top" src="{{ctrl.GF3}}" alt="">
+            </a>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="{{ctrl.GF4}}" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{ctrl.galleryFilm4}}</a>
-              </h4>
-              <p class="card-text"></p>
-            </div>
+            <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.galleryFilm4)">
+              <img class="card-img-top" src="{{ctrl.GF4}}" alt="">
+            </a>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="{{ctrl.GF5}}" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{ctrl.galleryFilm5}}</a>
-              </h4>
-              <p class="card-text"></p>
-            </div>
+            <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.galleryFilm5)">
+              <img class="card-img-top" src="{{ctrl.GF5}}" alt="">
+            </a>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="{{ctrl.GF6}}" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">{{ctrl.galleryFilm6}}</a>
-              </h4>
-              <p class="card-text"></p>
-            </div>
+            <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.galleryFilm6)">
+              <img class="card-img-top" src="{{ctrl.GF6}}" alt="">
+            </a>
           </div>
         </div>
-      </div>
       <!-- /.row -->
 
       <!-- Features Section -->
