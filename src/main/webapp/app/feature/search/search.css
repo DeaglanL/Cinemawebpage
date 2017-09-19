@@ -1,0 +1,15 @@
+#searchResultTitle{
+    padding-left: 20px;
+}
+
+#searchResult {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#moviePoster{
+    padding-left: 60px;
+    position: inherit;
+    alignment: center;
+}
+

@@ -1,0 +1,50 @@
+<div ng-controller="LoginController as loginCtrl">
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Login
+        <small>Subheading</small>
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a ui-sref="home">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Login</li>
+      </ol>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h4><i class="icon-envelope"></i><strong>Login</strong></h4>
+            <p>
+              Please enter your account information
+            </p>
+            <!-- START login form -->
+            <div class="cform" id="loginform">
+              <form method="post" role="form" class="contactForm" id="login" ng-submit="loginCtrl.loginSubmit(user)">
+                <div class="form-group">
+                  <input name="name" class="form-control" id="loginname" placeholder="Username" ng-model="user.name" required>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="password" id="loginpassword" placeholder="Password" ng-model="user.password" required/>
+                    <div class="validation" ng-show="wrongDetails">
+                        <p class="text-danger">Please check your username and password</p>
+                    </div>
+                </div>
+                <div class="form-group" ng-show="false">
+                    <input name="honeypot" class="form-control" id="honeypot" ng-model="user.honeypot">
+                </div>
+                <div class="text-center"><button type="submit" class="btn btn-lg btn-theme">Login</button></div>
+              </form>
+              <p id="forgotpassword">Forgot your passord?</p>
+              <p >Don't have an account ? <a ui-sref="register">Register Here</a></p>
+            </div>
+            <!-- END login form -->
+          </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    </div>
+</div>

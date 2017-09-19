@@ -1,0 +1,109 @@
+<div ng-controller="MovieInfoController as ctrl">
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3" id = "Title"></h1>
+      <a><small id ="Tagline"></small></a>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a ui-sref="home">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Movie Info</li>
+      </ol>
+
+      <div id = "movieInfo">
+      <!-- Portfolio Item Row -->
+      <div class="row">
+
+        <div class="col-md-8" id = "mofreinfomovieposter">
+
+        </div>
+
+        <div class="col-md-4">
+          <h3 class="my-3">Description</h3>
+          <p id="OverView"></p>
+
+          <h3 class="my-3">Movie Details</h3>
+          <table style="width:100%">
+
+            <tr>
+              <td>Status:</td>
+              <td id = "Status"></td>
+            </tr>
+
+            <tr>
+              <td>Age Rating Over 18:</td>
+              <td id = "Adult"></td>
+            </tr>
+            <tr>
+              <td>Language:</td>
+              <td id = "Language"></td>
+            </tr>
+
+            <tr>
+              <td>Release Date:</td>
+              <td id = "ReleaseDate"></td>
+            </tr>
+
+            <tr>
+              <td>Budget:</td>
+              <td id = "Budget"></td>
+            </tr>
+
+            <tr>
+              <td>Revenue:</td>
+              <td id = "Revenue"></td>
+            </tr>
+
+            <tr>
+              <td>Runtime:</td>
+              <td id = "Runtime"></td>
+            </tr>
+
+          </table>
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+      <!-- Related Projects Row -->
+      <h3 class="my-4"></h3>
+
+      <div id = "movieInfoRecmon" class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.similarMoviename1)">
+            <img class="img-fluid" src={{ctrl.similarMovie1}} alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.similarMoviename2)">
+            <img class="img-fluid" src={{ctrl.similarMovie2}} alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.similarMoviename3)">
+            <img class="img-fluid" src={{ctrl.similarMovie3}} alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.similarMoviename4)">
+            <img class="img-fluid" src={{ctrl.similarMovie4}} alt="">
+          </a>
+        </div>
+
+        <!--<div class="col-md-3 col-sm-6 mb-4">
+          <a href="#">
+            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+          </a>
+        </div>-->
+
+      </div>
+      <!-- /.row -->
+      </div>
+
+    </div>
+    <!-- /.container -->
+</div>
