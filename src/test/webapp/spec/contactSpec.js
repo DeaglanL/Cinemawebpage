@@ -1,75 +1,58 @@
 "use strict";
 
-describe("contactController", function() {
-    var $controller, contactController;
+describe("Contact Form", function() {
+    let contactCtrl;
 
-    // Load ui.router and apolloCinema module
     beforeEach(module("ui.router"));
     beforeEach(module("apolloCinema"));
 
-    // Inject the $controller service to create instances of the controller (ContactController) we want to test
-    beforeEach(inject(function(_$controller_) {
-        $controller = _$controller_;
-        contactController = $controller("contactController", {});
+    beforeEach(inject(function($controller, $httpBackend) {
+        contactCtrl = $controller("ContactController",{$httpBackend});
     }));
 
-    // Verify our controller exists
-    it("should have a contact controller", function() {
-        expect(contactController).toBeDefined();
+    it("should have a controller", function() {
+        expect(contactCtrl).toBeDefined();
     });
 
-    describe("checkIfRobot", function() {
-        var humanHoneypot = "";
-        var robotHoneyPot = ["text", 8, null];
+    let validData = [{"name": "David", "phone":"07711283272", "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":""},
+                    {"name": "Deaglan", "phone":"07747043784", "email":"test@test.com", "message":"Jasmine test", "honeypot":""},
+                    {"name": "Dylan", "phone":"07747043784", "email":"test@test.co.uk", "message":"Jasmine test", "honeypot":""},
+                    {"name": "Bradley", "phone":"07747043784", "email":"test734ltylytkliytkryety9ef@jb-fe.com", "message":"Jasmine test", "honeypot":""},
+                    {"name": "Alex", "phone":"07711283272", "email":"user@email.com", "message":"Jasmine test", "honeypot":""}];
 
-        it("should always return false if input is empty or null", function() {
-            var isRobot = checkIfRobot(humanHoneypot);
-            expect(isRobot).toEqual(false);
-        });
+    let invalidData = [{"name": "Procopis", "phone":"07711283272", "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":"text"},
+                        {"name": "Aaron", "phone":"07711283272", "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":8},
+                        {"name": "Adam", "phone":"07711283272", "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":null},
+                        {"name": "Abdul", "phone":"06711283272", "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":""},
+                        {"name": "Kurt", "phone":"077112", "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":""},
+                        {"name": "Mary", "phone":"text", "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":""},
+                        {"name": "Alan", "phone":"07letters", "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":""},
+                        {"name": "Nick", "phone":"0725307711283272", "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":""},
+                        {"name": "Neil", "phone":"", "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":""},
+                        {"name": "David", "phone":NaN, "email":"david.jiang@qa.com", "message":"Jasmine test", "honeypot":""},
+                        {"name": "David", "phone":"07711283272", "email":"email@emailcom", "message":"Jasmine test", "honeypot":""},
+                        {"name": "David", "phone":"07711283272", "email":"test@ test.co.uk", "message":"Jasmine test", "honeypot":""},
+                        {"name": "Jack", "phone":"07711283272", "email":"ghgf@fe.com.co.", "message":"Jasmine test", "honeypot":""},
+                        {"name": "Elliott", "phone":"07711283272", "email":"tes@t@test.com", "message":"Jasmine test", "honeypot":""},
+                        {"name": "Amy", "phone":"07711283272", "email":null, "message":"Jasmine test", "honeypot":""},
+                        {"name": "Alice", "phone":"07711283272", "email":"", "message":"Jasmine test", "honeypot":""}];
 
-        it("should always return true if input is not empty or null", function() {
-            for (var j in robotHoneyPot) {
-                var isRobot = checkIfRobot(robotHoneyPot[j]);
-                expect(isRobot).toEqual(true);
-            }
-        });
+    afterEach(function() {
+        //contactCtrl.verifyNoOutstandingExpectation();
+        //contactCtrl.verifyNoOutstandingRequest();
     });
 
-    describe("isValidEmail", function() {
-        var validEmails = ["email@domain.com", "email@domain.co.uk", "asjfbsidufbwsliv@gjhr-jrjr.com"];
-        var invalidEmails = ["email@emailcom", "test@ test.co.uk", "ghgf@fe.com.co.", "tes@t@test.com", ""];
+    /*it("should allow function to send data", function() {
+        for (let obj in validData) {
+            let dataSent = contactCtrl.handleFormSubmit(validData[obj]);
+            expect(dataSent).toEqual(true);
+        }
+    });*/
 
-        it("should be a valid email", function() {
-            for (var i in validEmails) {
-                var isValid = checkIfRobot(validEmails[i]);
-                expect(isValid).toEqual(true);
-            }
-        });
-
-        it("should not be a valid email", function() {
-            for (var j in invalidEmails) {
-                var isValid = checkIfRobot(invalidEmails[j]);
-                expect(isValid).toEqual(true);
-            }
-        });
-    });
-
-    describe("isValidPhone", function() {
-        var validEmails = ["07711283272", "07747043784", "07961543285"];
-        var invalidEmails = ["07253", "01747043784", "text", "07letters", "0725307711283272", "", NaN];
-
-        it("should be a valid phone number", function() {
-            for (var i in validEmails) {
-                var isValid = checkIfRobot(validEmails[i]);
-                expect(isValid).toEqual(true);
-            }
-        });
-
-        it("should not be a valid phone number", function() {
-            for (var j in invalidEmails) {
-                var isValid = checkIfRobot(invalidEmails[j]);
-                expect(isValid).toEqual(true);
-            }
-        });
+    it("should not send invalid data", function() {
+        for (let obj in invalidData) {
+            let dataSent = contactCtrl.handleFormSubmit(invalidData[obj]);
+            expect(dataSent).toEqual(false);
+        }
     });
 });

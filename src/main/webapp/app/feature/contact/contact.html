@@ -1,4 +1,4 @@
-<div ng-controller="contactController as contactCtrl">
+<div ng-controller="ContactController as contactCtrl">
     <!-- Page Content -->
     <div class="container">
 
@@ -56,60 +56,62 @@
 
       <!-- Contact Form -->
       <div class="row">
-        <div class="col-lg-8 mb-4">
-          <h3>Send us a Message</h3>
-          <form ng-submit="contactCtrl.handleFormSubmit(data)" name="sentMessage" id="contactForm" method="post" >
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Full Name:</label>
-                <input class="form-control" id="name" name="name" ng-model="data.name" required>
-                <p class="help-block"></p>
+          <div class="col-lg-8 mb-4">
+            <h3>Send us a Message</h3>
+            <form ng-submit="contactCtrl.handleFormSubmit(data)" name="sentMessage" id="contactForm" method="post" >
+              <div class="control-group form-group">
+                <div class="controls">
+                  <label>Full Name:</label>
+                  <input class="form-control" id="name" name="name" ng-model="data.name" required>
+                  <p class="help-block"></p>
+                </div>
               </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Mobile Number:</label>
-                <input type="tel" class="form-control" id="phone" name="phone" ng-model="data.phone" required>
-                  <div ng-show="phoneInvalid" id="phone-invalid">
-                      <div id="phone-invalid-message" class="text-center">
-                          <p class="text-danger">Please enter a valid UK mobile number</p>
-                      </div>
-                  </div>
+              <div class="control-group form-group">
+                <div class="controls">
+                  <label>Mobile Number:</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" ng-model="data.phone" required>
+                    <div ng-show="phoneInvalid" id="phone-invalid">
+                        <div id="phone-invalid-message" class="text-center">
+                            <p class="text-danger">Please enter a valid UK mobile number</p>
+                        </div>
+                    </div>
+                </div>
               </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Email Address:</label>
-                <input type="email" class="form-control" id="email" name="email" ng-model="data.email" required>
-                <div ng-show="emailInvalid" id="email-invalid">
-                  <div id="email-invalid-message" class="text-center">
-                    <p class="text-danger">Please enter a valid email address</p>
+              <div class="control-group form-group">
+                <div class="controls">
+                  <label>Email Address:</label>
+                  <input type="email" class="form-control" id="email" name="email" ng-model="data.email" required>
+                  <div ng-show="emailInvalid" id="email-invalid">
+                    <div id="email-invalid-message" class="text-center">
+                      <p class="text-danger">Please enter a valid email address</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Message:</label>
-                <textarea rows="10" cols="100" class="form-control" id="message" name="message" ng-model="data.message" required
-                          maxlength="999" style="resize:none"></textarea>
+              <div class="control-group form-group">
+                <div class="controls">
+                  <label>Message:</label>
+                  <textarea rows="10" cols="100" class="form-control" id="message" name="message" ng-model="data.message" required
+                            maxlength="999" style="resize:none"></textarea>
+                </div>
               </div>
-            </div>
-            <div class="control-group form-group" ng-show="false">
-                  <label>Honeypot:</label>
-                  <input type="text" class="form-control" id="honeypot" name="honeypot" ng-model="data.honeypot" >
-              </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
-          <div ng-show="contactCtrl.thankYou" id="thankyou_message">
-              <div id="overlayMessage" ng-style="contactCtrl.overlay">
-                  <p>Your message has been sent. Thank you for contacting us, and
-                      we will get back to you soon!</p>
-                  <button class="btn btn-primary" ui-sref="home">Return to homepage</button>
-              </div>
+              <div class="control-group form-group" ng-show="false">
+                    <label>Honeypot:</label>
+                    <input type="text" class="form-control" id="honeypot" name="honeypot" ng-model="data.honeypot" >
+                </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
           </div>
-
+            <div ng-show="contactCtrl.thankYou" id="thankyou_message">
+                <div id="overlayMessage" ng-style="contactCtrl.overlay">
+                    <p>Your message has been sent. Thank you for contacting us, and
+                        we will get back to you soon!</p>
+                    <button class="btn btn-primary" ui-sref="home">Return to homepage</button>
+                </div>
+            </div>
+            <div ng-show="contactCtrl.error" id="error_message">
+              <p class="text-danger">Error {{contactCtrl.errorStatus}}: error when processing your request. Please try again later</p>
+            </div>
       </div>
       <!-- /.row -->
     </div>

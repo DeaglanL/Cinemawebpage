@@ -1,22 +1,22 @@
 (function() {
 
-    var LoginController =  function($http) {
-        var vm = this;
+    const LoginController =  function() {
+        const vm = this;
 
         vm.wrongDetails = false;
 
         function acceptableUsername(username) {
-            var regexUsername = "/(?=.*[a-z]).{4,}/i"; //at least 4 characters including one lowercase letter
+            let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
             return regexUsername.test(username);
         }
 
         function acceptablePassword(password) {
-            var regexPassword = "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i"; //Must contain at least one number, one uppercase letter,
-            return regexPassword.test(password);                       //one lowercase letter, and at least 8 or more characters
+            let regexPassword = /^(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/; //Must contain at least one number, one uppercase letter,
+            return regexPassword.test(password);                       //one lowercase letter, one special character, and at least 8 or more characters
         }
 
-        function validateHuman(honeypot) {
-            return !!honeypot;
+        function checkIfRobot(honeypot) {
+            return !(honeypot==="");
         }
 
         function resetPassword(user) {
@@ -24,8 +24,7 @@
         }
 
         vm.loginSubmit = function(user) {
-            if (validateHuman(user.honeypot)) {  //if form is filled, form will not be submitted
-                alert("Robot detected");
+            if (checkIfRobot(user.honeypot)) {
                 return false;
             }
             if (!acceptableUsername(user.name) || !acceptablePassword(user.password)) {
@@ -54,9 +53,10 @@
                         alert("ERROR 500: Unable to verify login");
                         return false;
                     });*/
+                return true;
             }
         };
     };
 
-    angular.module("apolloCinema").controller("LoginController", ["$http", LoginController]);
+    angular.module("apolloCinema").controller("LoginController", [LoginController]);
 }());
