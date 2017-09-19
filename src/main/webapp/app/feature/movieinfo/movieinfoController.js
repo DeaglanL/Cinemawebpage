@@ -8,16 +8,23 @@
         });
 
         vm.searchMoreInfo = function (name) {
-            console.log(name);
             apiGet.getMovie(name).then(function (result) {
+
                 vm.movie = result.results[0];
                 console.log(result);
-                vm.displayMovieName = name;
+
+                var searchMoteInfoPoster = document.getElementById("mofreinfomovieposter");
+                var html = "";
+
                 document.getElementById("moreinfopara").innerHTML = result.results[0].overview;
+                document.getElementById("moreinfotitle").innerHTML = result.results[0].title;
+
+                html += "<img class=\"img-fluid\" src=\"https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path +"\" alt=\"\">"
 
 
-
+                searchMoteInfoPoster.innerHTML = html;
             });
+
         };
 
 
