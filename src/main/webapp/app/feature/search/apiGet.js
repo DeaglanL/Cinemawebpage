@@ -1,3 +1,4 @@
+"use strict";
 (function() {
 
     var apiGet =  function(movieDal) {

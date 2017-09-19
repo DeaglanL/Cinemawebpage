@@ -1,6 +1,7 @@
+"use strict";
 (function() {
 
-    var MovieInfoController =  function() {
+    let MovieInfoController =  function() {
 
     };
 

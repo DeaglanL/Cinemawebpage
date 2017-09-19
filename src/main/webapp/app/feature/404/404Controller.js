@@ -1,7 +1,7 @@
+"use strict";
 (function() {
 
-    var FourOfourController =  function() {
-        var vm = this;
+    let FourOfourController =  function() {
     };
 
     angular.module('apolloCinema').controller('FourOfourController', [FourOfourController]);

@@ -1,7 +1,8 @@
+"use strict";
 (function() {
 
-    var RegisterController =  function() {
-        var vm = this;
+    let RegisterController =  function() {
+        let vm = this;
 
         vm.takenUsername = false;
         vm.takenEmail = false;
@@ -12,7 +13,7 @@
         vm.passwordNotConfirmed = false;
 
         vm.validUsername = function (username) {
-            var regexUsername = "/(?=.*[a-z]).{4,}/i"; //at least 4 characters including at least one lowercase letter
+            let regexUsername = "/(?=.*[a-z]).{4,}/i"; //at least 4 characters including at least one lowercase letter
             if (regexUsername.test(username)) {
                 //check if username is taken
                 //if (!checkPositive) {
@@ -28,7 +29,7 @@
         };
 
         vm.validEmail = function (email) {
-            var regexEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            let regexEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
             if (regexEmail.test(email)) {
                 //check if email is used
                 //if (!checkPositive) {
@@ -44,7 +45,7 @@
         };
 
         vm.validatePasswordFormat = function (newUser) {
-            var regexPassword = "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i";
+            let regexPassword = "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i";
             if (!regexPassword.test(newUser.password)) {
                 vm.invalidPasswordFormat = !vm.invalidPasswordFormat;
                 return false;

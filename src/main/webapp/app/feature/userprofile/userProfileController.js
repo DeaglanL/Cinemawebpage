@@ -1,7 +1,7 @@
+"use strict";
 (function() {
 
-    var UserProfileController =  function() {
-        var vm = this;
+    let UserProfileController =  function() {
     };
 
     angular.module("apolloCinema").controller("UserProfileController", [UserProfileController]);

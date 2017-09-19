@@ -1,7 +1,8 @@
+"use strict";
 (function() {
 
-    var ParkingLocationController =  function() {
-        var vm = this;
+    let ParkingLocationController =  function() {
+
     };
 
     angular.module("apolloCinema").controller("ParkingLocationController", [ParkingLocationController]);

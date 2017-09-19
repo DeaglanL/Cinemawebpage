@@ -1,7 +1,8 @@
+"use strict";
 (function() {
 
-    var PricingController =  function() {
-        var vm = this;
+    let PricingController =  function() {
+
     };
 
     angular.module("apolloCinema").controller("PricingController", [PricingController]);

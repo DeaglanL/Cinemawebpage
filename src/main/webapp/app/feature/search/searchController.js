@@ -1,8 +1,8 @@
+"use strict";
 (function() {
 
-    var SearchController = function (apiGet, $rootScope) {
-        var vm = this;
-
+    let SearchController = function (apiGet, $rootScope) {
+        let vm = this;
 
         vm.on = $rootScope.$on("callSearch", function(event, sTerm){
                 vm.search(sTerm);
@@ -10,8 +10,8 @@
 
         vm.search = function (term) {
             apiGet.getMovie(term).then(function (result) {
-                var search = document.getElementById("results");
-                var html;
+                let search = document.getElementById("results");
+                let html;
                 html += "<h2>Search results:</h2>";
 
                 result.results.forEach(function (movie) {
@@ -20,6 +20,7 @@
                     html += "<div class=\"col-md-8\"><img class=img-fluid src=\"https://image.tmdb.org/t/p/w500" + movie.poster_path + "\"></div>";
                 });
                 search.innerHTML = html;
+                return result;
             });
         };
     };
