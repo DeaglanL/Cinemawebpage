@@ -1,8 +1,6 @@
 describe("SearchController", function() {
     beforeEach(module('apolloCinema'));
-
-    console.log("got past mod");
-    var $controller;
+    let $controller;
 
 
     beforeEach(inject(function(_$controller_){
@@ -14,10 +12,10 @@ describe("SearchController", function() {
 
         var controller;
 
-        beforeEach(inject(function ($controller) {
-            var scope = {};
+        beforeEach((function ($controller) {
+            var $scope = {};
 
-            var controller = $controller('SearchController', ["apiGet","$rootScope"], {});
+            controller = $controller('SearchController',{$scope:$scope});
             console.log("got past cont");
         }));
 
@@ -31,12 +29,5 @@ describe("SearchController", function() {
                 expect(result.results[0].title).toEqual("Transformers");
             });
         });
-
-
-
-
     });
-
-
-
 });

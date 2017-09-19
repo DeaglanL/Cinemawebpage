@@ -3,7 +3,6 @@
     var SearchController = function (apiGet, $rootScope) {
         var vm = this;
 
-
         vm.on = $rootScope.$on("callSearch", function(event, sTerm){
                 vm.search(sTerm);
             });
