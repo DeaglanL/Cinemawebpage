@@ -7,7 +7,7 @@
       <a><small id ="Tagline"></small></a>
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
+          <a ui-sref="home">Home</a>
         </li>
         <li class="breadcrumb-item active">Movie Info</li>
       </ol>
@@ -72,6 +72,27 @@
       <h3 class="my-4"></h3>
 
       <div id = "movieInfoRecmon" class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.similarMoviename1)">
+            <img class="img-fluid" src={{ctrl.similarMovie1}} alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.similarMoviename2)">
+            <img class="img-fluid" src={{ctrl.similarMovie2}} alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.similarMoviename3)">
+            <img class="img-fluid" src={{ctrl.similarMovie3}} alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.similarMoviename4)">
+            <img class="img-fluid" src={{ctrl.similarMovie4}} alt="">
+          </a>
+        </div>
 
         <!--<div class="col-md-3 col-sm-6 mb-4">
           <a href="#">

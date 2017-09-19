@@ -25,7 +25,7 @@
                         "          <h3>"+ movie.title +"</h3>" +
                         "          <p>Release Date: "+ movie.release_date +"</p>" +
                         "          <p>" + movie.overview + "</p>" +
-                        "          <a class=\"btn btn-primary\" href=\"#\">More Info" +
+                        "          <a class=\"btn btn-primary\" ui-sref=\"home\">More Info" +
                         "            <span class=\"glyphicon glyphicon-chevron-right\"></span>" +
                         "          </a>" +
                         "        </div>" +

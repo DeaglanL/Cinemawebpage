@@ -21,11 +21,11 @@ let apiKey = "c00a3e5661629abbe2531b560b75a9cc";
         };
 
         this.latestMovie = function () {
-            return dal.http.GET("https://api.themoviedb.org/3/search/upcoming?api_key=" + apiKey + "&language=en-US&page=1&region=GB");
+            return dal.http.GET("https://api.themoviedb.org/3/movie/latest?api_key=" + apiKey + "&language=en-US");
         };
 
         this.popularMovie = function () {
-            return dal.http.GET("https://api.themoviedb.org/3/search/popular?api_key=" + apiKey + "&language=en-US&page=1&region=GB");
+            return dal.http.GET("https://api.themoviedb.org/3/movie/popular?api_key=" + apiKey + "&language=en-US&page=1&region=GB");
         };
 
 

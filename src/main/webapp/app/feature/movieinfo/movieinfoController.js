@@ -18,13 +18,13 @@
         vm.searchMoreInfo = function (name) {
 
             apiGet.getMovie(name).then(function (result) {
-                console.log(result);
+
 
                 let searchMoreInfoPoster = document.getElementById("mofreinfomovieposter");
                 let html = "";
                 let movieID = result.results[0].id;
                 vm.movieName = result.results[0].title;
-                console.log(movieID);
+
 
                 document.getElementById("OverView").innerHTML = result.results[0].overview;
                 document.getElementById("Title").innerHTML = result.results[0].original_title;
@@ -34,7 +34,6 @@
                 searchMoreInfoPoster.innerHTML = html;
 
                 movieDal.getMovieInfo(movieID).then(function (result2) {
-                    console.log(result2);
 
                     document.getElementById("ReleaseDate").innerHTML = result2.release_date;
                     document.getElementById("Budget").innerHTML = result2.budget;
@@ -46,18 +45,17 @@
                 });
 
                 movieDal.similarMovie(movieID).then(function (result3) {
-                    console.log(result3.results);
-                    let similarFilmhtml = "";
-                    let searchMoreInfoRecmon = document.getElementById("movieInfoRecmon");
 
-                    similarFilmhtml +=
-                        "<div class=\"col-md-3 col-sm-6 mb-4\">" +
-                        "<a>" +
-                        "<img class= \"img-fluid\" src=\"http://placehold.it/500x300\" ng-model=\"movieName\" ng-click=\"ctrl.moreInfo(ctrl.movieName)\">" +
-                        "</a>" +
-                        "</div>"
+                    vm.similarMovie1 = "https://image.tmdb.org/t/p/w500" + result3.results[0].poster_path;
+                    vm.similarMovie2 = "https://image.tmdb.org/t/p/w500" + result3.results[1].poster_path;
+                    vm.similarMovie3 = "https://image.tmdb.org/t/p/w500" + result3.results[2].poster_path;
+                    vm.similarMovie4 = "https://image.tmdb.org/t/p/w500" + result3.results[3].poster_path;
 
-                    searchMoreInfoRecmon.innerHTML = similarFilmhtml;
+                    vm.similarMoviename1 = result3.results[0].title;
+                    vm.similarMoviename2 = result3.results[1].title;
+                    vm.similarMoviename3 = result3.results[2].title;
+                    vm.similarMoviename4 = result3.results[3].title;
+
                 });
 
             });

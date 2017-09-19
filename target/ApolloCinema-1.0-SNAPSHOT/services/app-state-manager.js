@@ -36,12 +36,22 @@
             url: "/search",
             templateUrl: "app/feature/search/search.html"
 
+        }).state("pricing", {
+            url:"/pricing",
+            templateUrl:"app/feature/pricing/pricing.html"
         }).state("parkinglocation", {
             url: "/parkinglocation",
             templateUrl: "app/feature/parkinglocation/parkinglocation.html"
 
-        })
+        }).state("movieinfo", {
+            url:"/movieinfo",
+            templateUrl:"app/feature/movieinfo/movieinfo.html"
 
+        }).state("404", {
+            url:"/404",
+            templateUrl:"app/feature/404/404.html"
+
+        })
 
     });
 }());

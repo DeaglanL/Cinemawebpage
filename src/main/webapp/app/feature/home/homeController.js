@@ -1,5 +1,5 @@
 (function() {
-    var HomeController =  function(apiGet, $rootScope, $state) {
+    var HomeController =  function($rootScope, $state, apiGet) {
 
         var vm = this;
 
@@ -81,5 +81,5 @@
         vm.getPic();
 
     };
-    angular.module("apolloCinema").controller("HomeController", ["apiGet", "$rootScope" ,"$state", HomeController]);
+    angular.module("apolloCinema").controller("HomeController", ["$rootScope" ,"$state", "apiGet", HomeController]);
 }());
