@@ -1,6 +1,6 @@
 "use strict"
 describe("SearchController", function() {
-    beforeEach(module('apolloCinema'));
+    beforeEach(module("apolloCinema"));
     let $controller;
 
 
@@ -9,23 +9,23 @@ describe("SearchController", function() {
         $controller = _$controller_;
     }));
 
-    describe('Search Test', function() {
+    describe("Search Test", function() {
 
-        var controller;
+        let controller;
 
         beforeEach((function ($controller) {
-            var $scope = {};
+            let $scope = {};
 
-            controller = $controller('SearchController',{$scope:$scope});
+            controller = $controller("SearchController",{$scope:$scope});
             console.log("got past cont");
         }));
 
 
-        it('Search controller to be defined', function() {
+        it("Search controller to be defined", function() {
             expect(controller).toBeDefined();
         });
 
-        it('Searches for transformers and checks ', function() {
+        it("Searches for transformers and checks", function() {
             controller.search("Transformers").then(function (result) {
                 expect(result.results[0].title).toEqual("Transformers");
             });
