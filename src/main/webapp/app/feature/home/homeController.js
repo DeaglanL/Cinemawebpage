@@ -72,8 +72,7 @@
             };
 
             vm.callMoreInfo = function (movieName) {
-                $rootScope.$emit("callMoreInfo", movieName);
-                $state.go("movieinfo");
+                $state.go("movieinfo").then(function(){ $rootScope.$emit("callMoreInfo", movieName);} );
             };
 
 
