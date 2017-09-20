@@ -1,32 +1,44 @@
 "use strict";
 (function() {
 
-    let LoginController =  function($http) {
-        let vm = this;
+    const LoginController =  function() {
+        const vm = this;
 
         vm.wrongDetails = false;
+        vm.error = false;
 
         function acceptableUsername(username) {
-            let regexUsername = "/(?=.*[a-z]).{4,}/i"; //at least 4 characters including one lowercase letter
+            let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
             return regexUsername.test(username);
         }
 
         function acceptablePassword(password) {
-            let regexPassword = "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i"; //Must contain at least one number, one uppercase letter,
-            return regexPassword.test(password);                       //one lowercase letter, and at least 8 or more characters
+            let regexPassword = /^(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/; //Must contain at least one number, one uppercase letter,
+            return regexPassword.test(password);                       //one lowercase letter, one special character, and at least 8 or more characters
         }
 
-        function validateHuman(honeypot) {
-            return !!honeypot;
+        function checkIfRobot(honeypot) {
+            return !(honeypot==="");
         }
 
         function resetPassword(user) {
             user.password = "";
         }
 
+        function confirmLogin(user) {
+            //await login details confirmation from server
+            if (confirmed) {
+                //logged in!
+                return true;
+            } else {
+                vm.wrongDetails = !vm.wrongDetails;
+                resetPassword(user);
+                return false;
+            }
+        }
+
         vm.loginSubmit = function(user) {
-            if (validateHuman(user.honeypot)) {  //if form is filled, form will not be submitted
-                alert("Robot detected");
+            if (checkIfRobot(user.honeypot)) {
                 return false;
             }
             if (!acceptableUsername(user.name) || !acceptablePassword(user.password)) {
@@ -34,30 +46,23 @@
                 resetPassword(user);
                 return false;
             } else {
-                //TODO: test functions
-                /*var validateUser = "";        //Not yet linked to server, does nothing atm
                 $http({
                     method: "POST",
-                    url: validateUser,
+                    url: "checkUserPATH",
                     data: user
-                }).then(function (response) {
-                        //await login details confirmation from server
-                        if (validLogin) {
-                            //route to homepage
-                            return true;
-                        } else {
-                            vm.wrongDetails = !vm.wrongDetails;
-                            resetPassword(user);
-                            return false;
-                        }
+                }).then(function () {
+                        confirmLogin(user);
                     },
-                    function (response) { // optional
-                        alert("ERROR 500: Unable to verify login");
+                    function (response) {
+                        vm.error = true;
+                        vm.errorStatus = response.status;
+                        resetPassword(user);
                         return false;
-                    });*/
+                    });
+                return true;
             }
         };
     };
 
-    angular.module("apolloCinema").controller("LoginController", ["$http", LoginController]);
+    angular.module("apolloCinema").controller("LoginController", [LoginController]);
 }());

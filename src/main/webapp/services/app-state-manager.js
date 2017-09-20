@@ -6,50 +6,50 @@
 
         $stateProvider.state("home", {
             url: "/home",
-            templateUrl: "app/feature/home/home.html"
+            templateUrl: "src/main/webapp/app/feature/home/home.html"
 
         }).state("about", {
             url:"/about",
-            templateUrl:"app/feature/about/about.html"
+            templateUrl:"src/main/webapp/app/feature/about/about.html"
 
         }).state("contact", {
             url:"/contact",
-            templateUrl:"app/feature/contact/contact.html"
+            templateUrl:"src/main/webapp/app/feature/contact/contact.html"
 
         }).state("movielist", {
             url:"/movielist",
-            templateUrl:"app/feature/movielist/movieListing.html"
+            templateUrl:"src/main/webapp/app/feature/movielist/movieListing.html"
 
         }).state("login", {
             url:"/login",
-            templateUrl:"app/feature/login/login.html"
+            templateUrl:"src/main/webapp/app/feature/login/login.html"
 
         }).state("register", {
             url:"/register",
-            templateUrl:"app/feature/register/register.html"
+            templateUrl:"src/main/webapp/app/feature/register/register.html"
 
         }).state("placetovisit", {
             url: "/placetovisit",
-            templateUrl: "app/feature/placetovisit/placetovisit.html"
+            templateUrl: "src/main/webapp/app/feature/placetovisit/placetovisit.html"
 
         }).state("search", {
             url: "/search",
-            templateUrl: "app/feature/search/search.html"
+            templateUrl: "src/main/webapp/app/feature/search/search.html"
 
         }).state("pricing", {
             url:"/pricing",
-            templateUrl:"app/feature/pricing/pricing.html"
+            templateUrl:"src/main/webapp/app/feature/pricing/pricing.html"
         }).state("parkinglocation", {
             url: "/parkinglocation",
-            templateUrl: "app/feature/parkinglocation/parkinglocation.html"
+            templateUrl: "src/main/webapp/app/feature/parkinglocation/parkinglocation.html"
 
         }).state("movieinfo", {
             url:"/movieinfo",
-            templateUrl:"app/feature/movieinfo/movieinfo.html"
+            templateUrl:"src/main/webapp/app/feature/movieinfo/movieinfo.html"
 
         }).state("404", {
             url:"/404",
-            templateUrl:"app/feature/404/404.html"
+            templateUrl:"src/main/webapp/app/feature/404/404.html"
 
         })
 
