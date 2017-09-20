@@ -25,8 +25,8 @@ public class customerDBImpl implements customerService {
     @Inject
     CustomerTableController custControl;
 
-    @Inject
-    Gson gson;
+
+    Gson gson = new Gson();
 
     public customerDBImpl(){
          ip = "sql11.freemysqlhosting.net";

@@ -123,7 +123,7 @@ public HashMap<Integer,String>customerInfo  = new HashMap <Integer,String> ();
 
 
     public  void removeProductById(Connection myConnection,int id) {
-        String query = "delete from productInfo where productid = ?";
+        String query = "delete from customers where productid = ?";
 
         try {
 
@@ -142,7 +142,7 @@ public HashMap<Integer,String>customerInfo  = new HashMap <Integer,String> ();
 
 
     public  void removeProductByName(Connection myConnection,String name) {
-        String query = "delete from productInfo where productid = ?";
+        String query = "delete from customers where productid = ?";
 
         try {
 
