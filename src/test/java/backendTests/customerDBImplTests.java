@@ -29,7 +29,7 @@ public class customerDBImplTests {
 
     @Test
     public void checkCustomerTest(){
-       fail("Not implemented");
+       assertEquals(cDB.checkCustomer("{\"username\":\"Django\" , \"password\" : \"Django\"}"), "success");
     }
 
     @After
