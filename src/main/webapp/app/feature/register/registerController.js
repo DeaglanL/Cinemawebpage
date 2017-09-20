@@ -11,9 +11,9 @@
         vm.invalidPasswordFormat = false;
         vm.passwordNotConfirmed = false;
 
-        vm.validUsername = function (username) {
+        vm.validUsername = function (newUser) {
             let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
-            if (regexUsername.test(username)) {
+            if (regexUsername.test(newUser.name)) {
                 vm.invalidUsername = false;
                 //check if username is taken
                 //if (!checkPositive) {
@@ -28,9 +28,9 @@
             }
         };
 
-        vm.validEmail = function (email) {
+        vm.validEmail = function (newUser) {
             let regexEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-            if (regexEmail.test(email)) {
+            if (regexEmail.test(newUser.email)) {
                 vm.invalidEmail = false;
                 //check if email is used
                 //if (!checkPositive) {
@@ -66,24 +66,24 @@
             }
         };
 
-        function checkIfRobot(honeypot) {
-            return !(honeypot==="");
+        function checkIfRobot(newUser) {
+            return !(newUser.honeypot==="");
         }
 
         vm.registerNew = function (newUser) {
-            if (checkIfRobot(newUser.honeypot)) {
+            if (checkIfRobot(newUser)) {
                 return false;
             }
-            if (!vm.validUsername) {
+            if (!vm.validUsername(newUser)) {
                 return false;
             }
-            if (!vm.validEmail) {
+            if (!vm.validEmail(newUser)) {
                 return false;
             }
-            if (!vm.validPasswordFormat) {
+            if (!vm.validPasswordFormat(newUser)) {
                 return false;
             }
-            if (!vm.validConfirmPassword) {
+            if (!vm.validConfirmPassword(newUser)) {
                 return false;
             } else {
                 //TODO: test functions

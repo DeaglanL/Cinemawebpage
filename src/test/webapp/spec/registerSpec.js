@@ -20,24 +20,37 @@ describe("Register Form", function() {
                     {"name":"username", "email":"test734ltylytkliytkryety9ef@jb-fe.com", "honeypot":"", "password":"#aF70000", "confirmPassword":"#aF70000"},
                     {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"#aF7====", "confirmPassword":"#aF7===="}];
 
-    let invalidDate = [];
+    let invalidNames = [{"name":"abc", "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":14664, "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"", "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":null, "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"}];
 
-    let invalidNames = [/*{"name":"abc"},{"name":14664},{"name":""},{"name":null}*/];
+    let invalidEmails = [{"name":"username", "email":"test@ test.co.uk", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"ghgf@fe.com.co.", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"tes@t@test.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":null, "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"email@emailcom", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"}];
 
-    let invalidEmails = [/*"test@ test.co.uk","ghgf@fe.com.co.","tes@t@test.com","",null,"email@emailcom"*/];
+    let invalidPasswords = [{"name":"username", "email":"email@domain.com", "honeypot":"", "password":"", "confirmPassword":""},
+                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"DomoArigatoMrRob0to", "confirmPassword":"DomoArigatoMrRob0to"},
+                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"@Ki1roy", "confirmPassword":"@Ki1roy"},
+                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"parts#made#1n#japan", "confirmPassword":"parts#made#1n#japan"},
+                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":null, "confirmPassword":null},
+                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"", "confirmPassword":""},
+                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"#CELEBRATI0N", "confirmPassword":"#CELEBRATI0N"}];
 
-    let invalidPasswords = [/*"","DomoArigatoMrRob0to","@Ki1roy","parts#made#1n#japan","#CELEBRATI0N"*/];
+    let invalidConfirmPasswords = [{"name":"username", "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd1"},
+                                    {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"#aF7qqqq", "confirmPassword":"#aF7qqq"},
+                                    {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"aF7QQ#QQ", "confirmPassword":"#wa1kLikeAnEgyptian"},
+                                    {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":""},
+                                    {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":null}];
 
-    let invalidConfirmPasswords = [{"password":"Pa$$w0rd","confirmPassword":"Pa$$w0rd1"},
-                                {"password":"#aF7qqqq","confirmPassword":"#aF7qqq"},
-                                {"password":"#aF7QQQQ","confirmPassword":" #aF7QQQQ"},
-                                {"password":"#aF70000","confirmPassword":"#wa1kLikeAnEgyptian"},
-                                {"password":"#aF7====","confirmPassword":""},
-                                {"password":"#aF7#aF7","confirmPassword":null}];
+    let invalidData = invalidNames + invalidEmails + invalidPasswords + invalidConfirmPasswords;
 
     it("should accept valid usernames", function() {
         for (let i in validData) {
-            registerCtrl.validUsername(validData[i].name);
+            registerCtrl.validUsername(validData[i]);
             expect(registerCtrl.invalidUsername).toEqual(false);
         }
     });
@@ -51,28 +64,28 @@ describe("Register Form", function() {
 
     it("should accept valid emails", function() {
         for (let i in validData) {
-            registerCtrl.validUsername(validData[i].email);
+            registerCtrl.validEmail(validData[i]);
             expect(registerCtrl.invalidEmail).toEqual(false);
         }
     });
 
     it("should not accept invalid emails", function() {
         for (let i in invalidEmails) {
-            registerCtrl.validUsername(invalidEmails[i]);
+            registerCtrl.validEmail(invalidEmails[i]);
             expect(registerCtrl.invalidEmail).toEqual(true);
         }
     });
 
     it("should accept valid passwords", function() {
         for (let i in validData) {
-            registerCtrl.validUsername(validData[i]);
+            registerCtrl.validPasswordFormat(validData[i]);
             expect(registerCtrl.invalidPasswordFormat).toEqual(false);
         }
     });
 
     it("should not accept invalid passwords", function() {
         for (let i in invalidPasswords) {
-            registerCtrl.validUsername(invalidPasswords[i]);
+            registerCtrl.validPasswordFormat(invalidPasswords[i]);
             expect(registerCtrl.invalidPasswordFormat).toEqual(true);
         }
     });
@@ -103,11 +116,11 @@ describe("Register Form", function() {
         }
     });*/
 
-    /*it("should not send invalid data", function() {
+    it("should not send invalid data", function() {
         for (let obj in invalidData) {
             let dataSent = registerCtrl.registerNew(invalidData[obj]);
             expect(dataSent).toEqual(false);
         }
-    });*/
+    });
 
 });
