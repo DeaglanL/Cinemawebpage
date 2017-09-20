@@ -1,4 +1,4 @@
-package Tickets;
+package persistance;
 
 public class Ticket {
 }

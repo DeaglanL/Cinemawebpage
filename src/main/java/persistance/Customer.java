@@ -1,4 +1,4 @@
-package Customers;
+package persistance;
 
 import java.sql.Connection;
 
@@ -81,19 +81,7 @@ private String username;
 
 
     public String jsonObject(){
-        getName();
-        getAddress();
-        getDob();
-        getEmail();
-        getUsername();
-        getPassword();
-        getPhoneno();
-
-
-        String result = "{ \"name\"" + ":" + "\""+ getName()+ "\"" +"," + "\"address\"" + ":" + "\"" + getAddress()+ "\"" +"," + "\"dob\"" + ":" + "\"" + getDob() +"\"" +"," + "\"email\"" + ":" +  "\"" + getEmail()+ "\"" +","  + "\"username\"" + ":" + "\"" +getUsername()+ "\"" +"," + "\"password\"" + ":" + "\"" + getPassword() + "\"" +"," + "\"phoneno\"" + ":" + "\"" +getPhoneno()+ "\"" +" }";
-
-        System.out.println(result);
-        return result;
+        return "{ \"name\"" + ":" + "\""+ getName()+ "\"" +"," + "\"address\"" + ":" + "\"" + getAddress()+ "\"" +"," + "\"dob\"" + ":" + "\"" + getDob() +"\"" +"," + "\"email\"" + ":" +  "\"" + getEmail()+ "\"" +","  + "\"username\"" + ":" + "\"" +getUsername()+ "\"" +"," + "\"password\"" + ":" + "\"" + getPassword() + "\"" +"," + "\"phoneno\"" + ":" + "\"" +getPhoneno()+ "\"" +" }";
     }
 
 

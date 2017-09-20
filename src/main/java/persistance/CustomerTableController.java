@@ -1,4 +1,4 @@
-package Customers;
+package persistance;
 
 import java.sql.*;
 import java.util.HashMap;

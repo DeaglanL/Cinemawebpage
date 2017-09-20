@@ -1,4 +1,4 @@
-import Customers.Customer;
+import persistance.Customer;
 
 public class Main {
 
