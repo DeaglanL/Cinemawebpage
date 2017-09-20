@@ -44,15 +44,15 @@ describe("Login Form", function() {
     });
 
     /*it("should allow function to send data", function() {
-        for (let obj in validData) {
-            let dataSent = loginCtrl.loginSubmit(validData[obj]);
+        for (let i in validData) {
+            let dataSent = loginCtrl.loginSubmit(validData[i]);
             expect(dataSent).toEqual(true);
         }
     });*/
 
     it("should not send invalid data", function() {
-        for (let obj in invalidData) {
-            let dataSent = loginCtrl.loginSubmit(invalidData[obj]);
+        for (let i in invalidData) {
+            let dataSent = loginCtrl.loginSubmit(invalidData[i]);
             expect(dataSent).toEqual(false);
         }
     });

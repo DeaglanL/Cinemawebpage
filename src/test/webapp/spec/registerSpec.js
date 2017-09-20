@@ -117,8 +117,8 @@ describe("Register Form", function() {
     });*/
 
     it("should not send invalid data", function() {
-        for (let obj in invalidData) {
-            let dataSent = registerCtrl.registerNew(invalidData[obj]);
+        for (let i in invalidData) {
+            let dataSent = registerCtrl.registerNew(invalidData[i]);
             expect(dataSent).toEqual(false);
         }
     });

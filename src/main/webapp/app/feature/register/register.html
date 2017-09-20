@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="form-group" ng-show="false">
-            <input name="honeypot" class="form-control" id="honeypot" ng-model="newUser.honeypot">
+            <input type="text" name="honeypot" class="form-control" id="honeypot" ng-model="newUser.honeypot">
           </div>
           <div class="form-group">
             <input type="password" class="form-control" name="password" id="registerpassword" placeholder="Password" ng-blur="registerCtrl.validatePasswordFormat" ng-model="newUser.password" required/>
@@ -60,6 +60,9 @@
           </div>
           <div class="text-center"><button class="btn btn-lg btn-theme">Create user</button></div>
         </form>
+        <div ng-show="registerCtrl.error" id="error_message">
+          <p class="text-danger">Error {{registerCtrl.errorStatus}}: error when processing your request. Please try again later</p>
+        </div>
       </div>
       <!-- END registration form -->
 

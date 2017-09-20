@@ -11,17 +11,19 @@
         vm.invalidPasswordFormat = false;
         vm.passwordNotConfirmed = false;
 
+        vm.error = false;
+
         vm.validUsername = function (newUser) {
             let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
             if (regexUsername.test(newUser.name)) {
                 vm.invalidUsername = false;
-                //check if username is taken
-                //if (!checkPositive) {
-                //  vm.takenUsername = !vm.takenUsername;
-                //  return false;
-                //} else {
-                //  return true;
-                //}
+                /*check if username is taken
+                  if (!checkPositive) {
+                    vm.takenUsername = true;
+                    return false;
+                  } else {
+                    return true;
+                  }*/
             } else {
                 vm.invalidUsername = true;
                 return false;
@@ -32,13 +34,13 @@
             let regexEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
             if (regexEmail.test(newUser.email)) {
                 vm.invalidEmail = false;
-                //check if email is used
-                //if (!checkPositive) {
-                //  vm.takenEmail = true;
-                //  return false;
-                //} else {
-                //  return true;
-                //}
+                /*check if email is used
+                  if (!checkPositive) {
+                      vm.takenEmail = true;
+                      return false;
+                  } else {
+                      return true;
+                  }*/
             } else {
                 vm.invalidEmail = true;
                 return false;
@@ -70,6 +72,18 @@
             return !(newUser.honeypot==="");
         }
 
+        function confirmNewUser() {
+            //await confirmation from server
+            if (created) {
+                //new user created!
+                return true;
+            } else {
+                vm.error = true;
+                vm.errorStatus = response.status;
+                return false;
+            }
+        }
+
         vm.registerNew = function (newUser) {
             if (checkIfRobot(newUser)) {
                 return false;
@@ -86,25 +100,18 @@
             if (!vm.validConfirmPassword(newUser)) {
                 return false;
             } else {
-                //TODO: test functions
-                /*var addNewUser = "";          //Not yet linked to server, does nothing atm
                 $http({
                     method: "POST",
-                    url: addNewUser,
-                    data: user
-                }).then(function(response) {
-                        //await confirmation from server
-                        if (newUserCreated) {
-                            //route to homepage
-                            return true;
-                        } else {
-                            return false;
-                        }
+                    url: "createUserPATH",
+                    data: newUser
+                }).then(function() {
+                        confirmNewUser();
                     },
-                    function(response) { // optional
-                        alert("ERROR 500: Unable to create user");
+                    function(response) {
+                        vm.error = true;
+                        vm.errorStatus = response.status;
                         return false;
-                    });*/
+                    });
                 return true;
             }
         };

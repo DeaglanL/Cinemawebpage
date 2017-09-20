@@ -50,8 +50,8 @@ describe("Contact Form", function() {
     });*/
 
     it("should not send invalid data", function() {
-        for (let obj in invalidData) {
-            let dataSent = contactCtrl.handleFormSubmit(invalidData[obj]);
+        for (let i in invalidData) {
+            let dataSent = contactCtrl.handleFormSubmit(invalidData[i]);
             expect(dataSent).toEqual(false);
         }
     });

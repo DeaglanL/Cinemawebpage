@@ -4,6 +4,7 @@
         const vm = this;
 
         vm.wrongDetails = false;
+        vm.error = false;
 
         function acceptableUsername(username) {
             let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
@@ -23,6 +24,18 @@
             user.password = "";
         }
 
+        function confirmLogin(user) {
+            //await login details confirmation from server
+            if (confirmed) {
+                //logged in!
+                return true;
+            } else {
+                vm.wrongDetails = !vm.wrongDetails;
+                resetPassword(user);
+                return false;
+            }
+        }
+
         vm.loginSubmit = function(user) {
             if (checkIfRobot(user.honeypot)) {
                 return false;
@@ -32,27 +45,19 @@
                 resetPassword(user);
                 return false;
             } else {
-                //TODO: test functions
-                /*var validateUser = "";        //Not yet linked to server, does nothing atm
                 $http({
                     method: "POST",
-                    url: validateUser,
+                    url: "checkUserPATH",
                     data: user
-                }).then(function (response) {
-                        //await login details confirmation from server
-                        if (validLogin) {
-                            //route to homepage
-                            return true;
-                        } else {
-                            vm.wrongDetails = !vm.wrongDetails;
-                            resetPassword(user);
-                            return false;
-                        }
+                }).then(function () {
+                        confirmLogin(user);
                     },
-                    function (response) { // optional
-                        alert("ERROR 500: Unable to verify login");
+                    function (response) {
+                        vm.error = true;
+                        vm.errorStatus = response.status;
+                        resetPassword(user);
                         return false;
-                    });*/
+                    });
                 return true;
             }
         };
