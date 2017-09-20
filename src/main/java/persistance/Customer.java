@@ -30,9 +30,9 @@ private String username;
         this.dbName = dbName;
         this.dbPassword = dbPassword;
         this.dbUsername = dbUsername;
-        myController = new CustomerTableController();
-        myConnection = myController.createConnection(ipAddress, port, dbName, dbUsername, dbPassword);
-        getInfo(id,myConnection);
+       // myController = new CustomerTableController();
+       // myConnection = myController.createConnection(ipAddress, port, dbName, dbUsername, dbPassword);
+        // getInfo(id,myConnection);
     }
 
     public String getId() {

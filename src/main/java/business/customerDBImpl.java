@@ -1,10 +1,13 @@
 package business;
 
+import com.google.gson.Gson;
+import persistance.Customer;
 import persistance.CustomerTableController;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+import java.sql.Connection;
 
 @Default
 @Stateless
@@ -16,8 +19,14 @@ public class customerDBImpl implements customerService {
     private String username;
     private String password;
 
+
+    private Connection conc;
+
     @Inject
     CustomerTableController custControl;
+
+    @Inject
+    Gson gson;
 
     public customerDBImpl(){
          ip = "sql11.freemysqlhosting.net";
@@ -25,6 +34,8 @@ public class customerDBImpl implements customerService {
          dbName = "sql11195115";
          username = "sql11195115";
          password = "p21IgmB3mn";
+
+        conc = custControl.createConnection(ip, port, dbName, username, password);
     }
 
     public customerDBImpl(String ip,String port,String dbName, String username,String password){
@@ -33,16 +44,22 @@ public class customerDBImpl implements customerService {
         this.dbName = dbName;
         this.username = username;
         this.password = password;
+
+        conc = custControl.createConnection(ip, port, dbName, username, password);
     }
 
     public String addCustomer(String jsonCustomer) {
 
-        custControl.createConnection(ip, port, dbName, username, password);
+         Customer newCust =  gson.fromJson(jsonCustomer, Customer.class);
 
-
-
-
-        return null;
+        try {
+            custControl.putCustomer(conc, newCust.getName(), newCust.getAddress(), newCust.getDob(), newCust.getEmail(), newCust.getUsername(), newCust.getEmail(), newCust.getPhoneno());
+        }
+        catch (Exception e)
+        {
+            return "Error text :" + e.toString();
+        }
+        return "success";
     }
 
     public String checkCustomer(String jsonLogin) {
