@@ -53,7 +53,7 @@ private String username;
 
     public String getDob() {
 
-        this.name = customerInfo.get(4);
+        this.dob = customerInfo.get(4);
         return dob;
     }
 
