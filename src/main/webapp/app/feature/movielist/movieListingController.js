@@ -14,7 +14,7 @@
 
                     html += "<div class=\"col-lg-4 mb-4\">\n" +
                         "                    <div class=\"card h-100\">\n" +
-                        "                        <center><img id=\"moviePoster\" class=\"img-fluid rounded mb-3 mb-md-0\" src=\"https://image.tmdb.org/t/p/w500" + movie.poster_path + "\" width=\"70%\"><\center>" +
+                        "                        <center><img id=\"listMoviePoster\" class=\"img-fluid rounded mb-3 mb-md-0\" src=\"https://image.tmdb.org/t/p/w500" + movie.poster_path + "\" width=\"70%\"><\center>" +
                         "                        <div class=\"card-body\">\n" +
                         "                        </div>\n" +
                         "                        <div class=\"card-footer\">\n" +

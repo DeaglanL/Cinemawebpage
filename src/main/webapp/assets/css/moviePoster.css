@@ -1,3 +1,7 @@
-#moviePoster {
+#listMoviePoster {
     padding-left: 0px;
+}
+
+#searchMoviePoster {
+    margin-left: 150px;
 }
