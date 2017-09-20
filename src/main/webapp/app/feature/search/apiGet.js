@@ -28,6 +28,16 @@
             return movieDal.popularMovie();
         };
 
+        this.movieVideo = function (movieID)
+        {
+            return movieDal.movieVideo(movieID);
+        };
+
+        this.movieList = function (movieID)
+        {
+            return movieDal.movieList(movieID);
+        };
+
     };
 
     angular.module("apolloCinema").service("apiGet", ["movieDal",apiGet]);

@@ -1,9 +1,9 @@
 "use strict";
-(function() {
+(function () {
 
-    let PlacesLocationController =  function() {
+    let PlacesLocationController = function () {
 
     };
 
-    angular.module('apolloCinema').controller('PlacesLocationController', [PlacesLocationController]);
+    angular.module("apolloCinema").controller("PlacesLocationController", [PlacesLocationController]);
 }());

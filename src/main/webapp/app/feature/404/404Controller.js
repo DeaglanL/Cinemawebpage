@@ -1,8 +1,8 @@
 "use strict";
-(function() {
+(function () {
 
-    let FourOfourController =  function() {
+    let FourOfourController = function () {
     };
 
-    angular.module('apolloCinema').controller('FourOfourController', [FourOfourController]);
+    angular.module("apolloCinema").controller("FourOfourController", [FourOfourController]);
 }());

@@ -1,7 +1,7 @@
 "use strict";
-(function() {
+(function () {
 
-    let RegisterController =  function() {
+    let RegisterController = function () {
         let vm = this;
 
         vm.takenUsername = false;
@@ -111,5 +111,5 @@
         };
     };
 
-    angular.module('apolloCinema').controller('RegisterController', [RegisterController]);
+    angular.module("apolloCinema").controller("RegisterController", [RegisterController]);
 }());

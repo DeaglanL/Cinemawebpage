@@ -6,7 +6,7 @@ let apiKey = "c00a3e5661629abbe2531b560b75a9cc";
 
     angular.module("apolloCinema").service("movieDal", ["dal", movieDal]);
 
-    function movieDal (dal) {
+    function movieDal(dal) {
 
         this.getMovie = function (term) {
             return dal.http.GET("https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&query=" + term);
@@ -17,7 +17,7 @@ let apiKey = "c00a3e5661629abbe2531b560b75a9cc";
         };
 
         this.similarMovie = function (movieID) {
-            return dal.http.GET("https://api.themoviedb.org/3/movie/"+ movieID +"/similar?api_key=" + apiKey +"&language=en-US&page=1");
+            return dal.http.GET("https://api.themoviedb.org/3/movie/" + movieID + "/similar?api_key=" + apiKey + "&language=en-US&page=1");
         };
 
         this.latestMovie = function () {
@@ -27,6 +27,14 @@ let apiKey = "c00a3e5661629abbe2531b560b75a9cc";
         this.popularMovie = function () {
             return dal.http.GET("https://api.themoviedb.org/3/movie/popular?api_key=" + apiKey + "&language=en-US&page=1&region=GB");
         };
+
+        this.movieVideo = function (movieID) {
+            return dal.http.GET("https://api.themoviedb.org/3/movie/" + movieID + "/videos?api_key=" + apiKey + "&language=en-US");
+        };
+
+        this.movieList = function () {
+            return dal.http.GET("https://api.themoviedb.org/3/discover/movie?api_key=" + apiKey + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1");
+        }
 
 
     }
