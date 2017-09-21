@@ -1,11 +1,8 @@
 "use strict";
 (function() {
 
-    const LoginController =  function($http) {
-        const vm = this;
-
-        vm.wrongDetails = false;
-        vm.error = false;
+    let LoginController =  function($http) {
+        let vm = this;
 
         function acceptableUsername(username) {
             let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
@@ -30,10 +27,11 @@
                 return false;
             }
             if (!acceptableUsername(user.name) || !acceptablePassword(user.password)) {
-                vm.wrongDetails = !vm.wrongDetails;
+                vm.wrongDetails = true;
                 resetPassword(user);
                 return false;
             } else {
+                vm.wrongDetails = false;
                 $http({
                     method: "POST",
                     url: "checkUserPATH",

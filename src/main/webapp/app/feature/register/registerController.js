@@ -1,15 +1,10 @@
 "use strict";
 (function() {
 
-    const RegisterController =  function($http) {
-        const vm = this;
-
-        vm.takenUsername = false;
-        vm.takenEmail = false;
+    let RegisterController =  function($http) {
+        let vm = this;
 
         vm.submitDisabled = true;
-
-        vm.error = false;
 
         vm.validUsername = function (newUser) {
             let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
