@@ -1,4 +1,4 @@
-import Customers.Customer;
+/*import persistance.Customer;
 
 public class Main {
 
@@ -15,4 +15,4 @@ y.jsonObject();
 
     }
 
-}
+} */
