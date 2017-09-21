@@ -1,13 +1,9 @@
 package persistance;
-
 import java.sql.*;
 import java.util.HashMap;
 
 
 public class CustomerTableController {
-
-public HashMap<Integer,String>customerInfo  = new HashMap <Integer,String> ();
-
 
 
 
@@ -78,7 +74,9 @@ public HashMap<Integer,String>customerInfo  = new HashMap <Integer,String> ();
     }
 
 
-    public  HashMap getInfo(int id, Connection myConnection){
+    public  Customer getCustomerById(int id, Connection myConnection){
+
+        Customer currentCustomer;
 
         String customerId = "";
         String name ="";
@@ -109,20 +107,112 @@ public HashMap<Integer,String>customerInfo  = new HashMap <Integer,String> ();
         }
 
 
-        customerInfo.put(1,customerId);
-        customerInfo.put(2,name);
-        customerInfo.put(3,address);
-        customerInfo.put(4,dob);
-        customerInfo.put(5,email);
-        customerInfo.put(6,username);
-        customerInfo.put(7,password);
-        customerInfo.put(8,phoneno);
-        return customerInfo;
+        currentCustomer =  new Customer(customerId, name, address,dob,email,password,phoneno,username);
+
+        return currentCustomer;
     }
 
 
 
-    public  void removeProductById(Connection myConnection,int id) {
+
+
+
+
+
+    public  Customer getCustomerByName( String usernamex, Connection myConnection){
+
+        Customer currentCustomer;
+
+        String customerId = "";
+        String name ="";
+        String address="";
+        String dob="";
+        String email="";
+        String username="";
+        String password="";
+        String phoneno="";
+
+        try {
+            Statement stmt = myConnection.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from customers where name = " + "\"" + usernamex+ "\"");
+            while (rs.next()) {
+                customerId = customerId + rs.getString("customerid");
+                name = name + rs.getString("name" );
+                address = address + rs.getString("address" );
+                dob = dob + rs.getString("dob" );
+                email = email + rs.getString("email" );
+                username = username + rs.getString("username" );
+                password = password + rs.getString("password" );
+                phoneno = phoneno + rs.getString("phoneno" );
+            }
+
+
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        currentCustomer =  new Customer(customerId, name, address,dob,email,password,phoneno,username);
+
+        return currentCustomer;
+    }
+
+
+
+
+
+
+
+    public  Customer getCustomerByPassword( String passwordx, Connection myConnection){
+
+        Customer currentCustomer;
+
+        String customerId = "";
+        String name ="";
+        String address="";
+        String dob="";
+        String email="";
+        String username="";
+        String password="";
+        String phoneno="";
+
+        try {
+            Statement stmt = myConnection.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from customers where password = " + "\"" + passwordx+ "\"");
+            while (rs.next()) {
+                customerId = customerId + rs.getString("customerid");
+                name = name + rs.getString("name" );
+                address = address + rs.getString("address" );
+                dob = dob + rs.getString("dob" );
+                email = email + rs.getString("email" );
+                username = username + rs.getString("username" );
+                password = password + rs.getString("password" );
+                phoneno = phoneno + rs.getString("phoneno" );
+            }
+
+
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        currentCustomer =  new Customer(customerId, name, address,dob,email,password,phoneno,username);
+
+        return currentCustomer;
+    }
+
+
+
+
+
+
+
+
+
+
+    public  void removeCustomerById(Connection myConnection,int id) {
         String query = "delete from customers where productid = ?";
 
         try {
@@ -141,7 +231,7 @@ public HashMap<Integer,String>customerInfo  = new HashMap <Integer,String> ();
     }
 
 
-    public  void removeProductByName(Connection myConnection,String name) {
+    public  void removeCustomerByName(Connection myConnection,String name) {
         String query = "delete from customers where productid = ?";
 
         try {
@@ -159,6 +249,5 @@ public HashMap<Integer,String>customerInfo  = new HashMap <Integer,String> ();
 
 
     }
-
 
 }

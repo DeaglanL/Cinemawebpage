@@ -1,6 +1,7 @@
 package business;
 
 import com.google.gson.Gson;
+import persistance.Credentials;
 import persistance.Customer;
 import persistance.CustomerTableController;
 
@@ -11,7 +12,7 @@ import java.sql.Connection;
 
 @Default
 @Stateless
-public class customerDBImpl implements customerService {
+public class customerDBImpl implements CustomerService {
 
     private String ip;
     private String port;
@@ -59,10 +60,29 @@ public class customerDBImpl implements customerService {
         {
             return "Error text :" + e.toString();
         }
-        return "success";
+        return jsonCustomer;
     }
 
     public String checkCustomer(String jsonLogin) {
-        return null;
+        Credentials creds = gson.fromJson(jsonLogin, Credentials.class);
+
+        Customer customer = custControl.getCustomerByName(creds.getUsername(), conc);
+
+         if(customer != null)
+         {
+             if (customer.getPassword() == creds.getPassword())
+             {
+                 return "success";
+             }
+             else
+             {
+                 return "invalid username or password";
+             }
+         }
+         else
+         {
+             return "invalid username or password";
+         }
+
     }
 }

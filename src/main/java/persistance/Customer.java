@@ -1,90 +1,90 @@
 package persistance;
 
-import java.sql.Connection;
-
-
 public  class Customer extends CustomerTableController{
 
     private String id;
-    private String ipAddress;
-    private String port;
-    private String dbName;
-    private String dbPassword;
-    private String dbUsername;
+    private String name;
+    private String address;
+    private String dob;
+    private String email;
+    private String password;
+    private String phoneno;
+    private String username;
 
-
-private String name;
-private String address;
-private String dob;
-private String email;
-private String password;
-private String phoneno;
-private String username;
-
-    private CustomerTableController myController ;
-    private Connection myConnection ;
-
-    public Customer(int id,String ipAddress,String port, String dbName, String dbUsername ,String dbPassword) {
-        this.ipAddress = ipAddress;
-        this.port = port;
-        this.dbName = dbName;
-        this.dbPassword = dbPassword;
-        this.dbUsername = dbUsername;
-       // myController = new CustomerTableController();
-       // myConnection = myController.createConnection(ipAddress, port, dbName, dbUsername, dbPassword);
-        // getInfo(id,myConnection);
+    public Customer(String id, String name, String address, String dob, String email, String password, String phoneno, String username) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.dob = dob;
+        this.email = email;
+        this.password = password;
+        this.phoneno = phoneno;
+        this.username = username;
     }
 
+
     public String getId() {
-        this.id = customerInfo.get(1);
         return id;
     }
 
-
     public String getName() {
-        this.name = customerInfo.get(2);
         return name;
     }
 
     public String getAddress() {
-        this.address = customerInfo.get(3);
         return address;
     }
 
     public String getDob() {
-
-        this.dob = customerInfo.get(4);
         return dob;
     }
 
     public String getEmail() {
-
-        this.dob = customerInfo.get(5);
-        return dob;
-    }
-
-    public String getUsername() {
-        this.username = customerInfo.get(6);
-        return username;
+        return email;
     }
 
     public String getPassword() {
-
-        this.password = customerInfo.get(7);
         return password;
     }
 
     public String getPhoneno() {
-        this.phoneno = customerInfo.get(8);
         return phoneno;
     }
 
-
-    public String jsonObject(){
-        return "{ \"name\"" + ":" + "\""+ getName()+ "\"" +"," + "\"address\"" + ":" + "\"" + getAddress()+ "\"" +"," + "\"dob\"" + ":" + "\"" + getDob() +"\"" +"," + "\"email\"" + ":" +  "\"" + getEmail()+ "\"" +","  + "\"username\"" + ":" + "\"" +getUsername()+ "\"" +"," + "\"password\"" + ":" + "\"" + getPassword() + "\"" +"," + "\"phoneno\"" + ":" + "\"" +getPhoneno()+ "\"" +" }";
+    public String getUsername() {
+        return username;
     }
 
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setPhoneno(String phoneno) {
+        this.phoneno = phoneno;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }

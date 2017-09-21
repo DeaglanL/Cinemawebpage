@@ -3,12 +3,15 @@ package backendTests;
 import business.customerDBImpl;
 import org.junit.*;
 
+import javax.inject.Inject;
+
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
 
 
 public class customerDBImplTests {
 
+    @Inject
     private customerDBImpl cDB;
 
     @BeforeClass
@@ -17,13 +20,13 @@ public class customerDBImplTests {
 
     @Before
     public void beforeTest() {
-        cDB = new customerDBImpl();
+        //cDB = new customerDBImpl();
 
     }
 
     @Test
     public void addCustomerTest(){
-        assertEquals(cDB.addCustomer("{\"name\":\"David\",\"address\":\"The heart\",\"dob\":\"30/04/1995\",\"email\":\"David.Jaing@qa.com\",\"username\" + : \"Django \",\"password\": \" Django  \" , \"phoneno\"  :  \" 07321321 \"}"), "success");
+        assertEquals(cDB.addCustomer("{\"name\":\"David\",\"address\":\"The heart\",\"dob\":\"30/04/1995\",\"email\":\"David.Jaing@qa.com\",\"username\": \"Django \",\"password\": \" Django  \" , \"phoneno\"  :  \" 07321321 \"}"), "success");
 
     }
 
