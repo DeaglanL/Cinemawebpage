@@ -33,10 +33,11 @@
                 return false;
             } else {
                 vm.wrongDetails = false;
+                delete user.honeypot;
                 userService.saveUser(user).then(function (results) {
                     if (results!=="success") {
                         vm.wrongDetails = true;
-                        vm.loginStatus = "Login failed";
+                        vm.loginStatus = "Login failed: wrong details";
                         resetPassword(user);
                         return false;
                     } else {
@@ -47,7 +48,7 @@
                 }, function (error) {
                     vm.error = true;
                     vm.errorStatus = error.status;
-                    vm.loginStatus = "Login failed";
+                    vm.loginStatus = "Login failed: error";
                     resetPassword(user);
                     return false;
                 });
