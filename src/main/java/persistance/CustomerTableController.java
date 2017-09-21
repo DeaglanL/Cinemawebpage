@@ -1,4 +1,6 @@
 package persistance;
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Default;
 import java.sql.*;
 import java.util.HashMap;
 
@@ -6,6 +8,7 @@ import java.util.HashMap;
 public class CustomerTableController {
 
 
+    public CustomerTableController(){}
 
     public Connection createConnection(String ipAddress,String port, String dbName,String username, String password) {
         Connection myConnection = null;
@@ -134,7 +137,7 @@ public class CustomerTableController {
 
         try {
             Statement stmt = myConnection.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from customers where name = " + "\"" + usernamex+ "\"");
+            ResultSet rs = stmt.executeQuery("select * from customers where username = " + "\"" + usernamex+ "\"");
             while (rs.next()) {
                 customerId = customerId + rs.getString("customerid");
                 name = name + rs.getString("name" );
@@ -213,7 +216,7 @@ public class CustomerTableController {
 
 
     public  void removeCustomerById(Connection myConnection,int id) {
-        String query = "delete from customers where productid = ?";
+        String query = "delete from customers where customerid = ?";
 
         try {
 
@@ -232,7 +235,7 @@ public class CustomerTableController {
 
 
     public  void removeCustomerByName(Connection myConnection,String name) {
-        String query = "delete from customers where productid = ?";
+        String query = "delete from customers where name = ?";
 
         try {
 

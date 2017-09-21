@@ -23,9 +23,8 @@ public class customerDBImpl implements CustomerService {
 
     private Connection conc;
 
-    @Inject
-    CustomerTableController custControl;
 
+    private CustomerTableController custControl = new CustomerTableController();
 
     Gson gson = new Gson();
 
@@ -54,7 +53,7 @@ public class customerDBImpl implements CustomerService {
          Customer newCust =  gson.fromJson(jsonCustomer, Customer.class);
 
         try {
-            custControl.putCustomer(conc, newCust.getName(), newCust.getAddress(), newCust.getDob(), newCust.getEmail(), newCust.getUsername(), newCust.getEmail(), newCust.getPhoneno());
+            custControl.putCustomer(conc, newCust.getName(), newCust.getAddress(), newCust.getDob(), newCust.getEmail(), newCust.getUsername(), newCust.getPassword(), newCust.getPhoneno());
         }
         catch (Exception e)
         {
@@ -70,18 +69,18 @@ public class customerDBImpl implements CustomerService {
 
          if(customer != null)
          {
-             if (customer.getPassword() == creds.getPassword())
+             if (customer.getPassword().equals(creds.getPassword()))
              {
                  return "success";
              }
              else
              {
-                 return "invalid username or password";
+                 return "Invaild user name or password";
              }
          }
          else
          {
-             return "invalid username or password";
+             return "Cant find customer";
          }
 
     }

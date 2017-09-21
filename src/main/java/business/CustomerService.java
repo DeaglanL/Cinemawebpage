@@ -1,6 +1,6 @@
 package business;
 
-public interface customerService {
+public interface CustomerService {
     String addCustomer(String jsonCustomer);
     String checkCustomer(String jsonLogin);
 

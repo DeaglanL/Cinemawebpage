@@ -1,6 +1,6 @@
 package persistance;
 
-public  class Customer extends CustomerTableController{
+public  class Customer{
 
     private String id;
     private String name;
