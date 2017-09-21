@@ -1,7 +1,7 @@
 "use strict";
 (function() {
 
-    let LoginController =  function($http) {
+    let LoginController =  function(userService) {
         let vm = this;
 
         function acceptableUsername(username) {
@@ -26,39 +26,35 @@
             if (checkIfRobot(user.honeypot)) {
                 return false;
             }
-            if (!acceptableUsername(user.name) || !acceptablePassword(user.password)) {
+            if (!acceptableUsername(user.username) || !acceptablePassword(user.password)) {
                 vm.wrongDetails = true;
+                vm.loginStatus = "Login failed";
                 resetPassword(user);
                 return false;
             } else {
                 vm.wrongDetails = false;
-                $http({
-                    method: "POST",
-                    url: "checkUserPATH",
-                    data: user
-                }).then(function () {
-                        $http({
-                            method: "GET",
-                            url: "confirmLoginPATH",
-                        }).then(function(){
-                            //logged in!
-                            return true;
-                        },function() {
-                            vm.wrongDetails = !vm.wrongDetails;
-                            resetPassword(user);
-                            return false;
-                        });
-                    },
-                    function (response) {
-                        vm.error = true;
-                        vm.errorStatus = response.status;
+                userService.saveUser(user).then(function (results) {
+                    console.log("Logging in user " + user.name);
+                    if (results!=="success") {
+                        vm.wrongDetails = true;
+                        vm.loginStatus = "Login failed";
                         resetPassword(user);
                         return false;
-                    });
-                return true;
+                    } else {
+                        //logged in!
+                        vm.loginStatus = "Login success!";
+                        return true;
+                    }
+                }, function (error) {
+                    vm.error = true;
+                    vm.errorStatus = error.status;
+                    vm.loginStatus = "Login failed";
+                    resetPassword(user);
+                    return false;
+                });
             }
         };
     };
 
-    angular.module("apolloCinema").controller("LoginController", ["$http", LoginController]);
+    angular.module("apolloCinema").controller("LoginController", ["userService", LoginController]);
 }());

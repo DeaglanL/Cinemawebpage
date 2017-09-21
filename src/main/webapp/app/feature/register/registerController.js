@@ -12,12 +12,12 @@
                 vm.invalidUsername = false;
                 $http({
                     method: "POST",
-                    url: "sendUsernamePATH",
+                    url: "rest/customer/json",
                     data: newUser.name
                 }).then(function() {
                     $http({
                         method: "GET",
-                        url: "confirmUsernamePATH",
+                        url: "rest/customer/json",
                     }).then(function(){
                         if (response.data!=="success"){
                             //username is not unique
@@ -45,12 +45,12 @@
                 vm.invalidEmail = false;
                 $http({
                     method: "POST",
-                    url: "sendEmailPATH",
+                    url: "rest/customer/json",
                     data: newUser.email
                 }).then(function() {
                     $http({
                         method: "GET",
-                        url: "confirmEmailPATH",
+                        url: "rest/customer/json",
                     }).then(function(response){
                         if (response.data!=="success"){
                             //email is not unique
@@ -100,12 +100,12 @@
                 newUser.phone = "";
                 $http({
                     method: "POST",
-                    url: "createUserPATH",
+                    url: "rest/customer/json",
                     data: newUser
                 }).then(function() {
                         $http({
                             method: "GET",
-                            url: "confirmNewUserPATH",
+                            url: "rest/customer/json",
                         }).then(function(){
                             //new user created!
                             return true;

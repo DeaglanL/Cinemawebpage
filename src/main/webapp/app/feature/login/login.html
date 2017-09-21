@@ -25,7 +25,7 @@
             <div class="cform" id="loginform">
               <form method="post" role="form" class="contactForm" id="login" ng-submit="loginCtrl.loginSubmit(user)">
                 <div class="form-group">
-                  <input name="name" class="form-control" id="loginname" placeholder="Username" ng-model="user.name" required>
+                  <input name="username" class="form-control" id="loginname" placeholder="Username" ng-model="user.username" required>
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control" name="password" id="loginpassword" placeholder="Password" ng-model="user.password" required/>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="form-group" ng-show="false">
-                    <input type="text" name="honeypot" class="form-control" id="honeypot" ng-model="user.honeypot">
+                    <input type="text" name="honeypot" placeholder="honeypot" class="form-control" id="honeypot" ng-model="user.honeypot">
                 </div>
                 <div class="text-center"><button type="submit" class="btn btn-lg btn-theme">Login</button></div>
               </form>
@@ -45,6 +45,9 @@
               <p class="text-danger">Error {{loginCtrl.errorStatus}}: error when processing your request. Please try again later</p>
             </div>
             <!-- END login form -->
+            <div>
+              <span>{{loginCtrl.loginStatus}}</span>
+            </div>
           </div>
         </div>
     </div>
