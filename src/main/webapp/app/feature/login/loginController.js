@@ -1,11 +1,8 @@
 "use strict";
 (function() {
 
-    const LoginController =  function() {
-        const vm = this;
-
-        vm.wrongDetails = false;
-        vm.error = false;
+    let LoginController =  function(userService) {
+        let vm = this;
 
         function acceptableUsername(username) {
             let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
@@ -25,44 +22,39 @@
             user.password = "";
         }
 
-        function confirmLogin(user) {
-            //await login details confirmation from server
-            if (confirmed) {
-                //logged in!
-                return true;
-            } else {
-                vm.wrongDetails = !vm.wrongDetails;
-                resetPassword(user);
-                return false;
-            }
-        }
-
         vm.loginSubmit = function(user) {
             if (checkIfRobot(user.honeypot)) {
                 return false;
             }
-            if (!acceptableUsername(user.name) || !acceptablePassword(user.password)) {
-                vm.wrongDetails = !vm.wrongDetails;
+            if (!acceptableUsername(user.username) || !acceptablePassword(user.password)) {
+                vm.wrongDetails = true;
+                vm.loginStatus = "Login failed";
                 resetPassword(user);
                 return false;
             } else {
-                $http({
-                    method: "POST",
-                    url: "checkUserPATH",
-                    data: user
-                }).then(function () {
-                        confirmLogin(user);
-                    },
-                    function (response) {
-                        vm.error = true;
-                        vm.errorStatus = response.status;
+                vm.wrongDetails = false;
+                userService.saveUser(user).then(function (results) {
+                    console.log("Logging in user " + user.name);
+                    if (results!=="success") {
+                        vm.wrongDetails = true;
+                        vm.loginStatus = "Login failed";
                         resetPassword(user);
                         return false;
-                    });
-                return true;
+                    } else {
+                        //logged in!
+                        vm.loginStatus = "Login success!";
+                        return true;
+                    }
+                }, function (error) {
+                    vm.error = true;
+                    vm.errorStatus = error.status;
+                    vm.loginStatus = "Login failed";
+                    resetPassword(user);
+                    return false;
+                });
             }
         };
     };
 
-    angular.module("apolloCinema").controller("LoginController", [LoginController]);
+    angular.module("apolloCinema").controller("LoginController", ["userService", LoginController]);
 }());
