@@ -14,39 +14,45 @@ describe("Register Form", function() {
         expect(registerCtrl).toBeDefined();
     });
 
-    let validData = [{"name":"username", "email":"david.jiang@qa.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
-                    {"name":"a1234", "email":"test@test.com", "honeypot":"", "password":"#aF7qqqq", "confirmPassword":"#aF7qqqq"},
-                    {"name":"b#&*^", "email":"test@test.co.uk", "honeypot":"", "password":"#aF7QQQQ", "confirmPassword":"#aF7QQQQ"},
-                    {"name":"username", "email":"test734ltylytkliytkryety9ef@jb-fe.com", "honeypot":"", "password":"#aF70000", "confirmPassword":"#aF70000"},
-                    {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"#aF7====", "confirmPassword":"#aF7===="}];
+    let validData = [{"name":"username", "email":"david.jiang@qa.com", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                    {"name":"a1234", "email":"test@test.com", "honeypot":undefined, "password":"#aF7qqqq", "confirmPassword":"#aF7qqqq"},
+                    {"name":"b#&*^", "email":"test@test.co.uk", "honeypot":undefined, "password":"#aF7QQQQ", "confirmPassword":"#aF7QQQQ"},
+                    {"name":"username", "email":"test734ltylytkliytkryety9ef@jb-fe.com", "honeypot":undefined, "password":"#aF70000", "confirmPassword":"#aF70000"},
+                    {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"#aF7====", "confirmPassword":"#aF7===="}];
 
-    let invalidNames = [{"name":"abc", "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
-                        {"name":14664, "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
-                        {"name":"", "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
-                        {"name":null, "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"}];
+    let invalidNames = [{"name":"abc", "email":"email@domain.com", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":14664, "email":"email@domain.com", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"", "email":"email@domain.com", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":null, "email":"email@domain.com", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"}];
 
-    let invalidEmails = [{"name":"username", "email":"test@ test.co.uk", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
-                        {"name":"username", "email":"ghgf@fe.com.co.", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
-                        {"name":"username", "email":"tes@t@test.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
-                        {"name":"username", "email":null, "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
-                        {"name":"username", "email":"email@emailcom", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
-                        {"name":"username", "email":"", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"}];
+    let invalidEmails = [{"name":"username", "email":"test@ test.co.uk", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"ghgf@fe.com.co.", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"tes@t@test.com", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":null, "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"email@emailcom", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"}];
 
-    let invalidPasswords = [{"name":"username", "email":"email@domain.com", "honeypot":"", "password":"", "confirmPassword":""},
-                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"DomoArigatoMrRob0to", "confirmPassword":"DomoArigatoMrRob0to"},
-                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"@Ki1roy", "confirmPassword":"@Ki1roy"},
-                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"parts#made#1n#japan", "confirmPassword":"parts#made#1n#japan"},
-                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":null, "confirmPassword":null},
-                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"", "confirmPassword":""},
-                            {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"#CELEBRATI0N", "confirmPassword":"#CELEBRATI0N"}];
+    let invalidPasswords = [{"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"", "confirmPassword":""},
+                            {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"DomoArigatoMrRob0to", "confirmPassword":"DomoArigatoMrRob0to"},
+                            {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"@Ki1roy", "confirmPassword":"@Ki1roy"},
+                            {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"parts#made#1n#japan", "confirmPassword":"parts#made#1n#japan"},
+                            {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":null, "confirmPassword":null},
+                            {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"", "confirmPassword":""},
+                            {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"#CELEBRATI0N", "confirmPassword":"#CELEBRATI0N"}];
 
-    let invalidConfirmPasswords = [{"name":"username", "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd1"},
-                                    {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"#aF7qqqq", "confirmPassword":"#aF7qqq"},
-                                    {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"aF7QQ#QQ", "confirmPassword":"#wa1kLikeAnEgyptian"},
-                                    {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":""},
-                                    {"name":"username", "email":"email@domain.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":null}];
+    let invalidConfirmPasswords = [{"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd1"},
+                                    {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"#aF7qqqq", "confirmPassword":"#aF7qqq"},
+                                    {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"aF7QQ#QQ", "confirmPassword":"#wa1kLikeAnEgyptian"},
+                                    {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":""},
+                                    {"name":"username", "email":"email@domain.com", "honeypot":undefined, "password":"Pa$$w0rd", "confirmPassword":null}];
 
-    let invalidData = invalidNames + invalidEmails + invalidPasswords + invalidConfirmPasswords;
+    let invalidHoneypot = [{"name":"username", "email":"david.jiang@qa.com", "honeypot":"text", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"david.jiang@qa.com", "honeypot":524, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"david.jiang@qa.com", "honeypot":null, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"david.jiang@qa.com", "honeypot":"", "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"},
+                        {"name":"username", "email":"david.jiang@qa.com", "honeypot":0, "password":"Pa$$w0rd", "confirmPassword":"Pa$$w0rd"}];
+
+    let invalidData = invalidNames + invalidEmails + invalidPasswords + invalidConfirmPasswords + invalidHoneypot;
 
     it("should accept valid usernames", function() {
         for (let i in validData) {
