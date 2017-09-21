@@ -1,7 +1,12 @@
 #listMoviePoster {
-    padding-left: 0px;
+    margin-left: 50px;
 }
 
 #searchMoviePoster {
     margin-left: 150px;
+}
+
+.card-text {
+    text-align: center;
+
 }

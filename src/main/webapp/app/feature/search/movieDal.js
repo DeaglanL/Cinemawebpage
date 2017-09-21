@@ -32,8 +32,12 @@ let apiKey = "c00a3e5661629abbe2531b560b75a9cc";
             return dal.http.GET("https://api.themoviedb.org/3/movie/" + movieID + "/videos?api_key=" + apiKey + "&language=en-US");
         };
 
-        this.movieList = function () {
-            return dal.http.GET("https://api.themoviedb.org/3/discover/movie?api_key=" + apiKey + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1");
+        this.movieList = function (pageNumber) {
+            return dal.http.GET("https://api.themoviedb.org/3/discover/movie?api_key=" + apiKey + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=" + pageNumber);
+        }
+
+        this.upComingMovie = function (pageNumber) {
+            return dal.http.GET("https://api.themoviedb.org/3/movie/upcoming?api_key=" + apiKey + "&language=en-US&page=" + pageNumber + "&region=GB");
         }
 
 

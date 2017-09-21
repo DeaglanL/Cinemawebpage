@@ -10,15 +10,15 @@
 
         vm.search = function (term) {
             apiGet.getMovie(term).then(function (result) {
-                var search = document.getElementById("results");
-                var html = "";
+                let search = document.getElementById("results");
+                let html = "";
                 html += "<h2 id = \"searchResultTitle\">Search results:</h2>";
 
                 result.results.forEach(function (movie) {
                     vm.searchMovieName = movie.title;
                     html += "<div id=\"searchResult\" class=\"row\" >" +
                         "        <div class=\"col-md-6\">" +
-                        "          <a ng-model=\"movieName\" ng-click=\"ctrl.moreInfo(ctrl.searchMovieName)\">" +
+                        "          <a>" +
                         "            <img id=\"searchMoviePoster\" class=\"img-fluid rounded mb-3 mb-md-0\" src=\"https://image.tmdb.org/t/p/w500" + movie.poster_path + "\" width=\"50%\" align=\"middle\">" +
                         "          </a>" +
                         "        </div>" +
@@ -26,7 +26,7 @@
                         "          <h3>" + movie.title + "</h3>" +
                         "          <p>Release Date: " + movie.release_date + "</p>" +
                         "          <p>" + movie.overview + "</p>" +
-                        "          <a class=\"btn btn-primary\">More Info" +
+                        "          <a class=\"btn btn-primary\" ng-model=\"movieName\" ng-click=\"ctrl.moreInfo(ctrl.searchMovieName)\">More Info" +
                         "            <span class=\"glyphicon glyphicon-chevron-right\"></span>" +
                         "          </a>" +
                         "        </div>" +
