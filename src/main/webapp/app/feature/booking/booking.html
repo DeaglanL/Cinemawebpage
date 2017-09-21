@@ -10,105 +10,108 @@
         <li class="breadcrumb-item">Choose seat</li>
         <li class="breadcrumb-item">Confirm & Pay</li>
     </ol>
-
-    <div class="row col-md-6">
-        <h4>You are going to see:</h4>
-        <div class="">{{bookingCtrl.movieTitle}}</div>
-        <img ng-src="{{bookingCtrl.moviePosterThumbnail}}">
-        <div class="">
+    <div class="row">
+        <div class="col-md-4">
+            <h4>You are going to see:</h4>
             <div class="">
-                <label>Duration:</label>
                 <div class="">
-                    <span class="">{{bookingCtrl.movieLength}}</span>
+                    <span>{{bookingCtrl.movieTitle}}</span>
                 </div>
-            </div>
-            <div class="">
-                <label>At</label>
                 <div class="">
-                    <span class="">{{bookingCtrl.cinema}}</span>
-                    <span class="">{{bookingCtrl.screenName}}</span>
+                    <img ng-src="{{bookingCtrl.moviePosterThumbnail}}" alt="poster">
                 </div>
-            </div>
-            <div class="">
-                <label>On</label>
                 <div class="">
-                    <span class="date">{{bookingCtrl.screeningDate}}</span>
-                    <a class="" href="">change</a>
+                    <label>Duration:</label>
+                    <div class="">
+                        <span class="">{{bookingCtrl.movieLength}}</span>
+                    </div>
                 </div>
-            </div>
-            <div class="">
-                <label>Starting at</label>
                 <div class="">
-                    <span class="">{{bookingCtrl.screeningTime}}</span>
-                    <a class="" href="">change</a>
+                    <label>At:</label>
+                    <div class="">
+                        <span class="">{{bookingCtrl.cinema}}</span>
+                        <span class="">{{bookingCtrl.screenName}}</span>
+                    </div>
                 </div>
+                <div class="">
+                    <label>On:</label>
+                    <div class="">
+                        <span class="date">{{bookingCtrl.screeningDate}}</span>
+                    </div>
+                </div>
+                <div class="">
+                    <label>Starting at:</label>
+                    <div class="">
+                        <span class="">{{bookingCtrl.screeningTime}}</span>
+                    </div>
+                </div>
+                <a href="" class="">Change my booking</a>
             </div>
-            <a href="" class="">Change my booking</a>
         </div>
-    </div>
-    <div class="row col-lg-8">
-        <form ng-submit="bookingCtrl.submitTicketDetails()">
-            <table id="tickets-table" class="table">
-                <thead>
-                    <tr>
-                        <th class="">Ticket</th>
-                        <th class="">Price</th>
-                        <th class="">Quantity</th>
-                        <th class="">Subtotal</th>
+        <div class="col-lg-8">
+            <form ng-submit="bookingCtrl.submitTicketDetails()">
+                <table id="tickets-table" class="table">
+                    <thead>
+                        <tr>
+                            <th class="">Ticket</th>
+                            <th class="">Price</th>
+                            <th class="">Quantity</th>
+                            <th class="">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="">
+                        <td class=""><strong>Adult</strong></td>
+                        <td id="" class="">{{"£" + bookingCtrl.ticketPriceAdult}}</td>
+                        <td class="">
+                            <div class="">
+                                <select id="numAdults" class="" ng-model="bookingCtrl.numAdults">
+                                    <option selected value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td id="" class="">{{"£" + bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult}}</td>
                     </tr>
-                </thead>
-                <tbody>
-                <tr class="">
-                    <td class=""><strong>Adult</strong></td>
-                    <td id="" class="">{{bookingCtrl.ticketPriceAdult}}</td>
-                    <td class="">
-                        <div class="">
-                            <select name="" id="" class="" ng-model="ticketCtrl.numAdults">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td id="" class="">{{bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult}}</td>
-                </tr>
-                <tr class="">
-                    <td class=""><strong>Concession</strong> <i> > 16 years, students, and < 65 years</i></td>
-                    <td id="" class="">{{bookingCtrl.ticketPriceConcession}}</td>
-                    <td class="">
-                        <div class="">
-                            <select name="" id="" class="" ng-model="ticketCtrl.numConcessions">
-                                <option value="">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td id="" class="">{{bookingCtrl.numConcessions * bookingCtrl.ticketPriceAdult}}</td>
-                </tr>
-                <tr id="" class="">
-                    <td class="" colspan="3">Order value:</td>
-                    <td class="">{{bookingCtrl.numConcessions * bookingCtrl.ticketPriceAdult + bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult}}}</td>
-                </tr>
-                </tbody>
-            </table>>
-            <div class="inner">
-                <button name="submit" type="submit" class="btn-primary">Confirm tickets</button>
-            </div>
-        </form>
+                    <tr class="">
+                        <td class=""><strong>Concession</strong> <div><i> Children (under 16), students, and seniors</i></div></td>
+                        <td id="" class="">{{"£" + bookingCtrl.ticketPriceConcession}}</td>
+                        <td class="">
+                            <div class="">
+                                <select id="numConcessions" class="" ng-model="bookingCtrl.numConcessions">
+                                    <option selected value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td id="" class="">{{"£" + bookingCtrl.numConcessions * bookingCtrl.ticketPriceConcession}}</td>
+                    </tr>
+                    <tr id="" class="">
+                        <td class="" colspan="3">Order value:</td>
+                        <td class="">{{"£" + (bookingCtrl.numConcessions * bookingCtrl.ticketPriceConcession + bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult)}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="inner">
+                    <button name="submit" type="submit" class="btn-primary">Confirm tickets</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
