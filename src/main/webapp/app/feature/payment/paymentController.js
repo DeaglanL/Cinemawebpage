@@ -18,7 +18,7 @@
 
         vm.sendToPaypal = function() {
 
-        }
+        };
 
     };
 

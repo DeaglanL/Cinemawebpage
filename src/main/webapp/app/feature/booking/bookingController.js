@@ -23,7 +23,7 @@
                         "concessions":vm.numConcessions,
                         "screeningID":"",
                         "seatID":""};
-        }
+        };
     };
 
     angular.module("apolloCinema").controller("BookingController", [BookingController]);
