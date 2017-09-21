@@ -15,7 +15,7 @@
         }
 
         function checkIfRobot(honeypot) {
-            return !(honeypot==="");
+            return !(honeypot===undefined);
         }
 
         function resetPassword(user) {
@@ -34,7 +34,6 @@
             } else {
                 vm.wrongDetails = false;
                 userService.saveUser(user).then(function (results) {
-                    console.log("Logging in user " + user.name);
                     if (results!=="success") {
                         vm.wrongDetails = true;
                         vm.loginStatus = "Login failed";

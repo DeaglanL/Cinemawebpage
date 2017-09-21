@@ -14,29 +14,30 @@ describe("Login Form", function() {
         expect(loginCtrl).toBeDefined();
     });
 
-    let validData = [{"name":"username", "password":"Pa$$w0rd", "honeypot":""},
-                    {"name":"a1234", "password":"Pa$$w0rd", "honeypot":""},
-                    {"name":"b#&*^", "password":"Pa$$w0rd", "honeypot":""},
-                    {"name":"username", "password":"#aF7qqqq", "honeypot":""},
-                    {"name":"username", "password":"aF7QQQQ", "honeypot":""},
-                    {"name":"username", "password":"aF70000", "honeypot":""},
-                    {"name":"username", "password":"aF7====", "honeypot":""},];
+    let validData = [{"name":"username", "password":"Pa$$w0rd", "honeypot":undefined},
+                    {"name":"a1234", "password":"Pa$$w0rd", "honeypot":undefined},
+                    {"name":"b#&*^", "password":"Pa$$w0rd", "honeypot":undefined},
+                    {"name":"username", "password":"#aF7qqqq", "honeypot":undefined},
+                    {"name":"username", "password":"aF7QQQQ", "honeypot":undefined},
+                    {"name":"username", "password":"aF70000", "honeypot":undefined},
+                    {"name":"username", "password":"aF7====", "honeypot":undefined},];
 
     let invalidData = [{"name":"username", "password":"Pa$$w0rd", "honeypot":"text"},
                         {"name":"username", "password":"Pa$$w0rd", "honeypot":324},
                         {"name":"username", "password":"Pa$$w0rd", "honeypot":0},
                         {"name":"username", "password":"Pa$$w0rd", "honeypot":null},
-                        {"name":"abc", "password":"Pa$$w0rd", "honeypot":""},
-                        {"name":14664, "password":"Pa$$w0rd", "honeypot":""},
-                        {"name":"", "password":"Pa$$w0rd", "honeypot":""},
-                        {"name":null, "password":"Pa$$w0rd", "honeypot":""},
-                        {"name":"username", "password":"", "honeypot":""},
-                        {"name":"username", "password":null, "honeypot":""},
-                        {"name":"username", "password":985455508768, "honeypot":""},
-                        {"name":"username", "password":"DomoArigatoMrRob0to", "honeypot":""},
-                        {"name":"username", "password":"@Ki1roy", "honeypot":""},
-                        {"name":"username", "password":"parts#made#1n#japan", "honeypot":""},
-                        {"name":"username", "password":"#CELEBRATI0N", "honeypot":""}];
+                        {"name":"username", "password":"Pa$$w0rd", "honeypot":""},
+                        {"name":"abc", "password":"Pa$$w0rd", "honeypot":undefined},
+                        {"name":14664, "password":"Pa$$w0rd", "honeypot":undefined},
+                        {"name":"", "password":"Pa$$w0rd", "honeypot":undefined},
+                        {"name":null, "password":"Pa$$w0rd", "honeypot":undefined},
+                        {"name":"username", "password":"", "honeypot":undefined},
+                        {"name":"username", "password":null, "honeypot":undefined},
+                        {"name":"username", "password":985455508768, "honeypot":undefined},
+                        {"name":"username", "password":"DomoArigatoMrRob0to", "honeypot":undefined},
+                        {"name":"username", "password":"@Ki1roy", "honeypot":undefined},
+                        {"name":"username", "password":"parts#made#1n#japan", "honeypot":undefined},
+                        {"name":"username", "password":"#CELEBRATI0N", "honeypot":undefined}];
 
     afterEach(function() {
         //loginCtrl.verifyNoOutstandingExpectation();
