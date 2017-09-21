@@ -1,7 +1,7 @@
 "use strict";
 (function() {
 
-    const LoginController =  function() {
+    const LoginController =  function($http) {
         const vm = this;
 
         vm.wrongDetails = false;
@@ -25,18 +25,6 @@
             user.password = "";
         }
 
-        function confirmLogin(user) {
-            //await login details confirmation from server
-            if (confirmed) {
-                //logged in!
-                return true;
-            } else {
-                vm.wrongDetails = !vm.wrongDetails;
-                resetPassword(user);
-                return false;
-            }
-        }
-
         vm.loginSubmit = function(user) {
             if (checkIfRobot(user.honeypot)) {
                 return false;
@@ -51,7 +39,17 @@
                     url: "checkUserPATH",
                     data: user
                 }).then(function () {
-                        confirmLogin(user);
+                        $http({
+                            method: "GET",
+                            url: "confirmLoginPATH",
+                        }).then(function(){
+                            //logged in!
+                            return true;
+                        },function() {
+                            vm.wrongDetails = !vm.wrongDetails;
+                            resetPassword(user);
+                            return false;
+                        });
                     },
                     function (response) {
                         vm.error = true;
@@ -64,5 +62,5 @@
         };
     };
 
-    angular.module("apolloCinema").controller("LoginController", [LoginController]);
+    angular.module("apolloCinema").controller("LoginController", ["$http", LoginController]);
 }());

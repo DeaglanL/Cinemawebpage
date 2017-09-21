@@ -1,16 +1,13 @@
 "use strict";
 (function() {
 
-    const RegisterController =  function() {
+    const RegisterController =  function($http) {
         const vm = this;
 
         vm.takenUsername = false;
         vm.takenEmail = false;
 
-        vm.invalidUsername = false;
-        vm.invalidEmail = false;
-        vm.invalidPasswordFormat = false;
-        vm.passwordNotConfirmed = false;
+        vm.submitDisabled = true;
 
         vm.error = false;
 
@@ -18,105 +15,119 @@
             let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
             if (regexUsername.test(newUser.name)) {
                 vm.invalidUsername = false;
-                /*check if username is taken
-                  if (!checkPositive) {
-                    vm.takenUsername = true;
+                $http({
+                    method: "POST",
+                    url: "sendUsernamePATH",
+                    data: newUser.name
+                }).then(function() {
+                    $http({
+                        method: "GET",
+                        url: "confirmUsernamePATH",
+                    }).then(function(){
+                        if (response.data!=="success"){
+                            //username is not unique
+                            vm.takenUsername = true;
+                        }
+                    },function(response) {
+                        vm.error = true;
+                        vm.errorStatus = response.status;
+                        return false;
+                    });
+                },function(response) {
+                    vm.error = true;
+                    vm.errorStatus = response.status;
                     return false;
-                  } else {
-                    return true;
-                  }*/
+                });
             } else {
                 vm.invalidUsername = true;
-                return false;
             }
+            checkAllValid();
         };
 
         vm.validEmail = function (newUser) {
             let regexEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
             if (regexEmail.test(newUser.email)) {
                 vm.invalidEmail = false;
-                /*check if email is used
-                  if (!checkPositive) {
-                      vm.takenEmail = true;
-                      return false;
-                  } else {
-                      return true;
-                  }*/
+                $http({
+                    method: "POST",
+                    url: "sendEmailPATH",
+                    data: newUser.email
+                }).then(function() {
+                    $http({
+                        method: "GET",
+                        url: "confirmEmailPATH",
+                    }).then(function(response){
+                        if (response.data!=="success"){
+                            //email is not unique
+                            vm.takenEmail = true;
+                        }
+                    },function(response) {
+                        vm.error = true;
+                        vm.errorStatus = response.status;
+                        return false;
+                    });
+                },function(response) {
+                    vm.error = true;
+                    vm.errorStatus = response.status;
+                    return false;
+                });
             } else {
                 vm.invalidEmail = true;
-                return false;
             }
+            checkAllValid();
         };
 
         vm.validPasswordFormat = function (newUser) {
-            let regexPassword = /^(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/; //Must contain at least one number, one uppercase letter,
-            if (regexPassword.test(newUser.password)) {                            //one lowercase letter, one special character, and at least 8 or more characters
-                vm.invalidPasswordFormat = false;
-                return true;
-            } else {
-                vm.invalidPasswordFormat = true;
-                return false;
-            }
+            vm.invalidPasswordFormat = !((/^(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/).test(newUser.password));
+            //Must contain at least one number, one uppercase letter, one lowercase letter, one special character, and at least 8 or more characters
+            checkAllValid();
         };
 
         vm.validConfirmPassword = function (newUser) {
-            if (newUser.password === newUser.confirmPassword && newUser.password.length > 0) {
-                vm.passwordNotConfirmed = false;
-                return true;
-            } else {
-                vm.passwordNotConfirmed = true;
-                return false;
-            }
+            vm.passwordNotConfirmed = !(newUser.password === newUser.confirmPassword && newUser.password.length > 0);
+            checkAllValid();
         };
+
+        function checkAllValid() {
+            vm.submitDisabled = vm.invalidUsername||vm.invalidEmail||vm.invalidPasswordFormat||vm.passwordNotConfirmed;
+        }
 
         function checkIfRobot(newUser) {
             return !(newUser.honeypot==="");
         }
 
-        function confirmNewUser() {
-            //await confirmation from server
-            if (created) {
-                //new user created!
-                return true;
-            } else {
-                vm.error = true;
-                vm.errorStatus = response.status;
-                return false;
-            }
-        }
-
         vm.registerNew = function (newUser) {
             if (checkIfRobot(newUser)) {
                 return false;
-            }
-            if (!vm.validUsername(newUser)) {
-                return false;
-            }
-            if (!vm.validEmail(newUser)) {
-                return false;
-            }
-            if (!vm.validPasswordFormat(newUser)) {
-                return false;
-            }
-            if (!vm.validConfirmPassword(newUser)) {
-                return false;
             } else {
+                newUser.address = "";
+                newUser.dob = "";
+                newUser.phone = "";
                 $http({
                     method: "POST",
                     url: "createUserPATH",
                     data: newUser
                 }).then(function() {
-                        confirmNewUser();
+                        $http({
+                            method: "GET",
+                            url: "confirmNewUserPATH",
+                        }).then(function(){
+                            //new user created!
+                            return true;
+                        },function(response) {
+                            vm.error = true;
+                            vm.errorStatus = response.status;
+                            return false;
+                        });
                     },
                     function(response) {
                         vm.error = true;
                         vm.errorStatus = response.status;
                         return false;
                     });
-                return true;
             }
         };
     };
 
-    angular.module('apolloCinema').controller('RegisterController', [RegisterController]);
+    angular.module('apolloCinema').controller('RegisterController', ["$http", RegisterController]);
 }());
