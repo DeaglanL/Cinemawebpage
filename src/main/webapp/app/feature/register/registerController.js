@@ -1,5 +1,5 @@
 "use strict";
-(function() {
+(function () {
 
     let RegisterController =  function(userService) {
         let vm = this;

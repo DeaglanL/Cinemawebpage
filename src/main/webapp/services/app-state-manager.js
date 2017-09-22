@@ -51,7 +51,7 @@
             url:"/404",
             templateUrl:"app/feature/404/404.html"
 
-        })
+        });
 
     });
 }());

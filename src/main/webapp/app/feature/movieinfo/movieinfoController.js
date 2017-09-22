@@ -1,10 +1,10 @@
 "use strict";
-(function() {
+(function () {
 
-    let MovieInfoController =  function($rootScope,$state,apiGet,movieDal) {
+    let MovieInfoController = function ($rootScope, $state, apiGet, movieDal) {
         let vm = this;
 
-        vm.on = $rootScope.$on("callMoreInfo", function(event, movieName){
+        vm.on = $rootScope.$on("callMoreInfo", function (event, movieName) {
             vm.searchMoreInfo(movieName);
         });
 
@@ -13,7 +13,9 @@
         };
 
         vm.callMoreInfo = function (movieName) {
-            $state.go("movieinfo").then(function(){ $rootScope.$emit("callMoreInfo", movieName);} );
+            $state.go("movieinfo").then(function () {
+                $rootScope.$emit("callMoreInfo", movieName);
+            });
         };
 
         vm.searchMoreInfo = function (name) {
@@ -31,7 +33,7 @@
                 document.getElementById("Title").innerHTML = result.results[0].original_title;
                 document.getElementById("Adult").innerHTML = result.results[0].adult;
                 document.getElementById("Language").innerHTML = result.results[0].original_language;
-                html += "<img class=\"img-fluid\" src=\"https://image.tmdb.org/t/p/w500" + result.results[0].poster_path +"\" height=\"70%\" width=\"70%\">"
+                html += "<img class=\"img-fluid\" src=\"https://image.tmdb.org/t/p/w500" + result.results[0].poster_path + "\" height=\"70%\" width=\"70%\">";
                 searchMoreInfoPoster.innerHTML = html;
 
                 movieDal.getMovieInfo(movieID).then(function (result2) {
@@ -59,11 +61,21 @@
 
                 });
 
+                movieDal.movieVideo(movieID).then()(function (result4) {
+                    let movieVideoElement = document.getElementById("movieVideo");
+                    console.log(result4);
+                    let html = "";
+
+                    html += "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/QFH747sK200\" frameborder=\"0\" allowfullscreen></iframe>"
+                    movieVideoElement.innerHTML = html;
+
+                });
+
             });
 
         };
 
     };
 
-    angular.module('apolloCinema').controller('MovieInfoController', ["$rootScope","$state","apiGet","movieDal",MovieInfoController]);
+    angular.module("apolloCinema").controller("MovieInfoController", ["$rootScope", "$state", "apiGet", "movieDal", MovieInfoController]);
 }());
