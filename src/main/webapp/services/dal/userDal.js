@@ -15,7 +15,7 @@
         };
 
         this.updateUser = function (userToUpdate) {
-            return dal.http.PUT("rest/customer/json/", userToUpdate);
+            return dal.http.PUT("rest/customer/json", userToUpdate);
         };
 
         this.deleteUser = function (userToDelete) {

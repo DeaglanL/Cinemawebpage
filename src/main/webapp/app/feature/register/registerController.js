@@ -8,9 +8,9 @@
 
         vm.validUsername = function (newUser) {
             let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
-            if (regexUsername.test(newUser.name)) {
+            if (regexUsername.test(newUser.username)) {
                 vm.invalidUsername = false;
-                userService.checkUsername(newUser).then(function (results) {
+                /*userService.checkUsername(newUser).then(function (results) {
                     if (results!=="success") {
                         vm.takenUsername = true;
                         vm.registerStatus = "Username already taken";
@@ -21,7 +21,7 @@
                     vm.error = true;
                     vm.errorStatus = error.status;
                     vm.registerStatus = "Username check failed: error";
-                });
+                });*/
             } else {
                 vm.invalidUsername = true;
             }
@@ -32,7 +32,7 @@
             let regexEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
             if (regexEmail.test(newUser.email)) {
                 vm.invalidEmail = false;
-                userService.checkEmail(newUser).then(function (results) {
+                /*userService.checkEmail(newUser).then(function (results) {
                     if (results!=="success") {
                         vm.takenEmail = true;
                         vm.registerStatus = "Email already taken";
@@ -43,7 +43,7 @@
                     vm.error = true;
                     vm.errorStatus = error.status;
                     vm.registerStatus = "Email check failed: error";
-                });
+                });*/
             } else {
                 vm.invalidEmail = true;
             }
@@ -74,12 +74,14 @@
                 return false;
             } else {
                 delete newUser.honeypot;
+                delete newUser.confirmPassword;
+                newUser.name = "";
                 newUser.address = "";
                 newUser.dob = "";
                 newUser.phone = "";
-                userService.saveUser(newUser).then(function (results) {
-                    if (results!=="success") {
-                        vm.registerStatus = "User creation failed: " + results;
+                userService.updateUser(newUser).then(function (results) {
+                    if (results.message!=="success") {
+                        vm.registerStatus = "User creation failed: " + results.message;
                         return false;
                     } else {
                         vm.registerStatus = "New user created!";
@@ -87,7 +89,7 @@
                     }
                 }, function (error) {
                     vm.error = true;
-                    vm.errorStatus = error.status;
+                    vm.errorStatus = error;
                     vm.registerStatus = "User creation failed: error";
                     return false;
                 });
