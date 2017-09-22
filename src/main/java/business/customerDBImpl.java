@@ -31,9 +31,9 @@ public class customerDBImpl implements CustomerService {
     public customerDBImpl(){
          ip = "sql11.freemysqlhosting.net";
          port = "3306";
-         dbName = "sql11195115";
-         username = "sql11195115";
-         password = "p21IgmB3mn";
+         dbName = "sql11195757";
+         username = "sql11195757";
+         password = "h29t1DmlTl";
 
         conc = custControl.createConnection(ip, port, dbName, username, password);
     }
