@@ -1,0 +1,91 @@
+<div class="container" ng-controller="PaymentController as payCtrl">
+
+    <h1 class="mt-4 mb-3">Confirm & Pay
+        <small>Subheading</small>
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a ui-sref="home">Home</a></li>
+        <li class="breadcrumb-item"><a ui-sref="booking">Get tickets</a></li>
+        <li class="breadcrumb-item"><a ui-sref="seat">Choose seat</a></li>
+        <li class="breadcrumb-item active">Confirm & Pay</li>
+    </ol>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Please confirm the details of your ticket:</h4>
+            <div class="">
+                <div class="">
+                    <span class="text-info">{{payCtrl.movieTitle}}</span>
+                </div>
+                <div class="">
+                    <label>Duration:</label>
+                    <div class="">
+                        <span class="text-info">{{payCtrl.movieLength}}</span>
+                    </div>
+                </div>
+                <div class="">
+                    <label>At</label>
+                    <div class="">
+                        <span class="text-info">{{payCtrl.cinema}}</span>
+                        <span class="text-info">{{payCtrl.screenName}}</span>
+                    </div>
+                </div>
+                <div class="">
+                    <label>On</label>
+                    <div class="">
+                        <span class="text-info">{{payCtrl.screeningDate}}</span>
+                    </div>
+                </div>
+                <div class="">
+                    <label>Starts</label>
+                    <div class="">
+                        <span class="text-info">{{payCtrl.screeningTime}}</span>
+                    </div>
+                </div>
+                    <a href="" class="">Change my booking</a>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="inner">
+                <h3>Your order</h3>
+            </div>
+            <table id="orders-table" class="table">
+                <thead>
+                    <tr>
+                        <th class="">You're ordering</th>
+                        <th class="">Seats</th>
+                        <th class="">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td class=""><span class="">{{payCtrl.ticketType}}</span></td>
+                        <td class=""><span class="">{{payCtrl.seat}}</span></td>
+                        <td class="">{{"£" + payCtrl.ticketPrice}}</td>
+                    </tr>
+                    <!--<tr class="">
+                        <td class=""><span class="">{{payCtrl.ticketType}}</span></td>
+                        <td class=""><span class="">{{payCtrl.seat}}</span></td>
+                        <td class="">{{"£" + payCtrl.ticketPrice}}</td>
+                    </tr>
+                    <tr class="">
+                        <td class=""><span class="">{{payCtrl.ticketType}}</span></td>
+                        <td><span class="">{{payCtrl.seat}}</span></td>
+                        <td class="">{{"£" + payCtrl.ticketPrice}}</td>
+                    </tr>-->
+                    <tr class="">
+                        <td class="" colspan="2">Order value</td>
+                        <td class="">{{"£" + payCtrl.ticketPrice}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="">
+                <button class="btn-primary" ng-click="sendToPaypal()">
+                    Confirm order
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

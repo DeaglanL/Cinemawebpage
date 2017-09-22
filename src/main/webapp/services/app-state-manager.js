@@ -12,6 +12,10 @@
             url: "/about",
             templateUrl: "app/feature/about/about.html"
 
+        }).state("booking", {
+            url:"/gettickets",
+            templateUrl:"app/feature/booking/booking.html"
+
         }).state("contact", {
             url: "/contact",
             templateUrl: "app/feature/contact/contact.html"
@@ -27,6 +31,10 @@
         }).state("register", {
             url: "/register",
             templateUrl: "app/feature/register/register.html"
+
+        }).state("payment", {
+            url:"/confirm",
+            templateUrl:"app/feature/payment/payment.html"
 
         }).state("placetovisit", {
             url: "/placetovisit",
@@ -47,6 +55,10 @@
         }).state("movieinfo", {
             url: "/movieinfo",
             templateUrl: "app/feature/movieinfo/movieinfo.html"
+
+        }).state("seats", {
+            url:"/seats",
+            templateUrl:"app/feature/seats/seats.html"
 
         }).state("404", {
             url: "/404",
