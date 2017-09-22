@@ -1,3 +1,4 @@
+"use strict";
 (function() {
 
     let MovieInfoController =  function($rootScope,$state,apiGet,movieDal) {
@@ -18,13 +19,13 @@
         vm.searchMoreInfo = function (name) {
 
             apiGet.getMovie(name).then(function (result) {
-                console.log(result);
+
 
                 let searchMoreInfoPoster = document.getElementById("mofreinfomovieposter");
                 let html = "";
                 let movieID = result.results[0].id;
                 vm.movieName = result.results[0].title;
-                console.log(movieID);
+
 
                 document.getElementById("OverView").innerHTML = result.results[0].overview;
                 document.getElementById("Title").innerHTML = result.results[0].original_title;
@@ -34,7 +35,6 @@
                 searchMoreInfoPoster.innerHTML = html;
 
                 movieDal.getMovieInfo(movieID).then(function (result2) {
-                    console.log(result2);
 
                     document.getElementById("ReleaseDate").innerHTML = result2.release_date;
                     document.getElementById("Budget").innerHTML = result2.budget;
@@ -46,7 +46,6 @@
                 });
 
                 movieDal.similarMovie(movieID).then(function (result3) {
-                    console.log(result3.results);
 
                     vm.similarMovie1 = "https://image.tmdb.org/t/p/w500" + result3.results[0].poster_path;
                     vm.similarMovie2 = "https://image.tmdb.org/t/p/w500" + result3.results[1].poster_path;

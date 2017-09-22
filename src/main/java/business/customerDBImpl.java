@@ -57,9 +57,9 @@ public class customerDBImpl implements CustomerService {
         }
         catch (Exception e)
         {
-            return "Error text :" + e.toString();
+            return "{\"message\": \"Error: " + e.toString() + "\"}";
         }
-        return jsonCustomer;
+        return "{\"message\": \"success\"}";
     }
 
     public String checkCustomer(String jsonLogin) {
@@ -71,16 +71,16 @@ public class customerDBImpl implements CustomerService {
          {
              if (customer.getPassword().equals(creds.getPassword()))
              {
-                 return "success";
+                 return "{\"message\": \"success\"}";
              }
              else
              {
-                 return "Invaild user name or password";
+                 return "{\"message\": \"invaild user name or password\"}";
              }
          }
          else
          {
-             return "Cant find customer";
+             return "{\"message\": \"Cant find customer\"}";
          }
 
     }

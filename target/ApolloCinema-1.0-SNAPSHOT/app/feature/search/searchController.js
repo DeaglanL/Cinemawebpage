@@ -1,8 +1,8 @@
+"use strict";
 (function() {
 
-    var SearchController = function (apiGet, $rootScope) {
-        var vm = this;
-
+    let SearchController = function (apiGet, $rootScope) {
+        let vm = this;
 
         vm.on = $rootScope.$on("callSearch", function(event, sTerm){
                 vm.search(sTerm);
@@ -34,6 +34,7 @@
                 });
 
                 search.innerHTML = html;
+                return result;
             });
         };
     };

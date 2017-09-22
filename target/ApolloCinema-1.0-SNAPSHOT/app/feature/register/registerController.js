@@ -1,114 +1,101 @@
+"use strict";
 (function() {
 
-    var RegisterController =  function() {
-        var vm = this;
+    let RegisterController =  function(userService) {
+        let vm = this;
 
-        vm.takenUsername = false;
-        vm.takenEmail = false;
+        vm.submitDisabled = true;
 
-        vm.invalidUsername = false;
-        vm.invalidEmail = false;
-        vm.invalidPasswordFormat = false;
-        vm.passwordNotConfirmed = false;
-
-        vm.validUsername = function (username) {
-            var regexUsername = "/(?=.*[a-z]).{4,}/i"; //at least 4 characters including at least one lowercase letter
-            if (regexUsername.test(username)) {
-                //check if username is taken
-                //if (!checkPositive) {
-                //  vm.takenUsername = !vm.takenUsername;
-                //  return false;
-                //} else {
-                //  return true;
-                //}
+        vm.validUsername = function (newUser) {
+            let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
+            if (regexUsername.test(newUser.username)) {
+                vm.invalidUsername = false;
+                /*userService.checkUsername(newUser).then(function (results) {
+                    if (results!=="success") {
+                        vm.takenUsername = true;
+                        vm.registerStatus = "Username already taken";
+                    } else {
+                        vm.registerStatus = "Username available!";
+                    }
+                }, function (error) {
+                    vm.error = true;
+                    vm.errorStatus = error.status;
+                    vm.registerStatus = "Username check failed: error";
+                });*/
             } else {
-                vm.invalidUsername = !vm.invalidUsername;
-                return false;
+                vm.invalidUsername = true;
             }
+            checkAllValid();
         };
 
-        vm.validEmail = function (email) {
-            var regexEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-            if (regexEmail.test(email)) {
-                //check if email is used
-                //if (!checkPositive) {
-                //  vm.takenEmail = !vm.takenEmail;
-                //  return false;
-                //} else {
-                //  return true;
-                //}
+        vm.validEmail = function (newUser) {
+            let regexEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+            if (regexEmail.test(newUser.email)) {
+                vm.invalidEmail = false;
+                /*userService.checkEmail(newUser).then(function (results) {
+                    if (results!=="success") {
+                        vm.takenEmail = true;
+                        vm.registerStatus = "Email already taken";
+                    } else {
+                        vm.registerStatus = "Email available!";
+                    }
+                }, function (error) {
+                    vm.error = true;
+                    vm.errorStatus = error.status;
+                    vm.registerStatus = "Email check failed: error";
+                });*/
             } else {
-                vm.invalidEmail = !vm.invalidEmail;
-                return false;
+                vm.invalidEmail = true;
             }
+            checkAllValid();
         };
 
-        vm.validatePasswordFormat = function (newUser) {
-            var regexPassword = "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i";
-            if (!regexPassword.test(newUser.password)) {
-                vm.invalidPasswordFormat = !vm.invalidPasswordFormat;
-                return false;
-            } else {
-                return true;
-            }
+        vm.validPasswordFormat = function (newUser) {
+            vm.invalidPasswordFormat = !((/^(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/).test(newUser.password));
+            //Must contain at least one number, one uppercase letter, one lowercase letter, one special character, and at least 8 or more characters
+            checkAllValid();
         };
 
-        vm.validateConfirmPassword = function (newUser) {
-            if (newUser.password === newUser.confirmPassword && newUser.password.length > 0) {
-                return true;
-            } else {
-                vm.passwordNotConfirmed = !vm.passwordNotConfirmed;
-                return false;
-            }
+        vm.validConfirmPassword = function (newUser) {
+            vm.passwordNotConfirmed = !(newUser.password === newUser.confirmPassword && newUser.password.length > 0);
+            checkAllValid();
         };
 
-        function validateHuman(honeypot) {
-            return !!honeypot;
+        function checkAllValid() {
+            vm.submitDisabled = vm.invalidUsername||vm.invalidEmail||vm.invalidPasswordFormat||vm.passwordNotConfirmed;
+        }
+
+        function checkIfRobot(newUser) {
+            return !(newUser.honeypot===undefined);
         }
 
         vm.registerNew = function (newUser) {
-            if (validateHuman(newUser.honeypot)) {  //if form is filled, form will not be submitted
-                alert("Robot detected");
-                return false;
-            }
-            if (!vm.validUsername) {
-                alert("Username not valid!");
-                return false;
-            }
-            if (!vm.validEmail) {
-                alert("Email not valid!");
-                return false;
-            }
-            if (!vm.validatePasswordFormat) {
-                alert("Password not valid!");
-                return false;
-            }
-            if (!vm.validateConfirmPassword) {
-                alert("Password not confirmed!");
+            if (checkIfRobot(newUser)) {
                 return false;
             } else {
-                //TODO: test functions
-                /*var addNewUser = "";          //Not yet linked to server, does nothing atm
-                $http({
-                    method: "POST",
-                    url: addNewUser,
-                    data: user
-                }).then(function(response) {
-                        //await confirmation from server
-                        if (newUserCreated) {
-                            //route to homepage
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    },
-                    function(response) { // optional
-                        alert("ERROR 500: Unable to create user");
+                delete newUser.honeypot;
+                delete newUser.confirmPassword;
+                newUser.name = "";
+                newUser.address = "";
+                newUser.dob = "";
+                newUser.phone = "";
+                userService.updateUser(newUser).then(function (results) {
+                    if (results.message!=="success") {
+                        vm.registerStatus = "User creation failed: " + results.message;
                         return false;
-                    });*/
+                    } else {
+                        vm.registerStatus = "New user created!";
+                        return true;
+                    }
+                }, function (error) {
+                    vm.error = true;
+                    vm.errorStatus = error;
+                    vm.registerStatus = "User creation failed: error";
+                    return false;
+                });
             }
         };
     };
 
-    angular.module('apolloCinema').controller('RegisterController', [RegisterController]);
+    angular.module("apolloCinema").controller("RegisterController", ["userService", RegisterController]);
 }());

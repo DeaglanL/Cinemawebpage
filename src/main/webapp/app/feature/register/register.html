@@ -23,7 +23,7 @@
       <div class="cform" id="registerform">
         <form action="" method="post" role="form" class="contactForm" id="register" ng-submit="registerCtrl.registerNew(newUser)">
           <div class="form-group">
-            <input name="name" class="form-control" id="registername" placeholder="Username" ng-blur="registerCtrl.validUsername(newUser)" ng-model="newUser.name" required/>
+            <input name="name" class="form-control" id="registername" placeholder="Username" ng-blur="registerCtrl.validUsername(newUser)" ng-model="newUser.username" required/>
             <div class="validation" ng-show="registerCtrl.takenUsername">
               <p class="text-danger">Username already taken, please choose another</p>
             </div>
