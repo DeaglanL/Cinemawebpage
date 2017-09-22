@@ -9,24 +9,24 @@
             templateUrl: "app/feature/home/home.html"
 
         }).state("about", {
-            url:"/about",
-            templateUrl:"app/feature/about/about.html"
+            url: "/about",
+            templateUrl: "app/feature/about/about.html"
 
         }).state("contact", {
-            url:"/contact",
-            templateUrl:"app/feature/contact/contact.html"
+            url: "/contact",
+            templateUrl: "app/feature/contact/contact.html"
 
         }).state("movielist", {
-            url:"/movielist",
-            templateUrl:"app/feature/movielist/movieListing.html"
+            url: "/movielist",
+            templateUrl: "app/feature/movielist/movieListing.html"
 
         }).state("login", {
-            url:"/login",
-            templateUrl:"app/feature/login/login.html"
+            url: "/login",
+            templateUrl: "app/feature/login/login.html"
 
         }).state("register", {
-            url:"/register",
-            templateUrl:"app/feature/register/register.html"
+            url: "/register",
+            templateUrl: "app/feature/register/register.html"
 
         }).state("placetovisit", {
             url: "/placetovisit",
@@ -37,19 +37,20 @@
             templateUrl: "app/feature/search/search.html"
 
         }).state("pricing", {
-            url:"/pricing",
-            templateUrl:"app/feature/pricing/pricing.html"
+            url: "/pricing",
+            templateUrl: "app/feature/pricing/pricing.html"
+
         }).state("parkinglocation", {
             url: "/parkinglocation",
             templateUrl: "app/feature/parkinglocation/parkinglocation.html"
 
         }).state("movieinfo", {
-            url:"/movieinfo",
-            templateUrl:"app/feature/movieinfo/movieinfo.html"
+            url: "/movieinfo",
+            templateUrl: "app/feature/movieinfo/movieinfo.html"
 
         }).state("404", {
-            url:"/404",
-            templateUrl:"app/feature/404/404.html"
+            url: "/404",
+            templateUrl: "app/feature/404/404.html"
 
         });
 
