@@ -84,6 +84,19 @@
             vm.comingSoonFilm4 = comingSoonMovieName4;
             vm.comingSoonFilm5 = comingSoonMovieName5;
 
+            apiGet.getMovie(comingSoonMovieName1).then(function (result) {
+
+                vm.comingSoonFilmPoster1 = "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.comingSoonFilmDescription1 = result.results[0].overview;
+
+                let movieID = result.results[0].id;
+
+                apiGet.movieVideo(movieID).then(function (result2) {
+                    console.log(result2.results[1].key);
+                    vm.comingSoonFilm1YoutubeKey = "https://www.youtube.com/embed/" + result2.results[1].key;
+                })
+            });
+
             vm.moreInfo = function (movieName) {
                 vm.callMoreInfo(movieName);
             };
@@ -100,5 +113,5 @@
         vm.getPic();
 
     };
-    angular.module("apolloCinema").controller("HomeController", ["$rootScope", "$state", "apiGet", HomeController]);
+    angular.module("apolloCinema").controller("HomeController", ["$rootScope", "$state", "apiGet", "$sce", HomeController]);
 }());
