@@ -12,9 +12,9 @@
         vm.screeningDate = "Date of screening";
         vm.screeningTime = "Time of screening";
 
-        vm.ticketType = "";
-        vm.seat = "";
-        vm.ticketPrice = "";
+        vm.ticketType = "Adult ticket";
+        vm.seat = "4D";
+        vm.ticketPrice = "10.00";
 
         vm.sendToPaypal = function() {
 
