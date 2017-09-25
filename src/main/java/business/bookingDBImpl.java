@@ -1,4 +1,4 @@
 package business;
 
-public class BookingImpl {
+public class bookingDBImpl implements BookingService{
 }
