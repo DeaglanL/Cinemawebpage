@@ -1,6 +1,6 @@
 "use strict";
 (function () {
-    let HomeController = function ($rootScope, $state, apiGet) {
+    let HomeController = function ($rootScope, $state, apiGet, $sce) {
 
         let vm = this;
 
@@ -93,7 +93,7 @@
 
                 apiGet.movieVideo(movieID).then(function (result2) {
                     console.log(result2.results[1].key);
-                    vm.comingSoonFilm1YoutubeKey = "https://www.youtube.com/embed/" + result2.results[1].key;
+                    vm.comingSoonFilm1YoutubeKey = $sce.trustAsHtml("https://www.youtube.com/embed/" + result2.results[1].key);
                 })
             });
 
