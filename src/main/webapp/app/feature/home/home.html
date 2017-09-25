@@ -8,28 +8,26 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active" style="background-image: url('{{ctrl.Src1}}')">
+                <div class="carousel-item active" style="background-image: url('{{ctrl.Src1}}')" ng-model="movieName"
+                     ng-click="ctrl.moreInfo(ctrl.slideShowMovie1)">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3 ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.slideShowMovie1)">
-                            {{ctrl.slideShowMovie1}}</h3>
+                        <h3>{{ctrl.slideShowMovie1}}</h3>
                         <p>{{ctrl.movieTagline1}}</p>
                     </div>
                 </div>
                 <!-- Slide Two - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background-image: url('{{ctrl.Src2}}')">
-                    <div class="carousel-caption d-none d-md-block" ng-model="movieName"
-                         ng-click="ctrl.moreInfo(ctrl.slideShowMovie2)">
-                        <h3>
-                            {{ctrl.slideShowMovie2}}</h3>
+                <div class="carousel-item" style="background-image: url('{{ctrl.Src2}}')" ng-model="movieName"
+                     ng-click="ctrl.moreInfo(ctrl.slideShowMovie2)">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>{{ctrl.slideShowMovie2}}</h3>
                         <p>{{ctrl.movieTagline2}}</p>
                     </div>
                 </div>
                 <!-- Slide Three - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background-image: url('{{ctrl.Src3}}')">
-                    <div class="carousel-caption d-none d-md-block" ng-model="movieName"
-                         ng-click="ctrl.moreInfo(ctrl.slideShowMovie3)">
-                        <h3>
-                            {{ctrl.slideShowMovie3}}</h3>
+                <div class="carousel-item" style="background-image: url('{{ctrl.Src3}}')" ng-model="movieName"
+                     ng-click="ctrl.moreInfo(ctrl.slideShowMovie3)">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>{{ctrl.slideShowMovie3}}</h3>
                         <p>{{ctrl.movieTagline3}}</p>
                     </div>
                 </div>
