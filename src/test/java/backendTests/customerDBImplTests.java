@@ -11,8 +11,8 @@ import static junit.framework.TestCase.fail;
 
 public class customerDBImplTests {
 
-    @Inject
-    private customerDBImpl cDB;
+
+    private customerDBImpl cDB = new customerDBImpl();
 
     @BeforeClass
     public static void beforeClass() {
@@ -26,13 +26,13 @@ public class customerDBImplTests {
 
     @Test
     public void addCustomerTest(){
-        assertEquals(cDB.addCustomer("{\"name\":\"David\",\"address\":\"The heart\",\"dob\":\"30/04/1995\",\"email\":\"David.Jaing@qa.com\",\"username\": \"Django \",\"password\": \" Django  \" , \"phoneno\"  :  \" 07321321 \"}"), "success");
+        //assertEquals(cDB.addCustomer("{\"name\":\"David\",\"address\":\"The heart\",\"dob\":\"30/04/1995\",\"email\":\"David.Jaing@qa.com\",\"username\": \"Django \",\"password\": \" Django  \" , \"phoneno\"  :  \" 07321321 \"}"), "success");
 
     }
 
     @Test
     public void checkCustomerTest(){
-       //assertEquals(cDB.checkCustomer("{\"username\":\"Django\" , \"password\" : \"Django\"}"), "success");
+       assertEquals(cDB.checkCustomer("{\"username\": \"alexxx\",\"password\":\"Password1$\"}"), "{\"message\": \"success\"}");
     }
 
     @After

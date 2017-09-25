@@ -6,7 +6,7 @@ import javax.ws.rs.*;
 import business.CustomerService;
 
 @Path("/customer")
-public class CustomerEndPoint {
+public class customerEndPoint {
 
     @Inject
     private CustomerService customerService;
