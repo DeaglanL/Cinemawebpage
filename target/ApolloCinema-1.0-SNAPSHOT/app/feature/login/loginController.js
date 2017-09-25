@@ -16,22 +16,22 @@
             if (checkIfRobot(user.honeypot)) {
                 return false;
             } else {
-                vm.wrongDetails = false;
                 delete user.honeypot;
-                userService.saveUser(user).then(function (results) {
+                userService.verify(user).then(function (results) {
                     if (results.message!=="success") {
                         vm.wrongDetails = true;
-                        vm.loginStatus = "Login failed: wrong details";
+                        vm.loginStatus = "Login failed: " + results.message;
                         resetPassword(user);
                         return false;
                     } else {
                         //logged in!
+                        vm.wrongDetails = false;
                         vm.loginStatus = "Login success!";
                         return true;
                     }
                 }, function (error) {
                     vm.error = true;
-                    vm.errorStatus = error.status + error;
+                    vm.errorStatus = error.status + " " + error.toString();
                     vm.loginStatus = "Login failed: error";
                     resetPassword(user);
                     return false;

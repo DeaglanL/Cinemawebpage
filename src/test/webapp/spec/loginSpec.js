@@ -5,6 +5,7 @@ describe("Login Form", function() {
 
     beforeEach(module("ui.router"));
     beforeEach(module("apolloCinema"));
+    beforeEach(module(""));
 
     beforeEach(inject(function($controller, $httpBackend) {
         loginCtrl = $controller("LoginController",{$httpBackend});

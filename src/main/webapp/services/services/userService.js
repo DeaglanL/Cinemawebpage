@@ -9,14 +9,14 @@
             return userDal.getUser();
         };
 
-        this.saveUser = function(user)
+        this.verify = function(user)
         {
-            return userDal.saveUser(user);
+            return userDal.verify(user);
         };
 
-        this.updateUser = function(user)
+        this.add = function(user)
         {
-            return userDal.updateUser(user);
+            return userDal.add(user);
         };
 
         this.deleteUser = function(user)

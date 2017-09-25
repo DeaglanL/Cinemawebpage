@@ -29,11 +29,11 @@ public class customerDBImpl implements CustomerService {
     Gson gson = new Gson();
 
     public customerDBImpl(){
-         ip = "sql11.freemysqlhosting.net";
+         ip = "46.32.240.39";
          port = "3306";
-         dbName = "sql11195757";
-         username = "sql11195757";
-         password = "h29t1DmlTl";
+         dbName = "apoll-6cn-u-141443";
+         username = "apoll-6cn-u-141443";
+         password = "6.wME^^fk";
 
         conc = custControl.createConnection(ip, port, dbName, username, password);
     }

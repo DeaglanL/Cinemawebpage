@@ -38,7 +38,7 @@
                     return deferred.promise;
                 },
 
-                PUT: function (apiPath, itemToSave) {
+                PUT: function (apiPath, itemToUpdate) {
                     let deferred = $q.defer();
                     $http(
                         {
@@ -48,10 +48,10 @@
                                 "Accept": "application/json, text/plain, */*",
                                 "Content-Type": "application/json;charset=UTF-8"
                             },
-                            data: JSON.stringify(itemToSave)
+                            data: JSON.stringify(itemToUpdate)
                         }
                     ).then(function (results) {
-                        deferred.resolve(results);
+                        deferred.resolve(results.data);
                     }, function (e) {
                         deferred.reject(e);
                     });
