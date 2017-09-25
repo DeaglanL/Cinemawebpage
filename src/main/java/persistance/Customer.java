@@ -1,15 +1,17 @@
 package persistance;
 
-public  class Customer{
 
-    private String id;
-    private String name;
-    private String address;
-    private String dob;
-    private String email;
-    private String password;
-    private String phoneno;
-    private String username;
+public  class Customer extends CustomerTableController{
+
+
+private String id;
+private String name;
+private String address;
+private String dob;
+private String email;
+private String password;
+private String phoneno;
+private String username;
 
     public Customer(String id, String name, String address, String dob, String email, String password, String phoneno, String username) {
         this.id = id;

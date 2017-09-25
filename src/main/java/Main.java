@@ -1,18 +1,19 @@
-/*import persistance.Customer;
+import java.sql.Connection;
 
 public class Main {
 
     public static void main(String[] args) {
 
+/*
+        TicketTableController x = new TicketTableController();
 
 
-Customer y = new Customer(4,"sql11.freemysqlhosting.net","3306", "sql11195115", "sql11195115", "p21IgmB3mn");
+        persistance.MasterController y = new persistance.MasterController();
+        Connection conn = y.createConnection("46.32.240.39 ", "3306", "apoll-ila-u-141465", "apoll-ila-u-141465", "gMgN/yVq3");
 
-y.jsonObject();
+        System.out.println(x.getMovieById(1, conn).getTitle());
 
-
-
+    */
 
     }
-
-} */
+}

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import persistance.Credentials;
 import persistance.Customer;
 import persistance.CustomerTableController;
+import persistance.MasterController;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
@@ -23,6 +24,7 @@ public class customerDBImpl implements CustomerService {
 
     private Connection conc;
 
+    private MasterController mc = new MasterController();
 
     private CustomerTableController custControl = new CustomerTableController();
 
@@ -35,7 +37,7 @@ public class customerDBImpl implements CustomerService {
          username = "apoll-6cn-u-141443";
          password = "6.wME^^fk";
 
-        conc = custControl.createConnection(ip, port, dbName, username, password);
+        conc = mc.createConnection(ip, port , dbName , username , password);
     }
 
     public customerDBImpl(String ip,String port,String dbName, String username,String password){
@@ -45,7 +47,7 @@ public class customerDBImpl implements CustomerService {
         this.username = username;
         this.password = password;
 
-        conc = custControl.createConnection(ip, port, dbName, username, password);
+        conc = mc.createConnection(ip, port , dbName , username , password);
     }
 
     public String addCustomer(String jsonCustomer) {
