@@ -65,8 +65,8 @@ public class Ticket extends TicketTableController {
     }
 
     public String getFilmTiltle() {
-        this.filmTiltle = customerInfo.get(4);
-        return filmTiltle;
+        this.filmTitle = customerInfo.get(4);
+        return filmTitle;
     }
 
     public String getPrice() {

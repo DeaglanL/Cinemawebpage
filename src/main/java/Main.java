@@ -1,14 +1,28 @@
 import Customers.Customer;
+import Customers.CustomerTableController;
+import Movies.MovieTableController;
+import Tickets.Ticket;
+
+import java.sql.Connection;
+import java.util.Calendar;
 
 public class Main {
 
     public static void main(String[] args) {
 
 
+        TicketTableController x = new TicketTableController();
 
-Customer y = new Customer(4,"sql11.freemysqlhosting.net","3306", "sql11195115", "sql11195115", "p21IgmB3mn");
 
-y.jsonObject();
+        MasterController y = new MasterController();
+        Connection conn = y.createConnection("46.32.240.39 ", "3306", "apoll-ila-u-141465", "apoll-ila-u-141465", "gMgN/yVq3");
+
+        System.out.println(x.getMovieById(1, conn).getTitle());
+
+
+
+
+
 
 
 
