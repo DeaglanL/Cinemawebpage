@@ -13,7 +13,110 @@
             </li>
             <li class="breadcrumb-item active">Search</li>
         </ol>
-        <div id="results"></div>
+
+        <div>
+            <div id="searchResult1" class="row">
+                <div class="col-md-6">
+                    <a>
+                        <img id="moviePoster1" class="img-fluid rounded mb-3 mb-md-0"
+                             src="{{ctrl.searchMoviePosterList[0]}}" width="50%" align="middle">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>{{ctrl.searchMovieNameList[0]}}</h3>
+                    <p>{{ctrl.searchMovieOverviewList[0]}}</p>
+                    <a ng-model="movieName"
+                       ng-click="ctrl.moreInfo(ctrl.searchMovieNameList[0])">
+                        <button class="button" style="vertical-align:middle">
+                            <span>More Info</span>
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+            <hr>
+
+            <div id="searchResult2" class="row">
+                <div class="col-md-6">
+                    <a>
+                        <img id="moviePoster2" class="img-fluid rounded mb-3 mb-md-0"
+                             src="{{ctrl.searchMoviePosterList[1]}}" width="50%" align="middle">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>{{ctrl.searchMovieNameList[1]}}</h3>
+                    <p>{{ctrl.searchMovieOverviewList[1]}}</p>
+                    <a ng-model="movieName"
+                       ng-click="ctrl.moreInfo(ctrl.searchMovieNameList[1])">
+                        <button class="button" style="vertical-align:middle">
+                            <span>More Info</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <hr>
+
+            <div id="searchResult3" class="row">
+                <div class="col-md-6">
+                    <a>
+                        <img id="moviePoster3" class="img-fluid rounded mb-3 mb-md-0"
+                             src="{{ctrl.searchMoviePosterList[2]}}" width="50%" align="middle">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>{{ctrl.searchMovieNameList[2]}}</h3>
+                    <p>{{ctrl.searchMovieOverviewList[2]}}</p>
+                    <a ng-model="movieName"
+                       ng-click="ctrl.moreInfo(ctrl.searchMovieNameList[2])">
+                        <button class="button" style="vertical-align:middle">
+                            <span>More Info</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <hr>
+
+            <div id="searchResult4" class="row">
+                <div class="col-md-6">
+                    <a>
+                        <img id="moviePoster4" class="img-fluid rounded mb-3 mb-md-0"
+                             src="{{ctrl.searchMoviePosterList[3]}}" width="50%" align="middle">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>{{ctrl.searchMovieNameList[3]}}</h3>
+                    <p>{{ctrl.searchMovieOverviewList[3]}}</p>
+                    <a ng-model="movieName"
+                       ng-click="ctrl.moreInfo(ctrl.searchMovieNameList[3])">
+                        <button class="button" style="vertical-align:middle">
+                            <span>More Info</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <hr>
+
+            <div id="searchResult5" class="row">
+                <div class="col-md-6">
+                    <a>
+                        <img id="moviePoster5" class="img-fluid rounded mb-3 mb-md-0"
+                             src="{{ctrl.searchMoviePosterList[4]}}" width="50%" align="middle">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>{{ctrl.searchMovieNameList[4]}}</h3>
+                    <p>{{ctrl.searchMovieOverviewList[4]}}</p>
+                    <a ng-model="movieName"
+                       ng-click="ctrl.moreInfo(ctrl.searchMovieNameList[4])">
+                        <button class="button" style="vertical-align:middle">
+                            <span>More Info</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <hr>
+        </div>
+
     </div>
 
 </div>

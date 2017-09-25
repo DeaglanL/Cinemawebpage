@@ -10,30 +10,16 @@
 
         vm.search = function (term) {
             apiGet.getMovie(term).then(function (result) {
-                let search = document.getElementById("results");
-                let html = "";
-                html += "<h2 id = \"searchResultTitle\">Search results:</h2>";
 
-                result.results.forEach(function (movie) {
-                    vm.movieNameSearch = movie.title;
-                    html += "<div id=\"searchResult\" class=\"row\" >" +
-                        "        <div class=\"col-md-6\">" +
-                        "          <a href=\"#\">" +
-                        "            <img id=\"moviePoster\" class=\"img-fluid rounded mb-3 mb-md-0\" src=\"https://image.tmdb.org/t/p/w500" + movie.poster_path + "\" width=\"50%\" align=\"middle\">" +
-                        "          </a>" +
-                        "        </div>" +
-                        "        <div class=\"col-md-5\">" +
-                        "          <h3>" + movie.title + "</h3>" +
-                        "          <p>Release Date: " + movie.release_date + "</p>" +
-                        "          <p>" + movie.overview + "</p>" +
-                        "          <a class=\"btn btn-primary\" ui-sref=\"home\" ng-model=\"movieName\" ng-click=\"ctrl.moreInfo(ctrl.movieNameSearch)\">More Info" +
-                        "            <span class=\"glyphicon glyphicon-chevron-right\"></span>" +
-                        "          </a>" +
-                        "        </div>" +
-                        "      </div><hr>";
+                vm.searchMovieNameList = [];
+                vm.searchMoviePosterList = [];
+                vm.searchMovieOverviewList = [];
 
-                });
-                search.innerHTML = html;
+                for (let i = 0; i < 6; i++) {
+                    vm.searchMovieNameList[i] = result.results[i].title;
+                    vm.searchMoviePosterList[i] = "https://image.tmdb.org/t/p/w500" + result.results[i].poster_path;
+                    vm.searchMovieOverviewList [i] = result.results[i].overview;
+                }
 
 
                 vm.moreInfo = function (movieName) {
