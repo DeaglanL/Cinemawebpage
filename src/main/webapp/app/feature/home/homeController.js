@@ -1,6 +1,6 @@
 "use strict";
 (function () {
-    let HomeController = function ($rootScope, $state, apiGet) {
+    let HomeController = function ($rootScope, $state, apiGet, $sce) {
 
         let vm = this;
 
@@ -93,7 +93,59 @@
 
                 apiGet.movieVideo(movieID).then(function (result2) {
                     console.log(result2.results[1].key);
-                    vm.comingSoonFilm1YoutubeKey = "https://www.youtube.com/embed/" + result2.results[1].key;
+                    vm.comingSoonFilm1YoutubeKey = $sce.trustAsHtml("https://www.youtube.com/embed/" + result2.results[1].key);
+                })
+            });
+
+            apiGet.getMovie(comingSoonMovieName2).then(function (result) {
+
+                vm.comingSoonFilmPoster2 = "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.comingSoonFilmDescription2 = result.results[0].overview;
+
+                let movieID = result.results[0].id;
+
+                apiGet.movieVideo(movieID).then(function (result2) {
+                    console.log(result2.results[1].key);
+                    vm.comingSoonFilm2YoutubeKey = "https://www.youtube.com/embed/" + result2.results[1].key;
+                })
+            });
+
+            apiGet.getMovie(comingSoonMovieName3).then(function (result) {
+
+                vm.comingSoonFilmPoster3 = "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.comingSoonFilmDescription3 = result.results[0].overview;
+
+                let movieID = result.results[0].id;
+
+                apiGet.movieVideo(movieID).then(function (result2) {
+                    console.log(result2.results[1].key);
+                    vm.comingSoonFilm3YoutubeKey = "https://www.youtube.com/embed/" + result2.results[1].key;
+                })
+            });
+
+            apiGet.getMovie(comingSoonMovieName4).then(function (result) {
+
+                vm.comingSoonFilmPoster4 = "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.comingSoonFilmDescription4 = result.results[0].overview;
+
+                let movieID = result.results[0].id;
+
+                apiGet.movieVideo(movieID).then(function (result2) {
+                    console.log(result2.results[1].key);
+                    vm.comingSoonFilm4YoutubeKey = "https://www.youtube.com/embed/" + result2.results[1].key;
+                })
+            });
+
+            apiGet.getMovie(comingSoonMovieName5).then(function (result) {
+
+                vm.comingSoonFilmPoster5 = "https://image.tmdb.org/t/p/w500" + result.results[0].backdrop_path;
+                vm.comingSoonFilmDescription5 = result.results[0].overview;
+
+                let movieID = result.results[0].id;
+
+                apiGet.movieVideo(movieID).then(function (result2) {
+                    console.log(result2.results[1].key);
+                    vm.comingSoonFilm5YoutubeKey = "https://www.youtube.com/embed/" + result2.results[1].key;
                 })
             });
 
