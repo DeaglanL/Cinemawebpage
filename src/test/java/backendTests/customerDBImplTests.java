@@ -3,17 +3,17 @@ package backendTests;
 import com.qa.springboot.business.customerDBImpl;
 import org.junit.*;
 
-import javax.inject.Inject;
-
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.fail;
 
 public class customerDBImplTests {
 
-@Inject
-private customerDBImpl cDB;
 
-@BeforeClass
-public static void beforeClass() {
-}
+    private customerDBImpl cDB = new customerDBImpl();
+
+    @BeforeClass
+    public static void beforeClass() {
+    }
 
 @Before
 public void beforeTest() {
