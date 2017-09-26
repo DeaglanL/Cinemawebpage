@@ -74,7 +74,6 @@
                 return false;
             } else {
                 let newUser = {"name":newName, "address":"", "dob":newDob, "email":newEmail, "username":newUsername, "password":newPassword, "phone":"07000000000"};
-                console.log("Created new user object");
                 userService.add(newUser).then(function (results) {
                     if (results.message!=="success") {
                         vm.registerStatus = "User creation failed: " + results.message;
@@ -84,7 +83,6 @@
                         return true;
                     }
                 }, function (error) {
-                    console.log("ERROR: " + error);
                     vm.error = true;
                     vm.errorStatus = error.status;
                     vm.registerStatus = "User creation failed: error";

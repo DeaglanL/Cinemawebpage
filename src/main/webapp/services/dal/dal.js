@@ -5,9 +5,7 @@
     angular.module('apolloCinema').service("dal", ["$http", "$q", "$log", Dal]);
 
     function Dal ($http, $q, $log) {
-        console.log("in DAL method");
         this.http = (function serviceCaller() {
-            console.log("choosing HTTP method");
             return {
 
                 GET: function (apiPath) {
@@ -21,7 +19,6 @@
                 },
 
                 POST: function (apiPath, itemToPost) {
-                    console.log("In POST DAL");
                     let deferred = $q.defer();
                     $http(
                         {
@@ -34,17 +31,14 @@
                             data: JSON.stringify(itemToPost)
                         }
                     ).then(function (results) {
-                        console.log("Resolved successfully");
                         deferred.resolve(results.data);
                     }, function (e) {
-                        console.log("DAL failed");
                         deferred.reject(e);
                     });
                     return deferred.promise;
                 },
 
                 PUT: function (apiPath, itemToPut) {
-                    console.log("In PUT DAL");
                     let deferred = $q.defer();
                     $http(
                         {
@@ -57,10 +51,8 @@
                             data: JSON.stringify(itemToPut)
                         }
                     ).then(function (results) {
-                        console.log("Resolved successfully");
-                        deferred.resolve(results.data);
+                        deferred.resolve(results);
                     }, function (e) {
-                        console.log("DAL failed");
                         deferred.reject(e);
                     });
                     return deferred.promise;

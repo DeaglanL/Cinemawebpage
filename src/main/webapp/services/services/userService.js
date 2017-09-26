@@ -11,13 +11,11 @@
 
         this.verify = function(user)
         {
-            console.log("verify user method called");
             return userDal.verify(user);
         };
 
         this.add = function(user)
         {
-            console.log("add user method called");
             return userDal.add(user);
         };
 
