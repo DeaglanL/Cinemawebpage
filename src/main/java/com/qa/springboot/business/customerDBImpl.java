@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.qa.springboot.persistance.Credentials;
 import com.qa.springboot.persistance.Customer;
 import com.qa.springboot.persistance.CustomerTableController;
+import com.qa.springboot.persistance.MasterController;
 import org.springframework.stereotype.Service;
 import java.sql.Connection;
 
@@ -19,6 +20,7 @@ public class customerDBImpl implements CustomerService {
 
     private Connection conc;
 
+    private MasterController mc = new MasterController();
 
     private CustomerTableController custControl = new CustomerTableController();
 
@@ -31,7 +33,7 @@ public class customerDBImpl implements CustomerService {
          username = "apoll-6cn-u-141443";
          password = "6.wME^^fk";
 
-        conc = custControl.createConnection(ip, port, dbName, username, password);
+        conc = mc.createConnection(ip, port, dbName, username, password);
     }
 
     public customerDBImpl(String ip,String port,String dbName, String username,String password){
@@ -41,7 +43,7 @@ public class customerDBImpl implements CustomerService {
         this.username = username;
         this.password = password;
 
-        conc = custControl.createConnection(ip, port, dbName, username, password);
+        conc = mc.createConnection(ip, port, dbName, username, password);
     }
 
     public String addCustomer(String jsonCustomer) {
