@@ -1,4 +1,4 @@
-package interoperability;
+package com.qa.springboot.interoperability;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

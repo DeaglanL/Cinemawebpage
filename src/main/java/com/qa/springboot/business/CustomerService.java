@@ -1,4 +1,4 @@
-package business;
+package com.qa.springboot.business;
 
 public interface CustomerService {
     String addCustomer(String jsonCustomer);

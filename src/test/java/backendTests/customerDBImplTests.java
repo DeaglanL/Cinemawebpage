@@ -1,6 +1,6 @@
 package backendTests;
 
-import business.customerDBImpl;
+import com.qa.springboot.business.customerDBImpl;
 import org.junit.*;
 
 import javax.inject.Inject;
