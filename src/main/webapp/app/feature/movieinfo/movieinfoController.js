@@ -21,7 +21,7 @@
         vm.searchMoreInfo = function (name) {
 
             apiGet.getMovie(name).then(function (result) {
-
+                $rootScope.sharedMovieName = name;
 
                 let searchMoreInfoPoster = document.getElementById("mofreinfomovieposter");
                 let html = "";
@@ -74,6 +74,7 @@
             });
 
         };
+
 
     };
 

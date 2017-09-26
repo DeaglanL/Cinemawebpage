@@ -1,11 +1,11 @@
 "use strict";
 
-(function() {
+(function () {
 
-    let BookingController =  function() {
+    let BookingController = function ($rootScope) {
         let vm = this;
 
-        vm.movieTitle = "Movie Title";
+        vm.movieTitle = $rootScope.sharedMovieName;
         vm.moviePosterThumbnail = "";
         vm.movieLength = "##mins";
         vm.cinema = "Cinema";
@@ -19,12 +19,25 @@
         vm.ticketPriceConcession = "7.50";
 
         vm.submitTicketDetails = function () {
-            let ticket = {"adults":vm.numAdults,
-                        "concessions":vm.numConcessions,
-                        "screeningID":"",
-                        "seatID":""};
+            let ticket = {
+                "adults": vm.numAdults,
+                "concessions": vm.numConcessions,
+                "screeningID": "",
+                "seatID": ""
+            };
         };
+
+        cinemaApp.controller('MainCtrl2', ['$scope', 'dataShare',
+            function ($scope, dataShare) {
+
+                $scope.text = '';
+                $scope.$on('data_shared', function () {
+                    var text = dataShare.getData();
+                    $scope.text = text;
+                });
+            }
+        ]);
     };
 
-    angular.module("apolloCinema").controller("BookingController", [BookingController]);
+    angular.module("apolloCinema").controller("BookingController", ["$rootScope", BookingController]);
 }());
