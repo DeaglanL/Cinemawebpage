@@ -1,7 +1,10 @@
 package com.qa.springboot.persistance;
+import org.springframework.stereotype.Controller;
+
+
 import java.sql.*;
 
-
+@Controller
 public class CustomerTableController {
 
 

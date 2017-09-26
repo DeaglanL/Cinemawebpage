@@ -5,9 +5,6 @@ import com.qa.springboot.persistance.Credentials;
 import com.qa.springboot.persistance.Customer;
 import com.qa.springboot.persistance.CustomerTableController;
 import org.springframework.stereotype.Service;
-
-import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 import java.sql.Connection;
 
 @Service
