@@ -5,20 +5,20 @@ import java.sql.*;
 public class ScreeningTableController {
 
 
-    public void putScreening(Connection myConnection, String cinema, String screeid, String time, String movieid, String date, String movies_movieid, String movies_customers_customersid, String screens_screensid) {
-        String query = " insert into screenings (cinema, screeid, time, movieid, date, movies_movieid, movies_customers_customersid, screens_screensid)"
-                + " values (?,?,?,?,?,?,?)";
+    public void putScreening(Connection myConnection, String cinema, int screenid, String time, String movieid, String date, String movies_movieid, String movies_customers_customersid, String screens_screensid) {
+        String query = " insert into screenings (cinema, screenid, time, movieid, date, movies_movieid, movies_customers_customersid, screens_screensid)"
+                + " values (?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStmt;
         try {
             preparedStmt = myConnection.prepareStatement(query);
             preparedStmt.setString (1, cinema);
-            preparedStmt.setInt (2, screeid);
-            preparedStmt.setInt (3, time);
+            preparedStmt.setInt (2, screenid);
+            preparedStmt.setString (3, time);
             preparedStmt.setString (4, movieid);
-            preparedStmt.setInt (5, date);
-            preparedStmt.setInt (6, movies_movieid);
+            preparedStmt.setString (5, date);
+            preparedStmt.setString (6, movies_movieid);
             preparedStmt.setString (7, movies_customers_customersid);
-            preparedStmt.setInt (8, screens_screensid);
+            preparedStmt.setString (8, screens_screensid);
             preparedStmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -26,53 +26,51 @@ public class ScreeningTableController {
     }
 
 
-    public Screening getProductById(int id, Connection myConnection){
+    public Screening getScreeningById(int id, Connection myConnection){
 
-        Screen currentScreen;
+        Screening currentScreening;
 
-        String screenid ="";
-        String type ="";
         String screeningid ="";
-        String seatid ="";
-
-
+        String cinema ="";
+        String screenid ="";
+        String time ="";
+        String movieid ="";
+        String date ="";
+        String movies_movieid ="";
+        String movies_customers_customersid ="";
+        String screens_screensid ="";
 
         try {
             Statement stmt = myConnection.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from products where productid = " + "\"" + id + "\"");
+            ResultSet rs = stmt.executeQuery("select * from screening where screeningid = " + "\"" + id + "\"");
             while (rs.next()) {
+                screeningid  = screeningid  + rs.getString("screeningid ");
+                cinema = cinema + rs.getString("cinema");
                 screenid = screenid + rs.getString("screenid");
-                type = type + rs.getString("type");
-                screeningid = screeningid + rs.getString("screeningid" );
-                seatid = seatid + rs.getString("seatid" );
+                time = time + rs.getString("time" );
+                movieid = movieid + rs.getString("movieid" );
+                date = date + rs.getString("date");
+                movies_movieid = movies_movieid + rs.getString("movies_movieid");
+                movies_customers_customersid = movies_customers_customersid + rs.getString("movies_customers_customersid" );
+                screens_screensid = screens_screensid + rs.getString("screens_screensid" );
 
             }
 
         } catch (SQLException e) {
-
             e.printStackTrace();
         }
-
-        currentScreen =  new Screen(screenid,type,screeningid,seatid);
-        return currentScreen;
+         currentScreening=  new Screening(screeningid,cinema,screenid,time,movieid, date, movies_movieid, movies_customers_customersid, screens_screensid);
+        return currentScreening;
     }
-
-
     public  void removeScreenById(Connection myConnection,int id) {
-        String query = "delete from screens where screensid = ?";
-
+        String query = "delete from screening where screeningid = ?";
         try {
-
             PreparedStatement preparedStmt = myConnection.prepareStatement(query);
             preparedStmt.setInt(1, id);
             preparedStmt.execute();
-
-
         } catch (SQLException e) {
-
             e.printStackTrace();
         }
-
 
     }
 }
