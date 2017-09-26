@@ -1,6 +1,6 @@
 package Customers;
 
-import java.sql.Connection;
+
 
 
 public  class Customer extends CustomerTableController{

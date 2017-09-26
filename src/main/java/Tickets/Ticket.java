@@ -4,91 +4,109 @@ import java.sql.Connection;
 
 public class Ticket extends TicketTableController {
 
-    private String customers_customersid;
-    private String ticketId;
-    private String screening_screeningId;
-    private String date;
-    private String filmTitle;
-    private String price;
-    private String time;
-    private String type;
-    private String seatNumber;
+    private String ticketId ="";
+    private String type ="";
+    private String time ="";
+    private String date ="";
+    private String seatNumber ="";
+    private String filmTitle ="";
+    private String customers_customersid ="";
+    private String screening_screeningid ="";
+    private String screening_movies_movieid ="";
+    private String screening_movies_customers_customersid ="";
 
 
-
-    private String id;
-    private String ipAddress;
-    private String port;
-    private String dbName;
-    private String dbPassword;
-    private String dbUsername;
-
-
-
-
-    private TicketTableController myController ;
-    private Connection myConnection ;
-
-    public Ticket(int id,String ipAddress,String port, String dbName, String dbUsername ,String dbPassword) {
-        this.ipAddress = ipAddress;
-        this.port = port;
-        this.dbName = dbName;
-        this.dbPassword = dbPassword;
-        this.dbUsername = dbUsername;
-        myController = new TicketTableController();
-        myConnection = myController.createConnection(ipAddress, port, dbName, dbUsername, dbPassword);
-        getInfo(id,myConnection);
+    public Ticket(String ticketId, String type, String time, String date, String seatNumber, String filmTitle, String customers_customersid, String screening_screeningid, String screening_movies_movieid, String screening_movies_customers_customersid) {
+        this.ticketId = ticketId;
+        this.type = type;
+        this.time = time;
+        this.date = date;
+        this.seatNumber = seatNumber;
+        this.filmTitle = filmTitle;
+        this.customers_customersid = customers_customersid;
+        this.screening_screeningid = screening_screeningid;
+        this.screening_movies_movieid = screening_movies_movieid;
+        this.screening_movies_customers_customersid = screening_movies_customers_customersid;
     }
 
-    public Connection getMyConnection() {
-        return myConnection;
-    }
-
-    public String getCustomers_customersid() {
-        this.customers_customersid = customerInfo.get(3);
-        return customers_customersid;
-    }
 
     public String getTicketId() {
-        this.ticketId = customerInfo.get(1);
         return ticketId;
     }
 
-    public String getScreening_screeningId() {
-        this.screening_screeningId = customerInfo.get(2);
-        return screening_screeningId;
-    }
-
-    public String getDate() {
-        this.date = customerInfo.get(5);
-        return date;
-    }
-
-    public String getFilmTiltle() {
-        this.filmTitle = customerInfo.get(4);
-        return filmTitle;
-    }
-
-    public String getPrice() {
-        this.price = customerInfo.get(7);
-        return price;
-    }
-
-    public String getTime() {
-        this.time = customerInfo.get(6);
-        return time;
-    }
-
     public String getType() {
-        this.type = customerInfo.get(8);
         return type;
     }
 
-    public String seatNumber() {
-        this.seatNumber = customerInfo.get(9);
+    public String getTime() {
+        return time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getSeatNumber() {
         return seatNumber;
     }
 
+    public String getFilmTitle() {
+        return filmTitle;
+    }
 
+    public String getCustomers_customersid() {
+        return customers_customersid;
+    }
 
+    public String getScreening_screeningid() {
+        return screening_screeningid;
+    }
+
+    public String getScreening_movies_movieid() {
+        return screening_movies_movieid;
+    }
+
+    public String getScreening_movies_customers_customersid() {
+        return screening_movies_customers_customersid;
+    }
+
+    public void setTicketId(String ticketId) {
+        this.ticketId = ticketId;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setSeatNumber(String seatNumber) {
+        this.seatNumber = seatNumber;
+    }
+
+    public void setFilmTitle(String filmTitle) {
+        this.filmTitle = filmTitle;
+    }
+
+    public void setCustomers_customersid(String customers_customersid) {
+        this.customers_customersid = customers_customersid;
+    }
+
+    public void setScreening_screeningid(String screening_screeningid) {
+        this.screening_screeningid = screening_screeningid;
+    }
+
+    public void setScreening_movies_movieid(String screening_movies_movieid) {
+        this.screening_movies_movieid = screening_movies_movieid;
+    }
+
+    public void setScreening_movies_customers_customersid(String screening_movies_customers_customersid) {
+        this.screening_movies_customers_customersid = screening_movies_customers_customersid;
+    }
 }
