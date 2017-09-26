@@ -1,6 +1,4 @@
-package Tickets;
-
-import java.sql.Connection;
+package persistance.Tickets;
 
 public class Ticket extends TicketTableController {
 

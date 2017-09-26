@@ -1,4 +1,4 @@
-package Products;
+package persistance.Products;
 
 public class Product {
     private String productid;

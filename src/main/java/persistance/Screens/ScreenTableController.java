@@ -1,4 +1,4 @@
-package Screens;
+package persistance.Screens;
 
 import java.sql.*;
 

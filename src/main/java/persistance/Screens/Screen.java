@@ -1,4 +1,4 @@
-package Screens;
+package persistance.Screens;
 
 public class Screen {
 

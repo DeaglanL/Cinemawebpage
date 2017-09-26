@@ -1,5 +1,5 @@
-package Tickets;
-import Customers.Customer;
+package persistance.Tickets;
+
 
 import java.sql.*;
 
