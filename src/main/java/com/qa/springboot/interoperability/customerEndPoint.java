@@ -1,9 +1,9 @@
-package interoperability;
+package com.qa.springboot.interoperability;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 
-import business.CustomerService;
+import com.qa.springboot.business.CustomerService;
 
 @Path("/customer")
 public class customerEndPoint {

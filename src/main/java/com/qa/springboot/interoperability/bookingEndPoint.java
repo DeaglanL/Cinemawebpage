@@ -1,6 +1,6 @@
-package interoperability;
+package com.qa.springboot.interoperability;
 
-import business.BookingService;
+import com.qa.springboot.business.BookingService;
 
 import javax.inject.Inject;
 import javax.ws.rs.POST;

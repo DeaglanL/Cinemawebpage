@@ -1,4 +1,4 @@
-package business;
+package com.qa.springboot.business;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;

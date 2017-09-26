@@ -1,14 +1,13 @@
-package business;
+package com.qa.springboot.business;
 
 import com.google.gson.Gson;
-import persistance.Credentials;
-import persistance.Customer;
-import persistance.CustomerTableController;
-import persistance.MasterController;
+import com.qa.springboot.persistance.Credentials;
+import com.qa.springboot.persistance.Customer;
+import com.qa.springboot.persistance.CustomerTableController;
+import com.qa.springboot.persistance.MasterController;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
-import javax.inject.Inject;
 import java.sql.Connection;
 
 @Default
