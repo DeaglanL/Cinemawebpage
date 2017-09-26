@@ -9,14 +9,16 @@
             return userDal.getUser();
         };
 
-        this.saveUser = function(user)
+        this.verify = function(user)
         {
-            return userDal.saveUser(user);
+            console.log("verify user method called");
+            return userDal.verify(user);
         };
 
-        this.updateUser = function(user)
+        this.add = function(user)
         {
-            return userDal.updateUser(user);
+            console.log("add user method called");
+            return userDal.add(user);
         };
 
         this.deleteUser = function(user)

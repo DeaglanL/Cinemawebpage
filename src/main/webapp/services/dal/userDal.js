@@ -10,12 +10,14 @@
             return dal.http.GET("rest/customer/json");
         };
 
-        this.saveUser = function (userToSave) {
-            return dal.http.POST("rest/customer/json", userToSave);
+        this.verify = function (userToCheck) {
+            console.log("Initiating POST DAL");
+            return dal.http.POST("rest/customer/json", userToCheck);
         };
 
-        this.updateUser = function (userToUpdate) {
-            return dal.http.PUT("rest/customer/json", userToUpdate);
+        this.add = function (userToAdd) {
+            console.log("Initiating PUT DAL");
+            return dal.http.PUT("rest/customer/json", userToAdd);
         };
 
         this.deleteUser = function (userToDelete) {

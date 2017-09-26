@@ -6,9 +6,9 @@
 
         vm.submitDisabled = true;
 
-        vm.validUsername = function (newUser) {
+        vm.validUsername = function (newUsername) {
             let regexUsername = /^(?=.{5,})(?=.*[a-z]).*$/; //at least 5 characters including at least one lowercase letter
-            if (regexUsername.test(newUser.username)) {
+            if (regexUsername.test(newUsername)) {
                 vm.invalidUsername = false;
                 /*userService.checkUsername(newUser).then(function (results) {
                     if (results!=="success") {
@@ -28,9 +28,9 @@
             checkAllValid();
         };
 
-        vm.validEmail = function (newUser) {
+        vm.validEmail = function (newEmail) {
             let regexEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-            if (regexEmail.test(newUser.email)) {
+            if (regexEmail.test(newEmail)) {
                 vm.invalidEmail = false;
                 /*userService.checkEmail(newUser).then(function (results) {
                     if (results!=="success") {
@@ -50,14 +50,14 @@
             checkAllValid();
         };
 
-        vm.validPasswordFormat = function (newUser) {
-            vm.invalidPasswordFormat = !((/^(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/).test(newUser.password));
+        vm.validPasswordFormat = function (newPassword) {
+            vm.invalidPasswordFormat = !((/^(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/).test(newPassword));
             //Must contain at least one number, one uppercase letter, one lowercase letter, one special character, and at least 8 or more characters
             checkAllValid();
         };
 
-        vm.validConfirmPassword = function (newUser) {
-            vm.passwordNotConfirmed = !(newUser.password === newUser.confirmPassword && newUser.password.length > 0);
+        vm.validConfirmPassword = function (newPassword, newConfirmPassword) {
+            vm.passwordNotConfirmed = !(newPassword === newConfirmPassword && newPassword.length > 0);
             checkAllValid();
         };
 
@@ -65,21 +65,17 @@
             vm.submitDisabled = vm.invalidUsername||vm.invalidEmail||vm.invalidPasswordFormat||vm.passwordNotConfirmed;
         }
 
-        function checkIfRobot(newUser) {
-            return !(newUser.honeypot===undefined);
+        function checkIfRobot(newHoneypot) {
+            return !(newHoneypot===undefined);
         }
 
-        vm.registerNew = function (newUser) {
-            if (checkIfRobot(newUser)) {
+        vm.registerNew = function (newName, newDob, newEmail, newUsername, newHoneypot, newPassword) {
+            if (checkIfRobot(newHoneypot)) {
                 return false;
             } else {
-                delete newUser.honeypot;
-                delete newUser.confirmPassword;
-                newUser.name = "";
-                newUser.address = "";
-                newUser.dob = "";
-                newUser.phone = "";
-                userService.updateUser(newUser).then(function (results) {
+                let newUser = {"name":newName, "address":"", "dob":newDob, "email":newEmail, "username":newUsername, "password":newPassword, "phone":"07000000000"};
+                console.log("Created new user object");
+                userService.add(newUser).then(function (results) {
                     if (results.message!=="success") {
                         vm.registerStatus = "User creation failed: " + results.message;
                         return false;
@@ -88,8 +84,9 @@
                         return true;
                     }
                 }, function (error) {
+                    console.log("ERROR: " + error);
                     vm.error = true;
-                    vm.errorStatus = error;
+                    vm.errorStatus = error.status;
                     vm.registerStatus = "User creation failed: error";
                     return false;
                 });
