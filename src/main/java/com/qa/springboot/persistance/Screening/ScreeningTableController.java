@@ -1,4 +1,4 @@
-package Screening;
+package com.qa.springboot.persistance.Screening;
 
 import java.sql.*;
 
