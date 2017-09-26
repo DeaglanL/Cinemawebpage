@@ -1,4 +1,4 @@
-package com.qa.springboot.persistance.movie;
+package com.qa.springboot.persistance;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
