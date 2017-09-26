@@ -1,10 +1,10 @@
-package persistance;
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Default;
+package com.qa.springboot.persistance;
+import org.springframework.stereotype.Controller;
+
+
 import java.sql.*;
-import java.util.HashMap;
 
-
+@Controller
 public class CustomerTableController {
 
 
