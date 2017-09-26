@@ -2,9 +2,9 @@ package com.qa.springboot.business;
 
 import com.google.gson.Gson;
 import com.qa.springboot.persistance.Credentials;
-import com.qa.springboot.persistance.Customer;
-import com.qa.springboot.persistance.CustomerTableController;
-import com.qa.springboot.persistance.MasterController;
+import com.qa.springboot.persistance.customer.Customer;
+import com.qa.springboot.persistance.customer.CustomerTableController;
+import com.qa.springboot.persistance.movie.MasterController;
 import org.springframework.stereotype.Service;
 import java.sql.Connection;
 

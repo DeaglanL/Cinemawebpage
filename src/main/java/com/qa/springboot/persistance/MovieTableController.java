@@ -1,5 +1,7 @@
 package com.qa.springboot.persistance;
 
+import com.qa.springboot.persistance.movie.Movie;
+
 import java.sql.*;
 
 public class MovieTableController {
