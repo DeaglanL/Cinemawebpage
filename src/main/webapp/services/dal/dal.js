@@ -5,7 +5,9 @@
     angular.module('apolloCinema').service("dal", ["$http", "$q", "$log", Dal]);
 
     function Dal ($http, $q, $log) {
+        console.log("in DAL method");
         this.http = (function serviceCaller() {
+            console.log("choosing HTTP method");
             return {
 
                 GET: function (apiPath) {
@@ -18,7 +20,8 @@
                     return deferred.promise;
                 },
 
-                POST: function (apiPath, itemToSave) {
+                POST: function (apiPath, itemToPost) {
+                    console.log("In POST DAL");
                     let deferred = $q.defer();
                     $http(
                         {
@@ -28,17 +31,20 @@
                                 "Accept": "application/json, text/plain, */*",
                                 "Content-Type": "application/json;charset=UTF-8"
                             },
-                            data: JSON.stringify(itemToSave)
+                            data: JSON.stringify(itemToPost)
                         }
                     ).then(function (results) {
+                        console.log("Resolved successfully");
                         deferred.resolve(results.data);
                     }, function (e) {
+                        console.log("DAL failed");
                         deferred.reject(e);
                     });
                     return deferred.promise;
                 },
 
-                PUT: function (apiPath, itemToUpdate) {
+                PUT: function (apiPath, itemToPut) {
+                    console.log("In PUT DAL");
                     let deferred = $q.defer();
                     $http(
                         {
@@ -48,11 +54,13 @@
                                 "Accept": "application/json, text/plain, */*",
                                 "Content-Type": "application/json;charset=UTF-8"
                             },
-                            data: JSON.stringify(itemToUpdate)
+                            data: JSON.stringify(itemToPut)
                         }
                     ).then(function (results) {
+                        console.log("Resolved successfully");
                         deferred.resolve(results.data);
                     }, function (e) {
+                        console.log("DAL failed");
                         deferred.reject(e);
                     });
                     return deferred.promise;

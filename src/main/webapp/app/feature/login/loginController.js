@@ -17,6 +17,7 @@
                 return false;
             } else {
                 delete user.honeypot;
+                console.log("credentials object ready");
                 userService.verify(user).then(function (results) {
                     if (results.message!=="success") {
                         vm.wrongDetails = true;
@@ -30,9 +31,9 @@
                         return true;
                     }
                 }, function (error) {
+                    console.log("ERROR: " + error);
                     vm.error = true;
-                    vm.errorStatus = error.status + " " + error.toString();
-                    vm.loginStatus = "Login failed: error";
+                    vm.errorStatus = error.status;
                     resetPassword(user);
                     return false;
                 });
