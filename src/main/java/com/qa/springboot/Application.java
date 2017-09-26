@@ -12,16 +12,24 @@ import java.util.Arrays;
 @Controller
 @SpringBootApplication
 public class Application {
+	public static Boolean debug;
 	public static void main(String[] args)
 	{
-		ApplicationContext ctx = SpringApplication.run(Application.class, args);
+		debug = false;
 
-		System.out.println("Let's inspect the beans provided by Spring Boot:");
+		if(debug) {
+			ApplicationContext ctx = SpringApplication.run(Application.class, args);
 
-		String[] beanNames = ctx.getBeanDefinitionNames();
-		Arrays.sort(beanNames);
-		for (String beanName : beanNames) {
-			System.out.println(beanName);
+			System.out.println("Let's inspect the beans provided by Spring Boot:");
+
+			String[] beanNames = ctx.getBeanDefinitionNames();
+			Arrays.sort(beanNames);
+			for (String beanName : beanNames) {
+				System.out.println(beanName);
+			}
 		}
+		else
+			SpringApplication.run(Application.class, args);
+
 	}
 }
