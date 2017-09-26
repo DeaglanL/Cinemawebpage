@@ -1,7 +1,5 @@
 package Cinemas;
 
-import Tickets.Ticket;
-
 import java.sql.*;
 
 public class CinemaTableController {
