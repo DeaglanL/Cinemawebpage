@@ -1,4 +1,4 @@
-package Cinemas;
+package com.qa.springboot.persistance.Cinemas;
 
 import java.sql.*;
 

@@ -1,4 +1,4 @@
-package persistance.Products;
+package com.qa.springboot.persistance.Products;
 
 public class Product {
     private String productid;

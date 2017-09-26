@@ -1,4 +1,4 @@
-package persistance.Screens;
+package com.qa.springboot.persistance.Screens;
 
 import java.sql.*;
 

@@ -1,4 +1,4 @@
-package persistance.Products;
+package com.qa.springboot.persistance.Products;
 
 import java.sql.*;
 

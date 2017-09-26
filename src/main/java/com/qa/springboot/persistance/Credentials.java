@@ -1,4 +1,4 @@
-package persistance;
+package com.qa.springboot.persistance;
 
 public class Credentials {
     private String username;

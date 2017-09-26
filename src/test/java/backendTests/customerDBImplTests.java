@@ -1,9 +1,7 @@
 package backendTests;
 
-import business.customerDBImpl;
+import com.qa.springboot.business.customerDBImpl;
 import org.junit.*;
-
-import javax.inject.Inject;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;

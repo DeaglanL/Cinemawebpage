@@ -1,6 +1,6 @@
 package backendTests;
 
-import business.bookingDBImpl;
+import com.qa.springboot.business.bookingDBImpl;
 import org.junit.*;
 
 import static junit.framework.TestCase.assertEquals;

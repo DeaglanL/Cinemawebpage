@@ -1,4 +1,4 @@
-package persistance.Tickets;
+package com.qa.springboot.persistance.Tickets;
 
 
 import java.sql.*;
