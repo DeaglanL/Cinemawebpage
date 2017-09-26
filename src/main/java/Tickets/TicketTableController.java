@@ -7,7 +7,7 @@ public class TicketTableController {
 
 
     public void putTicket(Connection myConnection, String type, String time, String date, int seatNumber, String filmTitle, int customers_customersid, int screening_screeningid, int screening_movies_movieid, int screening_movies_customers_customersid) {
-        String query = " insert into tickets (String type, String time, String date, int seatNumber, String filmTitle, int customers_customersid, int screening_screeningid, int screening_movies_movieid, int screening_movies_customers_customersid)"
+        String query = " insert into tickets (type,time, date,seatNumber, filmTitle, customers_customersid, screening_screeningid, screening_movies_movieid, screening_movies_customers_customersid)"
                 + " values (?,?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStmt;
         try {
@@ -94,20 +94,4 @@ public class TicketTableController {
     }
 
 
-    public  void removeMovieByName(Connection myConnection,String titlex) {
-        String query = "delete from movies where title = ?";
-
-        try {
-
-            PreparedStatement preparedStmt = myConnection.prepareStatement(query);
-            preparedStmt.setString(1, titlex);
-            preparedStmt.execute();
-
-
-
-        } catch (SQLException e) {
-
-            e.printStackTrace();
-        }
-    }
 }
