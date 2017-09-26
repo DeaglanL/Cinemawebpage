@@ -6,7 +6,7 @@ public class ScreeningTableController {
 
 
     public void putScreening(Connection myConnection, String cinema, int screenid, String time, String movieid, String date, String movies_movieid, String movies_customers_customersid, String screens_screensid) {
-        String query = " insert into screenings (cinema, screenid, time, movieid, date, movies_movieid, movies_customers_customersid, screens_screensid)"
+        String query = " insert into screening (cinema, screenid, time, movieid, date, movies_movieid, movies_customers_customersid, screens_screensid)"
                 + " values (?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStmt;
         try {

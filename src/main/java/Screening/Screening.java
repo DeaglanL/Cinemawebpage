@@ -3,7 +3,7 @@ package Screening;
 public class Screening {
     private String screeningid;
     private String cinema;
-    private String screeid;
+    private String screenid;
     private String time;
     private String movieid;
     private String date;
@@ -12,10 +12,10 @@ public class Screening {
     private String screens_screensid;
 
 
-    public Screening(String screeningid, String cinema, String screeid, String time, String movieid, String date, String movies_movieid, String movies_customers_customersid, String screens_screensid) {
+    public Screening(String screeningid, String cinema, String screenid, String time, String movieid, String date, String movies_movieid, String movies_customers_customersid, String screens_screensid) {
         this.screeningid = screeningid;
         this.cinema = cinema;
-        this.screeid = screeid;
+        this.screenid = screenid;
         this.time = time;
         this.movieid = movieid;
         this.date = date;
@@ -33,8 +33,8 @@ public class Screening {
         return cinema;
     }
 
-    public String getScreeid() {
-        return screeid;
+    public String getscreenid() {
+        return screenid;
     }
 
     public String getTime() {
@@ -69,8 +69,8 @@ public class Screening {
         this.cinema = cinema;
     }
 
-    public void setScreeid(String screeid) {
-        this.screeid = screeid;
+    public void setscreenid(String screenid) {
+        this.screenid = screenid;
     }
 
     public void setTime(String time) {
