@@ -28,7 +28,6 @@
                 let movieID = result.results[0].id;
                 vm.movieName = result.results[0].title;
 
-
                 document.getElementById("OverView").innerHTML = result.results[0].overview;
                 document.getElementById("Title").innerHTML = result.results[0].original_title;
                 document.getElementById("Adult").innerHTML = result.results[0].adult;
@@ -37,6 +36,10 @@
                 searchMoreInfoPoster.innerHTML = html;
 
                 movieDal.getMovieInfo(movieID).then(function (result2) {
+
+                    movieDal.movieVideo(movieID).then(function (result4) {
+                        vm.comingSoonFilm1YoutubeKey = ("https://www.youtube.com/embed/" + result4.results[1].key);
+                    });
 
                     $rootScope.sharedMovie2 = result2;
                     document.getElementById("ReleaseDate").innerHTML = result2.release_date;
@@ -61,17 +64,6 @@
                     vm.similarMoviename4 = result3.results[3].title;
 
                 });
-
-                movieDal.movieVideo(movieID).then()(function (result4) {
-                    let movieVideoElement = document.getElementById("movieVideo");
-                    console.log(result4);
-                    let html = "";
-
-                    html += "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/QFH747sK200\" frameborder=\"0\" allowfullscreen></iframe>"
-                    movieVideoElement.innerHTML = html;
-
-                });
-
 
             });
 
