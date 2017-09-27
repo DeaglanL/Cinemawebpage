@@ -15,15 +15,15 @@
         <div class="row col-lg-8">
             <div class="col-md-4">
             <h4>Find your local cinema</h4>
-            <div class="">
-                <select id="getCinema" class="" ng-model="bookingCtrl.cinema">
-                    <option selected value="">Choose a cinema</option>
-                    <option value="Manchester">Manchester</option>
-                    <option value="Sheffield">Sheffield</option>
-                    <option value="London">London</option>
-                </select>
+                <div class="">
+                    <select id="getCinema" class="" ng-model="bookingCtrl.cinema" ng-blur="bookingCtrl.listScreenings()">
+                        <option selected value="">Choose a cinema</option>
+                        <option value="Manchester">Manchester</option>
+                        <option value="Sheffield">Sheffield</option>
+                        <option value="London">London</option>
+                    </select>
+                </div>
             </div>
-        </div>
             <div class="col-md-8">
                 <h4>Choose a screening</h4>
                 <div class="row">

@@ -5,16 +5,21 @@
     let BookingController =  function($rootScope, bookingService) {
         let vm = this;
 
-        function init() {
-            bookingService.getScreenings(vm.movie.id).then(function (results) {
-                vm.screenings = results;
-            }, function (error) {
-                vm.error = true;
-                vm.errorStatus = error.status;
-            });
-        }
+        vm.listScreenings = function() {
+            if (vm.cinema==="") {
+                vm.screenings = [{}];
+            } else {
+                bookingService.getScreenings(vm.movie.id).then(function (results) {
+                    vm.screenings = results;
+                }, function (error) {
+                    vm.error = true;
+                    vm.errorStatus = error.status;
+                    vm.screenings = [{}];
+                })
+            }
+        };
 
-        vm.movie = $rootScope.sharedMovie;
+        //vm.movie = $rootScope.sharedMovie1 + ;
 
         vm.screenings = [{"screeningID":41,"cinema":"London","screenID":1,"time":"14:55","movieID":3,"date":"02/10/17"},
                         {"screeningID":42,"cinema":"London","screenID":4,"time":"16:20","movieID":3,"date":"02/10/17"},
@@ -40,8 +45,6 @@
                         "screeningID":vm.screen,
                         "seatID":""};
         };
-
-        //init();
     };
 
     angular.module("apolloCinema").controller("BookingController", ["$rootScope", "bookingService", BookingController]);
