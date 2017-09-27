@@ -77,6 +77,8 @@ public class CustomerTableController {
 
     public  Customer getCustomerByName( String usernamex, Connection myConnection){
 
+        System.out.println("In get cust by name");
+
         Customer currentCustomer;
 
         String customerId = "";
@@ -100,6 +102,8 @@ public class CustomerTableController {
                 username = username + rs.getString("username");
                 password = password + rs.getString("password");
                 phoneno = phoneno + rs.getString("phoneno");
+
+                System.out.println("not dead yet");
             }
 
         } catch (SQLException e) {

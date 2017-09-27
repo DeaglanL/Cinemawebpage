@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.qa.springboot.persistance.Credentials;
 import com.qa.springboot.persistance.customer.Customer;
 import com.qa.springboot.persistance.customer.CustomerTableController;
-import com.qa.springboot.persistance.movie.MasterController;
+import com.qa.springboot.persistance.MasterController;
 import org.springframework.stereotype.Service;
 import java.sql.Connection;
 
@@ -60,8 +60,10 @@ public class customerDBImpl implements CustomerService {
         return "{\"message\": \"success\"}";
     }
 
-    public String checkCustomer(String jsonLogin) {
-        Credentials creds = gson.fromJson(jsonLogin, Credentials.class);
+    public String checkCustomer(String json) {
+        System.out.println(json);
+
+        Credentials creds = gson.fromJson(json, Credentials.class);
 
         Customer customer = custControl.getCustomerByName(creds.getUsername(), conc);
 

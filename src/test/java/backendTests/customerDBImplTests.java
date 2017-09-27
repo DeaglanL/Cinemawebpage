@@ -24,13 +24,13 @@ public void beforeTest() {
 
     @Test
     public void addCustomerTest(){
-        //  assertEquals(cDB.addCustomer("{\"name\":\"David\",\"address\":\"The heart\",\"dob\":\"30/04/1995\",\"email\":\"David.Jaing@qa.com\",\"username\": \"Django \",\"password\": \" Django  \" , \"phoneno\"  :  \" 07321321 \"}"), "success");
+         assertEquals(cDB.addCustomer("{\"name\":\"David\",\"address\":\"The heart\",\"dob\":\"30/04/1995\",\"email\":\"David.Jaing@qa.com\",\"username\": \""+ Math.random() +" \",\"password\": \" "+ Math.random() +"   \" , \"phoneno\"  :  \" 07321321 \"}"), "{\"message\": \"success\"}");
 
     }
 
     @Test
     public void checkCustomerTest(){
-        //assertEquals(cDB.checkCustomer("{\"username\":\"Django\" , \"password\" : \"Django\"}"), "success");
+        assertEquals(cDB.checkCustomer("{\"username\":\"Adamiscool\" , \"password\" : \"Adamiscool!\"}"), "{\"message\": \"success\"}");
     }
 @After
 public void afterTest() {
