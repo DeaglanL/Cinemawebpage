@@ -5,12 +5,14 @@ import com.google.gson.JsonObject;
 import com.qa.springboot.persistance.Cinemas.Cinema;
 import com.qa.springboot.persistance.Cinemas.CinemaTableController;
 import com.qa.springboot.persistance.MasterController;
-import com.qa.springboot.persistance.customer.CustomerTableController;
+import com.qa.springboot.persistance.Screening.Screening;
 import org.springframework.stereotype.Service;
 
-import javax.validation.constraints.Null;
+import javax.ejb.Stateful;
 import java.sql.Connection;
+import java.util.List;
 
+@Stateful
 @Service
 public class bookingDBImpl implements BookingService{
 
@@ -19,14 +21,12 @@ public class bookingDBImpl implements BookingService{
     private String dbName;
     private String username;
     private String password;
-
     private Connection conc;
-
     private MasterController mc = new MasterController();
-
     private CinemaTableController cinemaControl = new CinemaTableController();
-
     private Gson gson = new Gson();
+
+    private Cinema currentCinema;
 
     public bookingDBImpl(){
         ip = "46.32.240.39";
@@ -56,6 +56,7 @@ public class bookingDBImpl implements BookingService{
         {
             JsonObject cinePOJO = gson.fromJson(cinema, JsonObject.class);
             cine = cinemaControl.getCinemaByName(cinePOJO.getAsJsonObject("cinema").getAsString(), conc);
+            currentCinema = cine;
             return gson.toJson(cine);
         }
         catch (Exception e)
@@ -65,6 +66,19 @@ public class bookingDBImpl implements BookingService{
     }
 
     public String getScreenings(String movie) {
+        List<Screening> sreenings;
+
+        try
+        {
+            JsonObject moviePOJO = gson.fromJson(movie, JsonObject.class);
+
+        }
+        catch (Exception e)
+        {
+            return "{\"message\": \""+ e.toString() +"\"}";
+        }
+
+
         return null;
     }
 }

@@ -15,8 +15,6 @@ public class CustomerEndPoint {
 
     @RequestMapping(value = "/json", method = RequestMethod.POST,  headers = "Accept=application/json")
     public  @ResponseBody String checkCustomer(@RequestBody String creds) {
-
-        System.out.println(creds);
        return customerService.checkCustomer(creds);
     }
 
