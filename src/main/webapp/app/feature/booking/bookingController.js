@@ -4,10 +4,14 @@
 
     let BookingController = function ($rootScope) {
         let vm = this;
+        let sharedMovieInfo = $rootScope.sharedMovie;
+        let sharedMovieInfo2 = $rootScope.sharedMovie2;
 
-        vm.movieTitle = $rootScope.sharedMovieName;
-        vm.moviePosterThumbnail = "";
-        vm.movieLength = "##mins";
+        console.log(sharedMovieInfo);
+
+        vm.movieTitle = sharedMovieInfo.results[0].title;
+        vm.moviePosterThumbnail = "https://image.tmdb.org/t/p/w500" + sharedMovieInfo.results[0].poster_path;
+        vm.movieLength = sharedMovieInfo2.runtime;
         vm.cinema = "Cinema";
         vm.screenName = "Screen ##";
         vm.screeningDate = "##/##/####";
@@ -32,7 +36,7 @@
 
                 $scope.text = '';
                 $scope.$on('data_shared', function () {
-                    var text = dataShare.getData();
+                    let text = dataShare.getData();
                     $scope.text = text;
                 });
             }

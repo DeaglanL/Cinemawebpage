@@ -21,7 +21,7 @@
         vm.searchMoreInfo = function (name) {
 
             apiGet.getMovie(name).then(function (result) {
-                $rootScope.sharedMovieName = name;
+                $rootScope.sharedMovie = result;
 
                 let searchMoreInfoPoster = document.getElementById("mofreinfomovieposter");
                 let html = "";
@@ -38,6 +38,7 @@
 
                 movieDal.getMovieInfo(movieID).then(function (result2) {
 
+                    $rootScope.sharedMovie2 = result2;
                     document.getElementById("ReleaseDate").innerHTML = result2.release_date;
                     document.getElementById("Budget").innerHTML = result2.budget;
                     document.getElementById("Revenue").innerHTML = result2.revenue;

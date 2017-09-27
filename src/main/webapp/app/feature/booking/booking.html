@@ -18,7 +18,7 @@
                     <span>{{bookingCtrl.movieTitle}}</span>
                 </div>
                 <div class="">
-                    <img ng-src="{{bookingCtrl.moviePosterThumbnail}}" alt="poster">
+                    <img ng-src="{{bookingCtrl.moviePosterThumbnail}}" alt="poster" width="50%" height="50%">
                 </div>
                 <div class="">
                     <label>Duration:</label>
@@ -52,12 +52,12 @@
             <form ng-submit="bookingCtrl.submitTicketDetails()">
                 <table id="tickets-table" class="table">
                     <thead>
-                        <tr>
-                            <th class="">Ticket</th>
-                            <th class="">Price</th>
-                            <th class="">Quantity</th>
-                            <th class="">Subtotal</th>
-                        </tr>
+                    <tr>
+                        <th class="">Ticket</th>
+                        <th class="">Price</th>
+                        <th class="">Quantity</th>
+                        <th class="">Subtotal</th>
+                    </tr>
                     </thead>
                     <tbody>
                     <tr class="">
@@ -82,7 +82,9 @@
                         <td id="" class="">{{"£" + bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult}}</td>
                     </tr>
                     <tr class="">
-                        <td class=""><strong>Concession</strong> <div><i> Children (under 16), students, and seniors</i></div></td>
+                        <td class=""><strong>Concession</strong>
+                            <div><i> Children (under 16), students, and seniors</i></div>
+                        </td>
                         <td id="" class="">{{"£" + bookingCtrl.ticketPriceConcession}}</td>
                         <td class="">
                             <div class="">
@@ -104,7 +106,9 @@
                     </tr>
                     <tr id="" class="">
                         <td class="" colspan="3">Order value:</td>
-                        <td class="">{{"£" + (bookingCtrl.numConcessions * bookingCtrl.ticketPriceConcession + bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult)}}</td>
+                        <td class="">{{"£" + (bookingCtrl.numConcessions * bookingCtrl.ticketPriceConcession +
+                            bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult)}}
+                        </td>
                     </tr>
                     </tbody>
                 </table>
