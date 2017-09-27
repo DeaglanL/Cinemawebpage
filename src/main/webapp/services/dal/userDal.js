@@ -7,21 +7,21 @@
     function UserDal (dal) {
 
         this.getUser = function () {
-            return dal.http.GET("rest/customer/json");
+            return dal.http.GET("customer/json");
         };
 
         this.verify = function (userToCheck) {
             console.log("Initiating POST DAL");
-            return dal.http.POST("rest/customer/json", userToCheck);
+            return dal.http.POST("customer/json", userToCheck);
         };
 
         this.add = function (userToAdd) {
             console.log("Initiating PUT DAL");
-            return dal.http.PUT("rest/customer/json", userToAdd);
+            return dal.http.PUT("customer/json", userToAdd);
         };
 
         this.deleteUser = function (userToDelete) {
-            return dal.http.DELETE("/rest/customer/json/", userToDelete);
+            return dal.http.DELETE("customer/json/", userToDelete);
         };
     }
 }());
