@@ -63,6 +63,45 @@ public class CinemaTableController {
     }
 
 
+    public Cinema getCinemaByName(String nameGiven, Connection myConnection){
+
+        Cinema currentCinema;
+
+        String cinemaId = "";
+        String address = "";
+        String openingTime = "";
+        String closingTime = "";
+        String name = "";
+        String numberOfScreens = "";
+        String screens_screensid = "";
+
+
+
+        try {
+            Statement stmt = myConnection.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from cinemas where name = " + "\"" + nameGiven + "\"");
+            while (rs.next()) {
+                cinemaId = cinemaId + rs.getString("cinemaId");
+                address = address + rs.getString("address");
+                openingTime = openingTime + rs.getString("openingTime" );
+                closingTime = closingTime + rs.getString("closingTime" );
+                name = name + rs.getString("name" );
+                numberOfScreens = numberOfScreens + rs.getString("numberOfScreens" );
+                screens_screensid = screens_screensid + rs.getString("screens_screensid" );
+
+
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        currentCinema =  new Cinema(cinemaId,address,openingTime,closingTime,name,numberOfScreens,screens_screensid);
+        return currentCinema;
+    }
+
+
 
 
 

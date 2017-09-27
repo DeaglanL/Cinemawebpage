@@ -16,13 +16,13 @@ public class BookingEndPoint {
 
     @RequestMapping(value = "/json", method = RequestMethod.POST, headers = "Accept=application/json")
     @ResponseBody
-    public String checkCustomer(String inputJSON) {
+    public String getCinemaInfo(String inputJSON) {
         return "null";
     }
 
     @RequestMapping(value = "/json", method = RequestMethod.PUT, headers = "Accept=application/json")
     @ResponseBody
-    public String addNewCustomer(String inputJSON) {
+    public String getScreenings(String inputJSON) {
         return "null";
     }
 }
