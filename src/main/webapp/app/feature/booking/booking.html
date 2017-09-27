@@ -109,7 +109,7 @@
                     <span class="text-info">{{bookingCtrl.movie.title}}</span>
                 </div>
                 <div class="">
-                    <img ng-src="{{bookingCtrl.movie.poster}}" alt="poster">
+                    <img ng-src="{{bookingCtrl.moviePosterThumbnail}}" alt="poster" width="50%" height="50%">
                 </div>
                 <div class="">
                     <label>Age Rating:</label>
@@ -144,6 +144,75 @@
                 </div>
                 <a ui-sref="movielist">Choose a different movie</a>
             </div>
+        </div>
+        <div class="col-lg-8">
+            <form ng-submit="bookingCtrl.submitTicketDetails()">
+                <table id="tickets-table" class="table">
+                    <thead>
+                    <tr>
+                        <th class="">Ticket</th>
+                        <th class="">Price</th>
+                        <th class="">Quantity</th>
+                        <th class="">Subtotal</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="">
+                        <td class=""><strong>Adult</strong></td>
+                        <td id="" class="">{{"£" + bookingCtrl.ticketPriceAdult}}</td>
+                        <td class="">
+                            <div class="">
+                                <select id="numAdults" class="" ng-model="bookingCtrl.numAdults">
+                                    <option selected value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td id="" class="">{{"£" + bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult}}</td>
+                    </tr>
+                    <tr class="">
+                        <td class=""><strong>Concession</strong>
+                            <div><i> Children (under 16), students, and seniors</i></div>
+                        </td>
+                        <td id="" class="">{{"£" + bookingCtrl.ticketPriceConcession}}</td>
+                        <td class="">
+                            <div class="">
+                                <select id="numConcessions" class="" ng-model="bookingCtrl.numConcessions">
+                                    <option selected value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td id="" class="">{{"£" + bookingCtrl.numConcessions * bookingCtrl.ticketPriceConcession}}</td>
+                    </tr>
+                    <tr id="" class="">
+                        <td class="" colspan="3">Order value:</td>
+                        <td class="">{{"£" + (bookingCtrl.numConcessions * bookingCtrl.ticketPriceConcession +
+                            bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult)}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="inner">
+                    <button name="submit" type="submit" class="btn-primary" ui-sref="seats">Confirm tickets</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -1,23 +1,21 @@
 "use strict";
 
-(function() {
+(function () {
 
-    let BookingController =  function($rootScope, bookingService) {
+    let BookingController = function ($rootScope) {
         let vm = this;
+        let sharedMovieInfo = $rootScope.sharedMovie;
+        let sharedMovieInfo2 = $rootScope.sharedMovie2;
 
-        vm.listScreenings = function() {
-            if (vm.cinema==="") {
-                vm.screenings = [{}];
-            } else {
-                bookingService.getScreenings(vm.movie.id).then(function (results) {
-                    vm.screenings = results;
-                }, function (error) {
-                    vm.error = true;
-                    vm.errorStatus = error.status;
-                    vm.screenings = [{}];
-                })
-            }
-        };
+        console.log(sharedMovieInfo);
+
+        vm.movieTitle = sharedMovieInfo.results[0].title;
+        vm.moviePosterThumbnail = "https://image.tmdb.org/t/p/w500" + sharedMovieInfo.results[0].poster_path;
+        vm.movieLength = sharedMovieInfo2.runtime;
+        vm.cinema = "Cinema";
+        vm.screenName = "Screen ##";
+        vm.screeningDate = "##/##/####";
+        vm.screeningTime = "##:##";
 
         //vm.movie = $rootScope.sharedMovie1 + ;
 
@@ -40,12 +38,25 @@
         };
 
         vm.submitTicketDetails = function () {
-            let ticket = {"adults":vm.numAdults,
-                        "concessions":vm.numConcessions,
-                        "screeningID":vm.screen,
-                        "seatID":""};
+            let ticket = {
+                "adults": vm.numAdults,
+                "concessions": vm.numConcessions,
+                "screeningID": "",
+                "seatID": ""
+            };
         };
+
+        cinemaApp.controller('MainCtrl2', ['$scope', 'dataShare',
+            function ($scope, dataShare) {
+
+                $scope.text = '';
+                $scope.$on('data_shared', function () {
+                    let text = dataShare.getData();
+                    $scope.text = text;
+                });
+            }
+        ]);
     };
 
-    angular.module("apolloCinema").controller("BookingController", ["$rootScope", "bookingService", BookingController]);
+    angular.module("apolloCinema").controller("BookingController", ["$rootScope", BookingController]);
 }());

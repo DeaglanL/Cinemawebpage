@@ -53,7 +53,30 @@
                 <div class="card h-100">
                     <h4 class="card-header">Manchester</h4>
                     <div class="card-body">
-                        <p class="card-text">List of movie show right now 1</p>
+                        <p class="card-text">
+                        <table style="width:100%">
+                            <tr>
+                                <th>Film Title</th>
+                                <th>Time</th>
+                                <th>Age</th>
+                            </tr>
+                            <tr>
+                                <td>Baby Driver</td>
+                                <td>15:00</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>Kingsman: Golden Circle</td>
+                                <td>17:00</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>Justice Laugue</td>
+                                <td>21:00</td>
+                                <td>15</td>
+                            </tr>
+                        </table>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -61,7 +84,30 @@
                 <div class="card h-100">
                     <h4 class="card-header">Sheffield</h4>
                     <div class="card-body">
-                        <p class="card-text">List of movie show right now 2</p>
+                        <p class="card-text" src=>
+                        <table style="width:100%">
+                            <tr>
+                                <th>Film Title</th>
+                                <th>Time</th>
+                                <th>Age</th>
+                            </tr>
+                            <tr>
+                                <td>Blade Runner</td>
+                                <td>12:00</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>Kingsman: Golden Circle</td>
+                                <td>16:00</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>Justice Laugue</td>
+                                <td>20:00</td>
+                                <td>15</td>
+                            </tr>
+                        </table>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -69,11 +115,35 @@
                 <div class="card h-100">
                     <h4 class="card-header">London</h4>
                     <div class="card-body">
-                        <p class="card-text">List of movie show right now 3</p>
+                        <p class="card-text">
+                        <table style="width:100%">
+                            <tr>
+                                <th>Film Title</th>
+                                <th>Time</th>
+                                <th>Age</th>
+                            </tr>
+                            <tr>
+                                <td>Baby Driver</td>
+                                <td>15:00</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>Kingsman: Golden Circle</td>
+                                <td>16:00</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>The Lego Ninjago Movie</td>
+                                <td>21:00</td>
+                                <td>15</td>
+                            </tr>
+                        </table>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+        ​
         <!-- /.row -->
 
         <!-- Portfolio Section -->
@@ -128,14 +198,6 @@
                 <div>
                     <h2>Coming Soon</h2>
 
-                    <div id="overlay" onclick="off()">
-                        <div id="youtbeVideo">
-                            <iframe width="560" height="315" src="{{ctrl.comingSoonFilm1YoutubeKey}}"
-                                    frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-
-
                     <div class="row" style="padding-bottom: 50px;">
                         <div class="col-md-7">
                             <a>
@@ -145,10 +207,6 @@
                         <div class="col-md-5" style="left: 40px;">
                             <h4>{{ctrl.comingSoonFilm1}}</h4>
                             <p>{{ctrl.comingSoonFilmDescription1}}</p>
-                            <a>
-                                <button class="button" style="vertical-align:middle" onclick="on()">
-                                    <span>Watch Trailer</span></button>
-                            </a>
                             <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.comingSoonFilm1)">
                                 <button class="button" style="vertical-align:middle">
                                     <span>More Info</span></button>
@@ -164,10 +222,6 @@
                         <div class="col-md-5" style="left: 40px;">
                             <h4>{{ctrl.comingSoonFilm2}}</h4>
                             <p>{{ctrl.comingSoonFilmDescription2}}</p>
-                            <a>
-                                <button class="button" style="vertical-align:middle" onclick="on()">
-                                    <span>Watch Trailer</span></button>
-                            </a>
                             <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.comingSoonFilm2)">
                                 <button class="button" style="vertical-align:middle">
                                     <span>More Info</span></button>
@@ -184,10 +238,6 @@
                         <div class="col-md-5" style="left: 40px;">
                             <h4>{{ctrl.comingSoonFilm3}}</h4>
                             <p>{{ctrl.comingSoonFilmDescription3}}</p>
-                            <a>
-                                <button class="button" style="vertical-align:middle" onclick="on()">
-                                    <span>Watch Trailer</span></button>
-                            </a>
                             <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.comingSoonFilm3)">
                                 <button class="button" style="vertical-align:middle">
                                     <span>More Info</span></button>
@@ -204,10 +254,6 @@
                         <div class="col-md-5" style="left: 40px;">
                             <h4>{{ctrl.comingSoonFilm4}}</h4>
                             <p>{{ctrl.comingSoonFilmDescription4}}</p>
-                            <a>
-                                <button class="button" style="vertical-align:middle" onclick="on()">
-                                    <span>Watch Trailer</span></button>
-                            </a>
                             <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.comingSoonFilm4)">
                                 <button class="button" style="vertical-align:middle">
                                     <span>More Info</span></button>
@@ -224,10 +270,6 @@
                         <div class="col-md-5" style="left: 40px;">
                             <h4>{{ctrl.comingSoonFilm5}}</h4>
                             <p>{{ctrl.comingSoonFilmDescription5}}</p>
-                            <a>
-                                <button class="button" style="vertical-align:middle" onclick="on()">
-                                    <span>Watch Trailer</span></button>
-                            </a>
                             <a ng-model="movieName" ng-click="ctrl.moreInfo(ctrl.comingSoonFilm5)">
                                 <button class="button" style="vertical-align:middle">
                                     <span>More Info</span></button>

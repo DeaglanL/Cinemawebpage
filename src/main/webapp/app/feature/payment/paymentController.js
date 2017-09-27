@@ -1,8 +1,8 @@
 "use strict";
 
-(function() {
+(function () {
 
-    let PaymentController =  function() {
+    let PaymentController = function () {
         let vm = this;
 
         vm.movieTitle = "Movie Title";
@@ -16,7 +16,7 @@
         vm.seat = "4D";
         vm.ticketPrice = "10.00";
 
-        vm.sendToPaypal = function() {
+        vm.sendToPaypal = function () {
 
         };
 
