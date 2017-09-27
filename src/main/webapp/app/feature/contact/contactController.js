@@ -13,7 +13,7 @@
         vm.overlay = {
             "color" : "white",
             "font-size" : "24px",
-            "padding" : "56px",
+            "padding" : "100px",
             "position" : "fixed",
             "width": "100%", /* Full width (cover the whole page) */
             "height": "100%", /* Full height (cover the whole page) */
