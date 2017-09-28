@@ -6,7 +6,7 @@
         let vm = this;
         let sharedMovieInfo = $rootScope.sharedMovie;
         let sharedMovieInfo2 = $rootScope.sharedMovie2;
-        
+
 
         vm.movieTitle = sharedMovieInfo.results[0].title;
         vm.moviePosterThumbnail = "https://image.tmdb.org/t/p/w500" + sharedMovieInfo.results[0].poster_path;
@@ -15,8 +15,6 @@
         vm.screenName = "Screen ##";
         vm.screeningDate = "##/##/####";
         vm.screeningTime = "##:##";
-
-        //vm.movie = $rootScope.sharedMovie1 + ;
 
         vm.screenings = [{
             "screeningID": 41,
