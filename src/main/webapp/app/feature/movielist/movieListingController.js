@@ -7,7 +7,6 @@
         vm.getList = function (pageNumber) {
             window.scrollTo(0, 0);
             apiGet.movieList(pageNumber).then(function (result) {
-                console.log(result);
                 vm.movieNameList = [];
                 vm.moviePosterList = [];
                 for (let i = 1; i < 19; i++) {
