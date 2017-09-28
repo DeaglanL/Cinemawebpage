@@ -1,61 +1,331 @@
-<div ng-controller="MovieListingController">
+<div ng-controller="MovieListingController as ctrl">
 
     <!-- Page Content -->
     <div class="container">
 
-      <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Movie Listings
-        <small>Subheading</small>
-      </h1>
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Movie List
+            <small></small>
+        </h1>
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a ui-sref="home">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Movie Listings</li>
-      </ol>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a ui-sref="home">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Most Popular</li>
+        </ol>
 
-      <!-- Image Header -->
-      <img class="img-fluid rounded mb-4" src="http://placehold.it/1200x300" alt="">
+        <!-- Image Header -->
+        <!-- <img class="img-fluid rounded mb-4" src="http://placehold.it/1200x300" alt="">
+        <!-- Marketing Icons Section -->
 
-      <!-- Marketing Icons Section -->
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Movie 1</h4>
-            <div class="card-body">
-              <p class="card-text">Movie 1 info</p>
+        <div id="movieListElement1" class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[1]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[1]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[1])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[2]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[2]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[2])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[3]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[3]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[3])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[4]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[4]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[4])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[5]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[5]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[5])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[6]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[6]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[6])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[7]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[7]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[7])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[8]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[8]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[8])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[9]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[9]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[9])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[10]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[10]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[10])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[11]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[11]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[11])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[12]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[12]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[12])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[13]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[13]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[13])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[14]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[14]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[14])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[15]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[15]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[15])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[16]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[16]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[16])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[17]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[17]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[17])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img class="img-fluid rounded mb-3 mb-md-0"
+                         src="{{ctrl.moviePosterList[18]}}" width="70%">
+                    <div class="card-body">
+                        <p class="card-text">{{ctrl.movieNameList[18]}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button" style="vertical-align:middle" ng-model="movieName"
+                                ng-click="ctrl.moreInfo(ctrl.movieNameList[18])">
+                            <span>More Info</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Movie 2</h4>
-            <div class="card-body">
-              <p class="card-text">Movie 2 info</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Movie 3</h4>
-            <div class="card-body">
-              <p class="card-text">Movie 3 info</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.row -->
 
+
+        <div class="center">
+            <div class="pagination">
+                <a ng-click="ctrl.getList(1)">1</a>
+                <a ng-click="ctrl.getList(2)">2</a>
+                <a ng-click="ctrl.getList(3)">3</a>
+                <a ng-click="ctrl.getList(4)">4</a>
+                <a ng-click="ctrl.getList(5)">5</a>
+                <a ng-click="ctrl.getList(6)">6</a>
+                <a ng-click="ctrl.getList(7)">7</a>
+                <a ng-click="ctrl.getList(8)">8</a>
+                <a ng-click="ctrl.getList(9)">9</a>
+                <a ng-click="ctrl.getList(10)">10</a>
+            </div>
+        </div>
+
+        <!-- /.row -->
     </div>
     <!-- /.container -->
 </div>

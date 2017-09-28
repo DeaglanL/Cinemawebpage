@@ -1,4 +1,4 @@
-<div ng-controller="RegisterController">
+<div ng-controller="RegisterController as registerCtrl">
   <!-- Page Content -->
   <div class="container">
 
@@ -21,50 +21,64 @@
       </p>
       <!-- START registration form -->
       <div class="cform" id="registerform">
-        <form action="" method="post" role="form" class="contactForm" id="register" ng-submit="loginCtrl.registerNew(newUser)">
+        <form action="" method="post" role="form" class="contactForm" id="register" ng-submit="registerCtrl.registerNew(newName, newDob, newEmail, newUsername, newHoneypot, newPassword)">
           <div class="form-group">
-            <input name="name" class="form-control" id="registername" placeholder="Username" ng-blur="loginCtrl.validUsername" ng-model="newUser.name" required/>
-            <div class="validation" ng-show="takenUsername">
-              <p class="text-danger">Username already taken, please choose another</p>
-            </div>
-            <div class="validation" ng-show="invalidEmail">
-              <p class="text-danger">Username must be at least 4 characters long  including at least one lowercase letter</p>
-            </div>
+            <input name="name" class="form-control" id="registername" placeholder="Name" ng-model="newName" required>
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" name="email" id="registeremail" placeholder="Your Email" ng-blur="loginCtrl.validEmail" ng-model="newUser.email" required/>
-            <div class="validation" ng-show="takenEmail">
+            <input type="date" name="dob" class="form-control" id="registerdob" placeholder="Date of birth" ng-model="newDob" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" id="registeremail" placeholder="Your Email" ng-blur="registerCtrl.validEmail(newEmail)" ng-model="newEmail" required/>
+            <div class="validation" ng-show="registerCtrl.takenEmail">
               <p class="text-danger">Email is already used by another account</p>
             </div>
-            <div class="validation" ng-show="invalidEmail">
+            <div class="validation" ng-show="registerCtrl.invalidEmail">
               <p class="text-danger">Email is invalid</p>
             </div>
           </div>
+          <div class="form-group">
+            <input name="username" class="form-control" id="registerusername" placeholder="Username" ng-blur="registerCtrl.validUsername(newUsername)" ng-model="newUsername" required/>
+            <div class="validation" ng-show="registerCtrl.takenUsername">
+              <p class="text-danger">Username already taken, please choose another</p>
+            </div>
+            <div class="validation" ng-show="registerCtrl.invalidUsername">
+              <p class="text-danger">Username must be at least 5 characters long and include at least one lowercase letter</p>
+            </div>
+          </div>
           <div class="form-group" ng-show="false">
-            <input name="honeypot" class="form-control" id="honeypot" ng-model="newUser.honeypot">
+            <input name="honeypot" class="form-control" id="honeypot" placeholder="honeypot" ng-model="newHoneypot">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" name="password" id="registerpassword" placeholder="Password" ng-blur="loginCtrl.validatePasswordFormat" ng-model="newUser.password" required/>
-            <div class="validation" ng-show="invalidPasswordFormat">
+            <input type="password" class="form-control" name="password" id="registerpassword" placeholder="Password" ng-blur="registerCtrl.validPasswordFormat(newPassword)" ng-model="newPassword" required/>
+            <div class="validation" ng-show="registerCtrl.invalidPasswordFormat">
               <p class="text-danger">Password must contain at least one number, one uppercase letter, one lowercase letter, and at least 8 or more characters</p>
             </div>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password" ng-blur="loginCtrl.validateConfirmPassword" ng-model="newUser.confirmPassword" required/>
+            <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password" ng-blur="registerCtrl.validConfirmPassword(newPassword, newConfirmPassword)" ng-model="newConfirmPassword" required/>
             <div class="validation" ng-show="validPasswordFormat">
-              <p class="text-danger">Password must contain at least one number, one uppercase letter, one lowercase letter, and at least 8 or more characters</p>
+              <p class="text-danger">Password must contain at least one number, one uppercase letter, one lowercase letter, one special character (@,#,$,%,^,&,+,=), and be at least 8 or more characters long</p>
             </div>
-            <div class="validation" ng-show="passwordConfirmed">
+            <div class="validation" ng-show="registerCtrl.passwordNotConfirmed">
               <p class="text-danger">Passwords do not match</p>
             </div>
           </div>
-          <div class="text-center"><button class="btn btn-lg btn-theme">Create user</button></div>
+          <div class="text-center">
+            <button class="btn btn-lg btn-theme" ng-disabled="registerCtrl.submitDisabled">Create user</button>
+          </div>
         </form>
+        <div ng-show="registerCtrl.error" id="error_message">
+          <p class="text-danger">Error {{registerCtrl.errorStatus}}: error when processing your request. Please try again later</p>
+        </div>
       </div>
       <!-- END registration form -->
 
     <p>
       <a href=""></a></p>
+      <div>
+        <span>{{registerCtrl.registerStatus}}</span>
+      </div>
 
   </div>
   <!-- /.container -->

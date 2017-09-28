@@ -2,17 +2,18 @@
 
 (function() {
 
-    let ContactController =  function($http) {
-        let vm = this;
+    const ContactController =  function($http) {
+        const vm = this;
 
         vm.phoneInvalid = false;
         vm.emailInvaild = false;
         vm.thankYou = false;
 
+        vm.error = false;
         vm.overlay = {
             "color" : "white",
             "font-size" : "24px",
-            "padding" : "56px",
+            "padding" : "100px",
             "position" : "fixed",
             "width": "100%", /* Full width (cover the whole page) */
             "height": "100%", /* Full height (cover the whole page) */
@@ -27,18 +28,19 @@
             vm.thankYou = !vm.thankYou;
         }
 
-        function validEmail(email) { // see:
-            let reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        function isValidEmail(email) { // see:
+            // language=JSRegexp
+            let reEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
             return reEmail.test(email);
         }
 
-        function validPhone(phone) { // see:
-            let rePhone = /^07([\d]{3})[(\D\s)]?[\d]{3}[(\D\s)]?[\d]{3}$/i;
+        function isValidPhone(phone) { // see:
+            let rePhone = /^07([\d]{3})[(\D\s)]?[\d]{3}[(\D\s)]?[\d]{3}$/;
             return rePhone.test(phone);
         }
 
-        function validateHuman(honeypot) {
-            return !!honeypot;
+        function checkIfRobot(honeypot) {
+            return !(honeypot==="");
         }
 
         function reset(data) {
@@ -50,17 +52,20 @@
         }
 
         vm.handleFormSubmit = function (data) {
-            if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
+            if (checkIfRobot(data.honeypot)) {
                 return false;
             }
-            if (!validPhone(data.phone)) {
-                vm.phoneInvalid = !vm.phoneInvalid;
-                return false;
-            }
-            if (!validEmail(data.email)) {   // if email is not valid show error
-                vm.emailInvaild = !vm.emailInvaild;
+            if (!isValidPhone(data.phone)) {
+                vm.phoneInvalid = true;
                 return false;
             } else {
+                vm.phoneInvalid = false;
+            }
+            if (!isValidEmail(data.email)) {
+                vm.emailInvaild = true;
+                return false;
+            } else {
+                vm.emailInvaild = false;
                 let googleScript = "https://script.google.com/macros/s/AKfycbzCVcDrHI_yn2LPjr45k7r-E5Sw6PKTVph8jmNJTz2FtHAGkNne/exec";
                 let encoded = Object.keys(data).map(function (k) {
                     return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
@@ -70,18 +75,19 @@
                     url: googleScript,
                     data: encoded,
                     headers: {"Content-Type": "application/x-www-form-urlencoded"}
-                }).then(function(response) {
+                }).then(function() {
                         toggleOverlay();
                         reset(data);
                         return true;
-                    },
-                    function(response) { // optional
-                        reset();
+                    },function(response) {
+                        vm.error = true;
+                        vm.errorStatus = response.status;
+                        reset(data);
                         return false;
                     });
             }
         };
     };
 
-    cinemaApp.controller("contactController", ["$http", ContactController]);
+    cinemaApp.controller("ContactController", ["$http", ContactController]);
 }());

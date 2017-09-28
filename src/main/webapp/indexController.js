@@ -1,8 +1,11 @@
 "use strict";
-(function() {
+(function () {
 
-    let indexController =  function($state, $rootScope) {
+    let indexController = function ($state, $rootScope) {
         let vm = this;
+        vm.userLoginHide = false;
+        vm.userLoginShow = false;
+
 
         vm.searchBar = function (sTerm) {
             $state.go("search").then(function () {

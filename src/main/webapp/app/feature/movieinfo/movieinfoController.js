@@ -1,10 +1,10 @@
 "use strict";
-(function() {
+(function () {
 
-    let MovieInfoController =  function($rootScope,$state,apiGet,movieDal) {
+    let MovieInfoController = function ($rootScope, $state, apiGet, movieDal) {
         let vm = this;
 
-        vm.on = $rootScope.$on("callMoreInfo", function(event, movieName){
+        vm.on = $rootScope.$on("callMoreInfo", function (event, movieName) {
             vm.searchMoreInfo(movieName);
         });
 
@@ -13,29 +13,35 @@
         };
 
         vm.callMoreInfo = function (movieName) {
-            $state.go("movieinfo").then(function(){ $rootScope.$emit("callMoreInfo", movieName);} );
+            $state.go("movieinfo").then(function () {
+                $rootScope.$emit("callMoreInfo", movieName);
+            });
         };
 
         vm.searchMoreInfo = function (name) {
 
             apiGet.getMovie(name).then(function (result) {
-
+                $rootScope.sharedMovie = result;
 
                 let searchMoreInfoPoster = document.getElementById("mofreinfomovieposter");
                 let html = "";
                 let movieID = result.results[0].id;
                 vm.movieName = result.results[0].title;
 
-
                 document.getElementById("OverView").innerHTML = result.results[0].overview;
                 document.getElementById("Title").innerHTML = result.results[0].original_title;
                 document.getElementById("Adult").innerHTML = result.results[0].adult;
                 document.getElementById("Language").innerHTML = result.results[0].original_language;
-                html += "<img class=\"img-fluid\" src=\"https://image.tmdb.org/t/p/w500" + result.results[0].poster_path +"\" height=\"70%\" width=\"70%\">"
+                html += "<img class=\"img-fluid\" src=\"https://image.tmdb.org/t/p/w500" + result.results[0].poster_path + "\" height=\"70%\" width=\"70%\">";
                 searchMoreInfoPoster.innerHTML = html;
 
                 movieDal.getMovieInfo(movieID).then(function (result2) {
 
+                    movieDal.movieVideo(movieID).then(function (result4) {
+                        vm.comingSoonFilm1YoutubeKey = ("https://www.youtube.com/embed/" + result4.results[1].key);
+                    });
+
+                    $rootScope.sharedMovie2 = result2;
                     document.getElementById("ReleaseDate").innerHTML = result2.release_date;
                     document.getElementById("Budget").innerHTML = result2.budget;
                     document.getElementById("Revenue").innerHTML = result2.revenue;
@@ -63,7 +69,8 @@
 
         };
 
+
     };
 
-    angular.module('apolloCinema').controller('MovieInfoController', ["$rootScope","$state","apiGet","movieDal",MovieInfoController]);
+    angular.module("apolloCinema").controller("MovieInfoController", ["$rootScope", "$state", "apiGet", "movieDal", MovieInfoController]);
 }());
