@@ -1,6 +1,10 @@
 package com.qa.springboot.persistance.Screening;
 
+import com.qa.springboot.persistance.Screens.Screen;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ScreeningTableController {
 
@@ -63,9 +67,9 @@ public class ScreeningTableController {
         return currentScreening;
     }
 
-    public Screening getScreeningByCinemaAndMovie(String cinemaTitle, int movieID, Connection myConnection){
+    public List<Screening> getScreeningByCinemaAndMovie(String cinemaTitle, int movieID, Connection myConnection){
 
-        Screening currentScreening;
+        List<Screening> currentScreening = new ArrayList<Screening>();
 
         String screeningid ="";
         String cinema ="";
@@ -96,7 +100,7 @@ public class ScreeningTableController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        currentScreening=  new Screening(screeningid,cinema,screenid,time,movieid, date, movies_movieid, movies_customers_customersid, screens_screensid);
+        currentScreening.add(new Screening(screeningid,cinema,screenid,time,movieid, date, movies_movieid, movies_customers_customersid, screens_screensid));
         return currentScreening;
     }
 
