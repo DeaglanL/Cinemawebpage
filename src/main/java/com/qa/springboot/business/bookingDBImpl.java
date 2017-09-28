@@ -6,6 +6,8 @@ import com.qa.springboot.persistance.Cinemas.Cinema;
 import com.qa.springboot.persistance.Cinemas.CinemaTableController;
 import com.qa.springboot.persistance.MasterController;
 import com.qa.springboot.persistance.Screening.Screening;
+import com.qa.springboot.persistance.Screening.ScreeningTableController;
+import com.qa.springboot.persistance.movie.Movie;
 import org.springframework.stereotype.Service;
 
 import javax.ejb.Stateful;
@@ -24,6 +26,7 @@ public class bookingDBImpl implements BookingService{
     private Connection conc;
     private MasterController mc = new MasterController();
     private CinemaTableController cinemaControl = new CinemaTableController();
+    private ScreeningTableController screeningsControl = new ScreeningTableController();
     private Gson gson = new Gson();
 
     private Cinema currentCinema;
@@ -67,18 +70,16 @@ public class bookingDBImpl implements BookingService{
 
     public String getScreenings(String movie) {
         List<Screening> sreenings;
-
         try
         {
-            JsonObject moviePOJO = gson.fromJson(movie, JsonObject.class);
+            Movie moviePOJO = gson.fromJson(movie, Movie.class);
+            sreenings = screeningsControl.getScreeningByCinemaAndMovie(currentCinema.getName(), Integer.parseInt(moviePOJO.getMovieId()), conc);
+            return gson.toJson(sreenings);
 
         }
         catch (Exception e)
         {
             return "{\"message\": \""+ e.toString() +"\"}";
         }
-
-
-        return null;
     }
 }

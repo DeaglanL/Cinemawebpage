@@ -1,6 +1,10 @@
 package com.qa.springboot.persistance.Screening;
 
+import com.qa.springboot.persistance.Screens.Screen;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ScreeningTableController {
 
@@ -62,6 +66,44 @@ public class ScreeningTableController {
          currentScreening=  new Screening(screeningid,cinema,screenid,time,movieid, date, movies_movieid, movies_customers_customersid, screens_screensid);
         return currentScreening;
     }
+
+    public List<Screening> getScreeningByCinemaAndMovie(String cinemaTitle, int movieID, Connection myConnection){
+
+        List<Screening> currentScreening = new ArrayList<Screening>();
+
+        String screeningid ="";
+        String cinema ="";
+        String screenid ="";
+        String time ="";
+        String movieid ="";
+        String date ="";
+        String movies_movieid ="";
+        String movies_customers_customersid ="";
+        String screens_screensid ="";
+
+        try {
+            Statement stmt = myConnection.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from screening where cinema = \"" + cinemaTitle + "\" and movieid = \"" + movieID + "\"");
+            while (rs.next()) {
+                screeningid  = screeningid  + rs.getString("screeningid ");
+                cinema = cinema + rs.getString("cinema");
+                screenid = screenid + rs.getString("screenid");
+                time = time + rs.getString("time" );
+                movieid = movieid + rs.getString("movieid" );
+                date = date + rs.getString("date");
+                movies_movieid = movies_movieid + rs.getString("movies_movieid");
+                movies_customers_customersid = movies_customers_customersid + rs.getString("movies_customers_customersid" );
+                screens_screensid = screens_screensid + rs.getString("screens_screensid" );
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        currentScreening.add(new Screening(screeningid,cinema,screenid,time,movieid, date, movies_movieid, movies_customers_customersid, screens_screensid));
+        return currentScreening;
+    }
+
     public  void removeScreenById(Connection myConnection,int id) {
         String query = "delete from screening where screeningid = ?";
         try {
