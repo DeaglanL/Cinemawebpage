@@ -5,6 +5,8 @@
     let BookingController = function ($rootScope, bookingService) {
         let vm = this;
 
+        vm.lackDetails = true;
+
         function init() {
             try{
                 vm.movie = {"id":$rootScope.sharedMovie.results[0].id,"title":$rootScope.sharedMovie.results[0].title,"poster":"https://image.tmdb.org/t/p/w500" + $rootScope.sharedMovie.results[0].poster_path,length:$rootScope.sharedMovie2.runtime};
@@ -33,20 +35,23 @@
         vm.ticketPriceAdult = 10;
         vm.ticketPriceConcession = 7.5;
 
-        vm.listScreenings = function() {
+        /*vm.listScreenings = function() {
             bookingService.getScreenings(vm.movie.id).then(function (results) {
                 vm.screenings = results;
             }, function (error) {
                 vm.error = true;
                 vm.errorStatus = error.status;
             })
-        };
+        };*/
 
         vm.choose = function(screening) {
             vm.screen = screening.screenID;
             vm.screeningDate = screening.date;
             vm.screeningTime = screening.time;
+            vm.lackDetails = false;
         };
+
+        $rootScope.screening = {"date":vm.screeningDate,"time":vm.screeningTime};
 
         $rootScope.ticket = {"adults": vm.numAdults, "concessions": vm.numConcessions, "cinema":vm.cinema, "screeningID": vm.screeningID, "screenID": vm.screen, "seatID": ""};
     };

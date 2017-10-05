@@ -6,8 +6,8 @@
 
     function BookingDal (dal) {
 
-        this.getqq = function () {
-            return dal.http.GET("rest/qq/json");
+        this.getSeats = function (screenID) {
+            return dal.http.POST("rest/seats/json", screenID);
         };
 
         this.getScreenings = function (movieID) {
