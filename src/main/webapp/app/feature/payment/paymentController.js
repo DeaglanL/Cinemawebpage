@@ -2,19 +2,21 @@
 
 (function () {
 
-    let PaymentController = function () {
+    let PaymentController = function ($rootScope) {
         let vm = this;
 
-        vm.movieTitle = "Movie Title";
-        vm.movieLength = "Movie duration";
-        vm.cinema = "Cinema";
-        vm.screenName = "Screen ##";
-        vm.screeningDate = "Date of screening";
-        vm.screeningTime = "Time of screening";
+        function init() {
+            try{
+                vm.movie = {"id":$rootScope.sharedMovie.results[0].id,"title":$rootScope.sharedMovie.results[0].title,"poster":"https://image.tmdb.org/t/p/w500" + $rootScope.sharedMovie.results[0].poster_path,length:$rootScope.sharedMovie2.runtime};
+                vm.ticket = $rootScope.ticket;
+                vm.screening = $rootScope.screening;
+            } catch(err){
+                vm.error = true;
+                vm.errorStatus = "TypeError";
+            }
+        }
 
-        vm.ticketType = "Adult ticket";
-        vm.seat = "4D";
-        vm.ticketPrice = "10.00";
+        init();
 
         vm.sendToPaypal = function () {
 
@@ -22,5 +24,5 @@
 
     };
 
-    angular.module("apolloCinema").controller("PaymentController", [PaymentController]);
+    angular.module("apolloCinema").controller("PaymentController", ["$rootScope", PaymentController]);
 }());

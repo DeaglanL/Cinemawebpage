@@ -5,16 +5,20 @@
     let SeatsController =  function($rootScope, bookingService) {
         let vm = this;
 
-        function init() {
+        vm.noSeat = true;
+
+        /*function init() {
             bookingService.getSeats($rootScope.ticket.screenID).then(function (results) {
                 vm.cinemaseats = results;
             }, function (error) {
                 vm.error = true;
                 vm.errorStatus = error.status;
             })
-        }
+        }*/
 
-        init();
+        //init();
+
+        vm.cinemaseats = [{id:"A1"},{id:"A2"},{id:"A3"},{id:"A4"},{id:"A5"},{id:"A6"},{id:"A7"},{id:"A8"},{id:"A9"},{id:"A10"}];
 
         vm.overlay = {
             "color" : "white",
@@ -30,7 +34,10 @@
             "background-color" : "rgba(0,0,0,0.75)" /* Black background with opacity */
         };
 
-        $rootScope.ticket.seatID = vm.seat;
+        vm.chosenSeat = function() {
+            vm.noSeat = false;
+            $rootScope.ticket.seatID = vm.seat;
+        };
 
     };
 

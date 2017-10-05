@@ -8,6 +8,10 @@
             return bookingDal.getScreenings(movieID);
         };
 
+        this.getSeats = function(screenID) {
+            return bookingDal.getSeats(screenID);
+        };
+
     };
 
     angular.module("apolloCinema").service("bookingService", ["bookingDal", BookingService]);
