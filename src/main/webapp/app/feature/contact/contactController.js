@@ -5,11 +5,8 @@
     const ContactController =  function($http) {
         const vm = this;
 
-        vm.phoneInvalid = false;
-        vm.emailInvaild = false;
         vm.thankYou = false;
-
-        vm.error = false;
+        
         vm.overlay = {
             "color" : "white",
             "font-size" : "24px",
