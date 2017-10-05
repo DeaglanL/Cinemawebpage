@@ -13,7 +13,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h4>Choose your tickets</h4>
+            <h4>Your order</h4>
             <form ng-submit="bookingCtrl.submitTicketDetails()">
                 <table id="tickets-table" class="table">
                     <thead>
@@ -27,54 +27,26 @@
                     <tbody>
                     <tr class="">
                         <td class=""><strong>Adult</strong></td>
-                        <td id="adultticketprice" class="">{{bookingCtrl.ticketPriceAdult | currency : "£"}}</td>
-                        <td class="">
-                            <div class="">
-                                <select id="numAdults" class="" ng-model="bookingCtrl.numAdults">
-                                    <option selected value="">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td id="totaladultprice" class="">{{bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult||0 | currency : "£"}}</td>
+                        <td id="adultticketprice" class="">{{10 | currency : "£"}}</td>
+                        <td class="">{{payCtrl.ticket.numAdults}}</td>
+                        <td id="totaladultprice" class="">{{payCtrl.ticket.numAdults * 10||0 | currency : "£"}}</td>
                     </tr>
                     <tr class="">
                         <td class=""><strong>Concession</strong> <div><i> Children (under 16), students, and seniors</i></div></td>
-                        <td id="concticketprice" class="">{{bookingCtrl.ticketPriceConcession | currency : "£"}}</td>
-                        <td class="">
-                            <div class="">
-                                <select id="numConcessions" class="" ng-model="bookingCtrl.numConcessions">
-                                    <option selected value="">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                </select>
-                            </div>
-                        </td>
-                        <td id="totalconcprice" class="">{{bookingCtrl.numConcessions * bookingCtrl.ticketPriceConcession||0 | currency : "£"}}</td>
+                        <td id="concticketprice" class="">{{7.5 | currency : "£"}}</td>
+                        <td class="">{{payCtrl.ticket.numConcessions}}</td>
+                        <td id="totalconcprice" class="">{{payCtrl.ticket.numConcessions * 7.5||0 | currency : "£"}}</td>
                     </tr>
                     <tr id="overallprice" class="">
                         <td class="" colspan="3">Order value:</td>
-                        <td class="">{{(bookingCtrl.numConcessions * bookingCtrl.ticketPriceConcession||0) + (bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult||0) | currency : "£"}}</td>
+                        <td class="">{{(payCtrl.ticket.numConcessions * 7.5||0) + (payCtrl.ticket.numAdults * 10||0) | currency : "£"}}</td>
                     </tr>
                     </tbody>
                 </table>
-                <div class="inner">
-                    <button name="submit" class="btn-primary" ui-sref="seats" ng-disabled="bookingCtrl.lackDetails">Choose a seat</button>
+                <div class="">
+                    <button class="btn-primary" ng-click="sendToPaypal()">
+                        Confirm order
+                    </button>
                 </div>
             </form>
         </div>
@@ -113,47 +85,6 @@
                     </div>
                 </div>
                 <a ui-sref="movielist">Choose a different movie</a>
-            </div>
-        </div>
-
-        <div class="col-lg-8">
-            <div class="inner">
-                <h3>Your order</h3>
-            </div>
-            <table id="orders-table" class="table">
-                <thead>
-                    <tr>
-                        <th class="">You're ordering</th>
-                        <th class="">Seats</th>
-                        <th class="">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="">
-                        <td class=""><span class="">{{payCtrl.ticketType}}</span></td>
-                        <td class=""><span class="">{{payCtrl.seat}}</span></td>
-                        <td class="">{{"£" + payCtrl.ticketPrice}}</td>
-                    </tr>
-                    <!--<tr class="">
-                        <td class=""><span class="">{{payCtrl.ticketType}}</span></td>
-                        <td class=""><span class="">{{payCtrl.seat}}</span></td>
-                        <td class="">{{"£" + payCtrl.ticketPrice}}</td>
-                    </tr>
-                    <tr class="">
-                        <td class=""><span class="">{{payCtrl.ticketType}}</span></td>
-                        <td><span class="">{{payCtrl.seat}}</span></td>
-                        <td class="">{{"£" + payCtrl.ticketPrice}}</td>
-                    </tr>-->
-                    <tr class="">
-                        <td class="" colspan="2">Order value</td>
-                        <td class="">{{"£" + payCtrl.ticketPrice}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="">
-                <button class="btn-primary" ng-click="sendToPaypal()">
-                    Confirm order
-                </button>
             </div>
         </div>
     </div>

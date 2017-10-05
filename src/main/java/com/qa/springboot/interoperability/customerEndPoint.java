@@ -18,7 +18,7 @@ public class customerEndPoint {
        return customerService.checkCustomer(creds);
     }
 
-    @RequestMapping(value = "/json", method = RequestMethod.PUT, headers = "Accept=application/json")
+    @RequestMapping(value = "/json/reg", method = RequestMethod.POST, headers = "Accept=application/json")
     @ResponseBody
     public String addNewCustomer(@RequestBody String customerJSON) {
         return customerService.addCustomer(customerJSON);

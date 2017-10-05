@@ -11,13 +11,11 @@
         };
 
         this.verify = function (userToCheck) {
-            console.log("Initiating POST DAL");
             return dal.http.POST("customer/json", userToCheck);
         };
 
         this.add = function (userToAdd) {
-            console.log("Initiating PUT DAL");
-            return dal.http.PUT("customer/json", userToAdd);
+            return dal.http.POST("customer/json/reg", userToAdd);
         };
 
         this.deleteUser = function (userToDelete) {
