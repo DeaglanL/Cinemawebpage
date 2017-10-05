@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/booking")
-public class BookingEndPoint {
+public class bookingEndPoint {
 
     @Autowired
     private BookingService bs;
