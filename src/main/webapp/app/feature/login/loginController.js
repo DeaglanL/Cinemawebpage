@@ -1,33 +1,32 @@
 "use strict";
-(function() {
+(function () {
 
-    let LoginController =  function(userService) {
+    let LoginController = function (userService, $location) {
         let vm = this;
 
         function checkIfRobot(honeypot) {
-            return !(honeypot===undefined);
+            return !(honeypot === undefined);
         }
 
         function resetPassword(user) {
             user.password = "";
         }
 
-        vm.loginSubmit = function(user) {
+        vm.loginSubmit = function (user) {
             if (checkIfRobot(user.honeypot)) {
                 return false;
             } else {
                 delete user.honeypot;
                 console.log("credentials object ready");
                 userService.verify(user).then(function (results) {
-                    if (results.message!=="success") {
+                    if (results.message !== "success") {
                         vm.wrongDetails = true;
                         vm.loginStatus = "Login failed: " + results.message;
                         resetPassword(user);
                         return false;
                     } else {
                         //logged in!
-                        vm.wrongDetails = false;
-                        vm.loginStatus = "Login success!";
+                        $location.path("/home");
                         return true;
                     }
                 }, function (error) {
@@ -41,5 +40,5 @@
         };
     };
 
-    angular.module("apolloCinema").controller("LoginController", ["userService", LoginController]);
+    angular.module("apolloCinema").controller("LoginController", ["userService", "$location", LoginController]);
 }());
