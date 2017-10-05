@@ -34,8 +34,7 @@
             </div>
             <div class="col-lg-12">
                 <h4>Choose your tickets</h4>
-                <form ng-submit="bookingCtrl.submitTicketDetails()">
-                    <table id="tickets-table" class="table">
+                <table id="tickets-table" class="table">
                         <thead>
                         <tr>
                             <th class="">Ticket</th>
@@ -92,11 +91,10 @@
                             <td class="">{{(bookingCtrl.numConcessions * bookingCtrl.ticketPriceConcession||0) + (bookingCtrl.numAdults * bookingCtrl.ticketPriceAdult||0) | currency : "£"}}</td>
                         </tr>
                         </tbody>
-                    </table>
-                    <div class="inner">
-                        <button name="submit" class="btn-primary" ui-sref="seats" ng-disabled="bookingCtrl.lackDetails">Choose a seat</button>
-                    </div>
-                </form>
+                </table>
+                <div class="inner">
+                    <button class="btn-primary" ui-sref="seats" ng-disabled="bookingCtrl.lackDetails">Choose a seat</button>
+                </div>
             </div>
         </div>
         <div class="col-lg-4">
