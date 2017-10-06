@@ -1,7 +1,7 @@
 "use strict";
 (function () {
 
-    let LoginController = function (userService, $location) {
+    let LoginController = function (userService, $location, $rootScope) {
         let vm = this;
 
         function checkIfRobot(honeypot) {
@@ -26,6 +26,9 @@
                         return false;
                     } else {
                         //logged in!
+                        $rootScope.indexUsername = user.username;
+                        $rootScope.indexLoginStatus = true;
+                        console.log(user.username);
                         $location.path("/home");
                         return true;
                     }
@@ -40,5 +43,5 @@
         };
     };
 
-    angular.module("apolloCinema").controller("LoginController", ["userService", "$location", LoginController]);
+    angular.module("apolloCinema").controller("LoginController", ["userService" ,"$location","$rootScope", LoginController]);
 }());

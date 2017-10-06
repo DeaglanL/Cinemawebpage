@@ -5,8 +5,7 @@
         let vm = this;
         vm.userLoginHide = false;
         vm.userLoginShow = false;
-        vm.userName = $rootScope.userName;
-        vm.loginStatus = $rootScope.indexLoginStatus;
+        vm.userName = $rootScope.indexUsername;
 
         vm.searchBar = function (sTerm) {
             $state.go("search").then(function () {
@@ -18,10 +17,17 @@
             $rootScope.$emit("callSearch", sTerm);
         };
 
-        vm.showLoginAndRegister = function () {
-            if (vm.loginStatus === true) return false;
-            else return false;
+        console.log($rootScope.indexLoginStatus);
+
+        if ($rootScope.indexLoginStatus = true){
+            vm.showLoginAndRegister = false;
+            console.log(vm.showLoginAndRegister);
         }
+        else{
+            vm.showLoginAndRegister = true;
+            console.log(vm.showLoginAndRegister);
+        }
+
 
 
     };
