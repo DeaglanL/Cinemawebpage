@@ -73,7 +73,7 @@
             if (checkIfRobot(newHoneypot)) {
                 return false;
             } else {
-                let newUser = {"name":newName, "address":"", "dob":newDob, "email":newEmail, "username":newUsername, "password":newPassword, "phone":"07000000000"};
+                let newUser = {"name":newName, "address":"noaddress", "dob":newDob, "email":newEmail, "username":newUsername, "password":newPassword, "phoneno":"07000000000"};
                 userService.add(newUser).then(function (results) {
                     if (results.message!=="success") {
                         vm.registerStatus = "User creation failed: " + results.message;
